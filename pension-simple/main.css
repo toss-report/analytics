@@ -1,0 +1,440 @@
+:root {
+  color-scheme: light;
+  --page: #f2f4f6;
+  --surface: #ffffff;
+  --ink: #191f28;
+  --ink-secondary: #4e5968;
+  --ink-muted: #8b95a1;
+  --border: #e5e8eb;
+
+  --accent: #3182f6;
+  --accent-strong: #1b64da;
+  --accent-tint: #ebf3ff;
+
+  --declared: #6b7280;
+  --declared-bg: #f3f4f6;
+  --index: #1baf7a;
+  --index-bg: rgba(27, 175, 122, 0.08);
+
+  --status-good: #0ca30c;
+  --status-good-bg: rgba(12, 163, 12, 0.08);
+  --status-critical: #d03b3b;
+  --status-critical-bg: rgba(208, 59, 59, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+    'Noto Sans KR', sans-serif;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+.hidden { display: none !important; }
+
+/* Hero */
+.hero { text-align: center; padding: 8px 8px 28px; }
+.kicker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--accent-tint);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.hero .subtitle {
+  color: var(--ink-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mode tabs */
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  background: var(--page);
+  border-radius: 14px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+.mode-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 8px;
+  border-radius: 11px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.mode-tab.active {
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Panel */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 18px;
+  margin-bottom: 16px;
+}
+.panel-desc {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.field {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  margin-bottom: 14px;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.field-error {
+  color: #d03b3b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: -8px 0 14px;
+}
+.field-optional {
+  font-weight: 400;
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+}
+.input-unit {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 0 14px;
+  background: var(--surface);
+  transition: border-color 0.15s ease;
+}
+.input-unit:focus-within { border-color: var(--accent); }
+.input-unit input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 13px 0;
+  min-width: 0;
+  font-family: inherit;
+}
+.input-unit span {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 14px;
+  padding: 13px 20px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.btn:active { opacity: 0.85; }
+.btn-primary { background: var(--accent); color: #ffffff; }
+.btn-primary:hover { background: var(--accent-strong); }
+.btn-lg { width: 100%; padding: 15px 20px; font-size: 1rem; margin-top: 6px; }
+.btn-weak {
+  background: var(--accent-tint);
+  color: var(--accent-strong);
+  height: 48px;
+}
+.btn-block { width: 100%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+
+/* Result */
+.result {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border);
+}
+.goal-compare {
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  background: var(--surface);
+  margin-bottom: 16px;
+}
+.goal-compare p { margin: 0; font-size: 0.9rem; color: var(--ink-secondary); }
+.goal-amount-row strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+.goal-type-note {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-bottom: 6px !important;
+}
+.goal-type-note:empty { display: none; }
+.gap-message {
+  margin-top: 10px !important;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.88rem !important;
+}
+.gap-message.good { color: var(--status-good); background: var(--status-good-bg); }
+.gap-message.critical { color: var(--status-critical); background: var(--status-critical-bg); }
+
+.result-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  margin: 0 0 12px;
+  text-align: center;
+}
+.compare-row {
+  display: flex;
+  gap: 10px;
+}
+.compare-card {
+  flex: 1;
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+}
+.compare-card.declared { background: var(--declared-bg); }
+.compare-card.index { background: var(--index-bg); }
+.compare-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 0 2px;
+  color: var(--ink);
+}
+.compare-rate {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  margin: 0 0 10px;
+}
+.compare-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.compare-card.declared .compare-value { color: var(--declared); }
+.compare-card.index .compare-value { color: var(--index); }
+
+.diff-note {
+  margin: 14px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+  text-align: center;
+  line-height: 1.6;
+}
+.diff-note strong { color: var(--accent-strong); font-weight: 700; }
+
+.invest-achieve-box {
+  border: 1.5px solid var(--status-good);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: var(--status-good-bg);
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.invest-achieve-box strong { color: var(--status-good); }
+
+.delay-box {
+  border: 1.5px solid #f5a623;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(245, 166, 35, 0.08);
+  margin-top: 14px;
+}
+.delay-title {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.delay-row {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+.delay-row:last-of-type { margin-bottom: 0; }
+.delay-row strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.delay-note {
+  margin: 12px 0 0;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+/* Note box */
+.note-box {
+  padding: 0 4px;
+  margin-bottom: 20px;
+}
+.note-box p {
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Bottom CTA */
+.cta-box-bottom {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+.cta-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+.cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Option cards (기존 노후 연금 계산기 STEP1 패턴 재사용) */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.option-grid.one { grid-template-columns: 1fr; }
+
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.option-card input {
+  margin-top: 2px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+.option-card span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.88rem;
+}
+.option-card strong { font-weight: 700; }
+.option-card small {
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+.option-card:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.conditional {
+  margin-top: 12px;
+  padding-left: 4px;
+}
+
+.field-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  margin: 22px 0 10px;
+}
+
+/* Steps (2단계 마법사 — 기존 노후 연금 계산기 STEP1 패턴 재사용) */
+.step {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 20px;
+  margin-bottom: 16px;
+}
+.step-kicker {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+.step h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.accent { color: var(--accent); }
+.step-desc {
+  color: var(--ink-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 22px;
+}
+.wizard-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.wizard-nav .btn { flex: 1; }
+.step-back {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-decoration: none;
+  cursor: pointer;
+}

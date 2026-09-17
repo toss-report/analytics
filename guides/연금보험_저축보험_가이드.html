@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연금보험·저축보험 가이드</title>
+<meta property="og:title" content="연금보험·저축보험 가이드">
+<meta property="og:description" content="비과세 혜택만 보고 유지 중이신가요? 종신보험 구분부터 공시이율, 변액 펀드 점검, 계약자 변경 주의사항까지 — 6페이지 정보 가이드">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og-guide.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root {
+    --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+
+    --fs-xs:  11px; --fs-sm:  12px; --fs-base: 13px; --fs-body: 14px;
+    --fs-md:  15px; --fs-lg:  16px; --fs-xl:  19px; --fs-2xl: 24px;
+
+    --lh-tight: 1.4; --lh-normal: 1.55; --lh-loose: 1.7;
+    --ls-tight: -0.5px; --ls-normal: -0.3px; --ls-wide: 0.4px;
+
+    --bg: #FFFFFF; --bg-root: #F8F9FB; --bg-card: #FFFFFF;
+
+    --text-primary: #1F2937; --text-secondary: #4B5563;
+    --text-tertiary: #6B7280; --text-quaternary: #9CA3AF;
+
+    --border: rgba(0,0,0,0.08); --border-soft: rgba(0,0,0,0.04);
+
+    --blue: #3182F6; --blue-dim: rgba(49,130,246,0.08); --blue-text: #1D4ED8;
+    --amber: #F59E0B; --amber-dim: rgba(245,158,11,0.10); --amber-text: #B45309;
+    --rose: #DC2626; --rose-dim: rgba(220,38,38,0.08); --rose-text: #B91C1C;
+
+    --section-px: 22px; --section-py: 30px; --section-gap: 6px;
+    --header-px: 22px; --header-pt: 24px; --header-pb: 28px; --header-inner-gap: 22px;
+
+    --radius-sm: 5px; --radius-md: 8px; --radius-lg: 12px; --radius-pill: 16px;
+    --container-max: 480px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-root);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+  }
+
+  .container { max-width: var(--container-max); margin: 0 auto; background: var(--bg); }
+
+  .header { padding: var(--header-pt) var(--header-px) var(--header-pb); position: relative; }
+  .header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--border); }
+  .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--header-inner-gap); }
+  .header-page { font-size: var(--fs-xs); font-weight: 500; color: var(--text-tertiary); padding: 3px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .header-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--blue-dim); color: var(--blue); padding: 5px 12px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: 500; margin-bottom: 14px; }
+  .header h1 { font-size: var(--fs-2xl); font-weight: 700; line-height: 1.35; letter-spacing: var(--ls-tight); margin-bottom: 8px; }
+  .header h1 em { font-style: normal; color: var(--blue); }
+  .header-question { font-size: var(--fs-md); font-weight: 600; color: var(--blue-text); margin-top: 4px; margin-bottom: 10px; line-height: 1.4; letter-spacing: var(--ls-normal); }
+  .header-desc { font-size: var(--fs-body); color: var(--text-secondary); line-height: var(--lh-normal); }
+
+  .section { padding: var(--section-py) var(--section-px); border-top: var(--section-gap) solid rgba(0,0,0,0.03); }
+  .section-label { font-size: var(--fs-xs); font-weight: 700; color: var(--blue); margin-bottom: 6px; letter-spacing: var(--ls-wide); }
+  .section-label.amber { color: var(--amber-text); }
+  .section-label.rose { color: var(--rose); }
+  .section-title { font-size: var(--fs-xl); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: var(--ls-tight); line-height: 1.4; }
+  .section-title em { font-style: normal; color: var(--blue); }
+  .section-title em.rose { color: var(--rose); }
+  .section-desc { font-size: var(--fs-body); color: var(--text-secondary); margin-bottom: 22px; line-height: var(--lh-normal); }
+
+  .sub-title { font-size: var(--fs-lg); font-weight: 700; color: var(--text-primary); margin-top: 24px; margin-bottom: 12px; letter-spacing: var(--ls-tight); line-height: 1.4; }
+  .sub-title:first-child { margin-top: 0; }
+
+  .def-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; margin-bottom: 12px; }
+  .def-label { display: inline-block; background: var(--blue-dim); color: var(--blue-text); font-size: var(--fs-xs); font-weight: 700; padding: 3px 10px; border-radius: var(--radius-pill); margin-bottom: 10px; letter-spacing: -0.2px; }
+  .def-label.amber { background: var(--amber-dim); color: var(--amber-text); }
+  .def-label.rose { background: var(--rose-dim); color: var(--rose); }
+  .def-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .def-text { font-size: var(--fs-sm); color: var(--text-secondary); line-height: var(--lh-loose); }
+  .def-text strong { color: var(--text-primary); font-weight: 700; }
+
+  .cta-box { background: var(--blue-dim); border: 1px solid rgba(49,130,246,0.12); border-radius: var(--radius-lg); padding: 14px 16px; margin-top: 18px; display: flex; align-items: flex-start; gap: 10px; }
+  .cta-box.amber { background: var(--amber-dim); border-color: rgba(245,158,11,0.18); }
+  .cta-box.rose { background: var(--rose-dim); border-color: rgba(220,38,38,0.16); }
+  .cta-emoji { font-size: var(--fs-md); flex-shrink: 0; margin-top: 1px; }
+  .cta-text { font-size: var(--fs-body); line-height: var(--lh-loose); color: var(--text-primary); }
+  .cta-text strong { color: var(--text-primary); font-weight: 700; }
+
+  .checklist { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 18px; margin-bottom: 14px; }
+  .checklist-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); margin-bottom: 14px; letter-spacing: -0.3px; }
+  .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border-soft); }
+  .check-item:first-of-type { border-top: none; padding-top: 0; }
+  .check-mark { width: 22px; height: 22px; border-radius: 6px; background: var(--blue-dim); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: var(--fs-sm); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .check-text { font-size: var(--fs-sm); color: var(--text-primary); line-height: var(--lh-normal); flex: 1; }
+  .check-text strong { color: var(--blue-text); font-weight: 700; }
+
+  .wrap-summary { background: var(--blue); color: #fff; border-radius: var(--radius-lg); padding: 22px 20px; text-align: center; }
+  .wrap-intro { font-size: var(--fs-sm); font-weight: 600; opacity: 0.85; margin-bottom: 6px; letter-spacing: -0.2px; }
+  .wrap-title { font-size: var(--fs-2xl); font-weight: 700; margin-bottom: 14px; letter-spacing: -0.5px; line-height: 1.3; }
+  .wrap-title em { font-style: normal; }
+  .wrap-text { font-size: var(--fs-sm); line-height: var(--lh-loose); opacity: 0.95; }
+  .wrap-text strong { font-weight: 700; }
+
+  .link-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 18px; margin-bottom: 12px; }
+  .link-card:last-child { margin-bottom: 0; }
+  .link-card h2 { font-size: var(--fs-lg); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.3px; }
+  .link-card p { font-size: var(--fs-sm); color: var(--text-secondary); line-height: var(--lh-normal); margin-bottom: 14px; }
+  .link-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 44px; border-radius: var(--radius-md); background: var(--blue-dim); color: var(--blue-text); font-size: var(--fs-sm); font-weight: 700; text-decoration: none; }
+
+  .footer { padding: 14px var(--section-px); border-top: 1px solid var(--border-soft); }
+  .footer-text { font-size: var(--fs-xs); color: var(--text-tertiary); line-height: var(--lh-normal); }
+
+  .tj-topbar {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 480px; margin: 0 auto; padding: 14px 20px;
+    background: #ffffff; border-bottom: 1px solid #e5e8eb;
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    letter-spacing: normal;
+  }
+  .tj-topbar-brand { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+  .tj-topbar-logo { height: 22px; width: auto; display: block; }
+  .tj-topbar-text { font-size: 15px; font-weight: 700; color: #191f28; }
+  .tj-topbar-link { font-size: 14px; font-weight: 600; color: #1b64da; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="tj-topbar">
+  <a class="tj-topbar-brand" href="../index.html"><img class="tj-topbar-logo" src="../assets/toss-logo.png" alt="토스"><span class="tj-topbar-text">toss insurance</span></a>
+  <a class="tj-topbar-link" href="../pension-guide.html">연금·저축 가이드</a>
+</div>
+
+<!-- ═══ PAGE 1: 표지 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">1 / 6</span>
+    </div>
+    <div class="header-badge">💰 연금보험·저축보험 가이드</div>
+    <h1>잘 유지하고 계신 게 <em>맞을까요</em></h1>
+    <div class="header-question">5년 이상 납입, 10년 이상 유지로 비과세 혜택 하나만 보고 계신가요?</div>
+    <div class="header-desc">많은 분들이 "5년 이상 납입, 10년 이상 유지로 비과세 혜택"이라는 조건만 보고 저축성 보험을 오래 유지하고 계십니다.<br>하지만 실제론 그 안에서 놓치고 계신 부분들이 있습니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">이 가이드에서 살펴볼 것</div>
+    <div class="section-title">비과세, <em>제대로</em> 알고 유지하기</div>
+    <div class="section-desc">비과세는 세금을 아끼는 혜택이지, 돈을 잘 불려준다는 뜻이 아닙니다.<br>다음 페이지부터 놓치기 쉬운 네 가지를 순서대로 짚어봅니다.</div>
+
+    <div class="checklist" style="margin-bottom:0;">
+      <div class="checklist-title">📋 살펴볼 순서</div>
+      <div class="check-item">
+        <div class="check-mark">1</div>
+        <div class="check-text">종신보험 구분 — <strong>저축으로 알고 가입하셨나요?</strong></div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">2</div>
+        <div class="check-text">공시이율형 — <strong>물가상승률을 따라가고 있나요?</strong></div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">3</div>
+        <div class="check-text">변액형 — <strong>지금 어떤 펀드</strong>에 들어가 있나요?</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">4</div>
+        <div class="check-text">계약자 변경 — <strong>비과세 요건이 초기화</strong>될 수 있어요</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 2: 종신보험은 저축이 아닙니다 ═══ -->
+<div class="container" style="margin-top: 24px;">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">2 / 6</span>
+    </div>
+    <div class="header-badge">💰 연금보험·저축보험 가이드</div>
+    <h1>종신보험은 <em>저축이 아닙니다</em></h1>
+    <div class="header-question">혹시 종신보험을 저축·연금으로 알고 계셨나요?</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">상품부터 구분하기</div>
+    <div class="section-title">종신보험은 <em>사망보장</em>이 목적입니다</div>
+    <div class="section-desc">종신보험은 피보험자가 사망했을 때 유족에게 사망보험금을 지급하는 보장성 보험입니다. 저축이나 연금처럼 돈을 불리기 위해 설계된 상품이 아닙니다.</div>
+
+    <div class="def-box amber">
+      <span class="def-label amber">확인</span>
+      <div class="def-title">보험료의 상당 부분이 사망보장 비용으로 쓰입니다</div>
+      <div class="def-text">종신보험 보험료에는 사망보험금 지급을 위한 위험보험료와 사업비가 포함되어 있고, 이 사업비는 적게는 15%, 많게는 40%에 달하기도 합니다. 낸 보험료에서 이런 비용을 뺀 나머지만 적립되기 때문에, 중도에 해지하면 낸 돈보다 돌려받는 돈이 적은 경우가 많습니다.</div>
+    </div>
+
+    <div class="sub-title">"10년에 120% 확정 지급"에 혹하셨다면</div>
+    <div class="def-text" style="margin-bottom:12px;">많은 분들이 "10년 유지하면 낸 돈의 120%를 돌려받는다"는 안내를 보고 가입을 결정합니다. 하지만 연 환산 수익률로 계산해보면 <strong style="color:var(--text-primary);">2%대 안팎에 그치는 경우가 많아</strong>, 물가상승률조차 따라가지 못할 수 있습니다.</div>
+
+    <div class="cta-box rose">
+      <span class="cta-emoji">⚠️</span>
+      <div class="cta-text"><strong>해지해서 목돈으로 쓰실 계획</strong>이라면 해당 목적에는 적합하지 않습니다.<br>애초에 저축이 아니라 사망보장을 위해 설계된 상품이라, 해지환급금 위주로 보면 손해를 보기 쉽습니다.</div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">🏠</span>
+      <div class="cta-text"><strong>상속을 준비</strong>하고 계신다면 이야기가 다릅니다. 사망보험금은 상속재산과 별개로 즉시 현금으로 지급되기 때문에, 부동산 비중이 높은 가정의 상속세 납부재원이나 유족의 당장의 생활자금으로 유용하게 쓰입니다. 다만 계약자·피보험자·수익자를 누구로 하느냐에 따라 세금 처리가 달라지므로, 상속 목적이라면 반드시 전문가와 함께 계약구조를 설계해야 합니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 3: 공시이율의 함정 ═══ -->
+<div class="container" style="margin-top: 24px;">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">3 / 6</span>
+    </div>
+    <div class="header-badge">💰 연금보험·저축보험 가이드</div>
+    <h1>비과세 혜택은 챙겼는데, <em>물가는요?</em></h1>
+    <div class="header-question">공시이율형, 지금도 낮은 이율로 굴러가고 있진 않나요?</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">공시이율이란</div>
+    <div class="section-title">보험사가 매달 정하는 <em>적립금 이율</em></div>
+    <div class="section-desc">저축성 보험(연금보험·저축보험)의 적립금은 보험사가 매달 발표하는 "공시이율"에 따라 불어납니다. 시중금리 흐름을 어느 정도 반영하지만,<br>보험사 사업비·최저보증 등의 구조상 통상 시중 예금금리와 비슷하거나 낮은 수준에 머무는 경우가 많습니다.</div>
+
+    <div class="def-box">
+      <span class="def-label">정의</span>
+      <div class="def-title">공시이율</div>
+      <div class="def-text">보험사가 자산운용 실적과 시장금리를 반영해 매달 발표하는 적립금 적용 이율. 가입 시 안내받은 이율은 "예시"이며, 실제로는 매달 바뀝니다.</div>
+    </div>
+
+    <div class="sub-title">비과세인데, 왜 손해일 수 있을까요?</div>
+    <div class="def-text" style="margin-bottom:12px;">비과세는 "이자소득세(15.4%)를 안 낸다"는 뜻이지, "돈이 잘 불어난다"는 뜻이 아닙니다. 공시이율 자체가 물가상승률보다 낮다면, 세금을 아꼈어도 <strong style="color:var(--text-primary);">실질 구매력은 오히려 줄어들 수 있습니다.</strong></div>
+
+    <div class="cta-box amber">
+      <span class="cta-emoji">📊</span>
+      <div class="cta-text">지금 유지 중인 상품의 <strong>최근 공시이율</strong>을 확인해보세요. 물가상승률과 비교했을 때, 비과세 혜택을 상쇄하고도 남을 만큼 실질가치가 줄고 있진 않은지 점검이 필요합니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 4: 변액형 펀드 점검 ═══ -->
+<div class="container" style="margin-top: 24px;">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">4 / 6</span>
+    </div>
+    <div class="header-badge">💰 연금보험·저축보험 가이드</div>
+    <h1><em>어떤 펀드</em>에 들어가고 있나요?</h1>
+    <div class="header-question">변액보험이라면, 방치하지 말고 정기적으로 확인하세요</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">변액보험이라면</div>
+    <div class="section-title">펀드는 <em>가만히 두라고</em> 있는 게 아닙니다</div>
+    <div class="section-desc">변액보험은 납입한 보험료 중 일부가 "특별계정"을 통해 펀드에 투자되는 구조입니다. 공시이율형과 달리 실적에 따라 적립금이 늘거나 줄 수 있는 만큼, 가입 이후에도 어떤 펀드에 들어가 있는지 주기적으로 확인하는 습관이 필요합니다.</div>
+
+    <div class="def-box amber">
+      <span class="def-label amber">참고</span>
+      <div class="def-title">오래된 변액보험일수록 펀드 선택지가 좁았습니다</div>
+      <div class="def-text">변액보험 초기에는 투자 가능한 펀드가 국내 주식형 위주로 제한적이었던 시기가 있었습니다. 지금은 국내외 주식·채권·인덱스 등 펀드 라인업이 훨씬 다양해졌기 때문에, 오래전 가입한 상품일수록 지금 기준으로 보면 아쉬운 펀드 구성으로 방치되어 있을 가능성이 있습니다.</div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">🔍</span>
+      <div class="cta-text">최소 1년에 한 번은 <strong>가입 중인 펀드 구성과 수익률</strong>을 확인하고, 필요하다면 펀드 변경(펀드 변경 수수료 없이 가능한 경우가 많습니다)을 검토해보시길 권합니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 5: 계약자 변경 주의 ═══ -->
+<div class="container" style="margin-top: 24px;">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">5 / 6</span>
+    </div>
+    <div class="header-badge">💰 연금보험·저축보험 가이드</div>
+    <h1>계약자를 바꾸면 <em class="rose">비과세가 초기화</em>될 수 있어요</h1>
+    <div class="header-question">계약자와 피보험자가 다른 저축보험이라면 특히 주의하세요</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label rose">계약자 변경 주의사항</div>
+    <div class="section-title">계약자 변경 = 세법상 <em class="rose">새 계약</em></div>
+    <div class="section-desc">계약자(보험료를 내는 사람)와 피보험자(보장을 받는 사람)가 다른 저축보험에서, 상속·증여 등의 이유로 계약자를 변경하는 경우가 종종 있습니다.</div>
+
+    <div class="def-box rose">
+      <span class="def-label rose">주의</span>
+      <div class="def-title">비과세 판단 기준일이 계약자 변경 시점으로 초기화될 수 있습니다</div>
+      <div class="def-text">계약자를 변경하면 세법상 그 시점에 새로 계약한 것으로 보아, "10년 이상 유지"를 따지는 비과세 요건의 시작일이 원래 가입일이 아니라 <strong>계약자 변경일</strong>로 다시 계산될 수 있습니다. 오랫동안 유지해서 비과세 요건을 채워가던 상품도, 계약자 변경 한 번으로 처음부터 다시 기간을 채워야 하는 상황이 될 수 있습니다.</div>
+    </div>
+
+    <div class="cta-box rose">
+      <span class="cta-emoji">⚠️</span>
+      <div class="cta-text">계약자 변경을 고려 중이시라면, <strong>변경 전에 반드시 비과세 요건에 미치는 영향</strong>을 먼저 확인하세요. 시점과 방법에 따라 결과가 크게 달라질 수 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 6: Wrap-up ═══ -->
+<div class="container" style="margin-top: 24px;">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">6 / 6</span>
+    </div>
+    <div class="header-badge">💰 연금보험·저축보험 가이드</div>
+    <h1>가입 전 확인이 아니라, <em>지금 확인</em>하세요</h1>
+    <div class="header-question">이 가이드의 핵심 메시지를 한 줄씩 요약했습니다</div>
+  </div>
+
+  <div class="section">
+    <div class="checklist">
+      <div class="checklist-title">📋 핵심 5가지</div>
+      <div class="check-item">
+        <div class="check-mark">1</div>
+        <div class="check-text">종신보험은 <strong>저축이 아니라 사망보장·상속 목적</strong>의 상품입니다.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">2</div>
+        <div class="check-text">비과세는 <strong>세금 혜택</strong>이지, 수익률을 보장해주지 않습니다.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">3</div>
+        <div class="check-text">공시이율형은 <strong>물가상승률을 못 따라갈 수</strong> 있습니다.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">4</div>
+        <div class="check-text">변액형은 <strong>1년에 한 번은 펀드 구성</strong>을 확인하세요.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">5</div>
+        <div class="check-text">계약자 변경은 <strong>비과세 요건을 초기화</strong>시킬 수 있습니다.</div>
+      </div>
+    </div>
+
+    <div class="link-card">
+      <h2>🎯 드림머니 계산기</h2>
+      <p>꿈꾸던 목돈, 얼마씩 모아야 이룰 수 있을까요?</p>
+      <a class="link-btn" href="../dreammoney/index.html">드림머니 계산기 열기</a>
+    </div>
+
+    <div class="link-card">
+      <h2>⏳ 타임캡슐 계산기</h2>
+      <p>희망 생활비만 입력하면 지금부터 얼마씩 준비해야 하는지 바로 확인할 수 있습니다.</p>
+      <a class="link-btn" href="../pension-simple/index.html">타임캡슐 계산기 열기</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다. 세법 관련 내용은 개인 상황에 따라 다르게 적용될 수 있어 정확한 판단은 세무 전문가 상담을 권해드립니다.</div>
+  </div>
+</div>
+
+</body>
+</html>

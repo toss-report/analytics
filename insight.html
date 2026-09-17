@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  if (window.__backGuardInit) return;
+  window.__backGuardInit = true;
+  var alreadyArmed = false;
+  try { alreadyArmed = sessionStorage.getItem('bgArmed') === '1'; } catch (e) {}
+  if (alreadyArmed) return;
+  try { sessionStorage.setItem('bgArmed', '1'); } catch (e) {}
+  history.pushState({ __bg: 1 }, '', location.href);
+  window.addEventListener('popstate', function(e){
+    if (e.state && e.state.__bg) return;
+    var t = document.createElement('div');
+    t.innerHTML = '한 번 더 누르시면,<br>카카오톡 대화방으로<br>돌아갑니다.';
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+      'max-width:calc(100% - 40px);text-align:center;background:#191f28;color:#fff;' +
+      'font-size:13.5px;font-weight:600;line-height:1.5;padding:14px 20px;border-radius:20px;z-index:200;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.2)';
+    (document.body || document.documentElement).appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2600);
+  });
+})();
+</script>
+<title>Insight | 채종명</title><meta property="og:type" content="website">
+<meta property="og:title" content="Insight | 채종명">
+<meta property="og:image" content="assets/og-insight.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insight | 채종명">
+<meta name="twitter:image" content="assets/og-insight.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-frame">
+
+  <header class="top-bar">
+    <a class="brand-logo-link" href="index.html"><img class="brand-logo" src="assets/toss-logo.png" alt="토스"><span class="brand-text">toss insurance</span></a>
+    <a class="nav-link" href="index.html">홈</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Insight</p>
+    <h1>토스 어드바이저,<br>
+채종명은요</h1>
+  </section>
+
+  <section class="card prose-card">
+<p>이상한 제안을 드리는 사람이 되기로 했습니다.<br>
+여섯 번의 겨울을 사회복지사로 보냈습니다.<br>
+가장자리에 선 사람들의 굽은 등을 마주할 때마다, 제도의 온기만으로는 막을 수 없는 삶의 서늘한 사각지대를 보았습니다.</p>
+<p>그러다 제 삶에도 예고 없는 비가 내렸습니다.<br>
+'차라리, 내가 대신...' 숨이 멎을 듯한 시간들을 견디며 비로소 알게 되었습니다.<br>
+차가운 병실 공기를 데우는 것은 막연한 누군가의 위로가 아니라,<br>
+당장의 내일을 버티게 해주는 현실적인 우산이라는 것을요.</p>
+<p>[ 유지하기 어려워 해지했던 월 30만원, 그리고 두 달 뒤 다가온 위기 ]</p>
+<p>그 때 이야기만하면 눈물로 아득해지는 장모님의 모습을 머릿속에 그리며,<br>
+또 누군가를 돕겠다 매일매일 다잡으며 그렇게 하루를 시작합니다.</p>
+<p>이 일을 하며 가장 덜컥 겁이 나는 순간은,<br>
+연락이 닿지 않던 고객님이 어느 날 불쑥 다시 찾아오실 때입니다.<br>
+아무리 돕고 싶어도 제가 건넬 수 있는 우산이 남아있지 않을 때,<br>
+막연한 위로만 건네며 '그때 조금 더 밉보이더라도 한 번 더 붙잡을 것을',<br>
+깊고 쓴 후회를 삼키곤 합니다.</p>
+<p>아무도 내일의 슬픔을 미리 예약하고 살아가지 않습니다.<br>
+다들 '나는 괜찮겠지'라는 얇은 믿음으로 오늘을 걷습니다.<br>
+하지만 우산은 맑은 날에 챙겨야 하고,<br>
+울타리는 비바람이 불기 전에 세워야 무너지지 않습니다.</p>
+<p>저는 고객님들께 조금 이상한 제안을 드리는 사람이 되기로 했습니다.<br>
+제가 짜드린 이 울타리를 평생 한 번도 쓰지 않으셨으면 좋겠습니다.<br>
+자잘한 수술로 몇십만 원을 돌려받는 작은 기쁨보다,<br>
+삶을 통째로 흔들 거대한 파도 앞에서 우리 가족이 무너지지 않을<br>
+단단한 방파제 하나만이라도 잘 지어두시기를 권합니다.</p>
+<p>가장 좋은 보험은 끝내 청구할 일이 없는 보험이니까요.</p>
+<p>내 삶을 지켜줄 꼭 필요한 방어막만 정직하게 남겨드리겠습니다.<br>
+당신의 무탈하고 평온한 일상을 누구보다 다정하게 바라는</p>
+<p>토스 어드바이저 채종명 드림.</p>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-heading">상담이 필요하신가요?</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화 상담 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡 상담 신청</a>
+    </div>
+    <p class="phone-line">토스인슈어런스 직영사업단 직영1 총괄본부<br>
+서울특별시 구로구 경인로 662, 37F(신도림동, 디큐브시티)</p>
+    <p class="compliance">이 사이트는 토스인슈어런스 소속 보험설계사 채종명이 운영하는 개인 소개 페이지입니다. 특정 보험상품의 가입을 권유하거나 추천하지 않으며, 안내된 내용은 이해를 돕기 위한 참고용입니다. 실제 가입 여부는 고객님의 자유로운 의사에 따라 결정되며, 상품 세부 내용은 반드시 상품설명서와 약관을 통해 확인하시기 바랍니다.</p>
+  </footer>
+
+</div>
+<script src="assets/phone-cta.js"></script>
+</body>
+</html>

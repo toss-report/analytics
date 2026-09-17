@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){
+  if (window.__backGuardInit) return;
+  window.__backGuardInit = true;
+  var alreadyArmed = false;
+  try { alreadyArmed = sessionStorage.getItem('bgArmed') === '1'; } catch (e) {}
+  if (alreadyArmed) return;
+  try { sessionStorage.setItem('bgArmed', '1'); } catch (e) {}
+  history.pushState({ __bg: 1 }, '', location.href);
+  window.addEventListener('popstate', function(e){
+    if (e.state && e.state.__bg) return;
+    var t = document.createElement('div');
+    t.innerHTML = '한 번 더 누르시면,<br>카카오톡 대화방으로<br>돌아갑니다.';
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+      'max-width:calc(100% - 40px);text-align:center;background:#191f28;color:#fff;' +
+      'font-size:13.5px;font-weight:600;line-height:1.5;padding:14px 20px;border-radius:20px;z-index:200;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.2)';
+    (document.body || document.documentElement).appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2600);
+  });
+})();
+</script>
+<title>타임캡슐 계산기</title>
+<meta name="description" content="은퇴 후 받고 싶은 월 생활비만 입력하면, 국민연금·퇴직연금을 뺀 나머지를 지금부터 얼마씩 준비해야 하는지 계산해드려요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="타임캡슐 계산기">
+<meta property="og:image" content="../assets/og-pension-simple.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="타임캡슐 계산기">
+<meta name="twitter:image" content="../assets/og-pension-simple.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="main.css?v=5">
+<style>
+  .site-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e8eb;
+  }
+  .site-topbar .brand-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .site-topbar .brand-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .site-topbar .brand-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #191f28;
+  }
+  .site-topbar .nav-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b64da;
+    text-decoration: none;
+  }
+
+  .page-frame {
+    max-width: 560px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #ffffff;
+  }
+  @media (min-width: 561px) {
+    .page-frame {
+      min-height: 0;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      border: 1px solid #e5e8eb;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+
+  .baseline-box {
+    margin: 4px 0 20px;
+    padding: 14px 16px;
+    background: #F7F8FA;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #4E5968;
+  }
+  .baseline-box b { color: #191F28; }
+  .baseline-source {
+    margin: 4px 0 10px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #8B95A1;
+  }
+  .baseline-source b { color: #4E5968; }
+  .baseline-source .source-tag { color: #B0B8C1; }
+  .field-hint {
+    margin: 8px 0 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #8B95A1;
+  }
+  .achieved-box {
+    padding: 20px;
+    background: #EAF9F4;
+    border: 1px solid #C5EDDD;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .achieved-box p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #00B386;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-frame">
+
+<header class="site-topbar">
+  <a class="brand-logo-link" href="../index.html"><img class="brand-logo" src="../assets/toss-logo.png" alt="토스"><span class="brand-text">toss insurance</span></a>
+  <a class="nav-link" href="../pension-guide.html">연금·저축 가이드</a>
+</header>
+
+<div class="app">
+
+  <header class="hero">
+    <span class="kicker-badge">⏳&nbsp;타임캡슐 계산기</span>
+    <h1>내가 열어볼 가장 든든한 선물</h1>
+    <p class="subtitle">매달 선물처럼 도착하는 하루를 위해 '지금의 내가, 미래의 나에게'</p>
+  </header>
+
+  <section class="step" data-step="1" id="step1">
+    <span class="step-kicker">STEP 1 · 목표 생활비</span>
+    <h2>희망하는 <span class="accent">은퇴 생활비</span></h2>
+    <p class="step-desc">은퇴 후 희망하는 월 생활비를 선택해주세요.</p>
+
+    <div class="option-grid one">
+      <label class="option-card"><input type="radio" name="goalType" value="min"><span><strong>최소 생활비</strong><small id="goalMinHint">현재 소득수준의 45%</small></span></label>
+      <label class="option-card"><input type="radio" name="goalType" value="mid"><span><strong>현재 생활 수준 유지</strong><small id="goalMidHint">현재 소득수준의 60%</small></span></label>
+      <label class="option-card"><input type="radio" name="goalType" value="high"><span><strong>여유로운 생활비</strong><small id="goalHighHint">현재 소득수준의 80%</small></span></label>
+      <label class="option-card"><input type="radio" name="goalType" value="custom"><span><strong>직접 입력</strong></span></label>
+    </div>
+    <p class="field-hint">※ 위 비율은 1인 가구 기준입니다. 2인 가구(부부)라면 약 1.8배 이상을 기준으로 생각해보세요.</p>
+    <div class="conditional hidden" id="goalCustomWrap">
+      <label class="field">희망 월 생활비
+        <div class="input-unit"><input type="text" inputmode="numeric" class="money-input" id="goalCustomAmount" placeholder="예: 250"><span>만원</span></div>
+      </label>
+    </div>
+    <p class="field-error hidden" id="goalTypeError">희망하는 은퇴 생활비를 선택해주세요.</p>
+
+    <div class="wizard-nav">
+      <button type="button" id="step1NextBtn" class="btn btn-primary btn-lg">다음</button>
+    </div>
+  </section>
+
+  <section class="step hidden" data-step="2" id="step2">
+    <a class="step-back" id="step2BackBtn">← 이전</a>
+    <span class="step-kicker">STEP 2 · 기본 정보</span>
+    <h2>현재 <span class="accent">소득과 나이</span></h2>
+    <p class="step-desc">정확한 계산을 위해 필요한 정보예요.</p>
+
+    <label class="field">현재 월 평균 소득 <span class="field-optional">(세전)</span>
+      <div class="input-unit"><input type="text" inputmode="numeric" class="money-input" id="monthlyIncome" placeholder="예: 350"><span>만원</span></div>
+    </label>
+
+    <div class="field-row">
+      <label class="field">현재 나이
+        <div class="input-unit"><input type="number" inputmode="numeric" id="currentAge" placeholder="예: 35" min="1" max="99"><span>세</span></div>
+      </label>
+      <label class="field">은퇴 희망 나이
+        <div class="input-unit"><input type="number" inputmode="numeric" id="targetAge" placeholder="예: 65" min="1" max="99"><span>세</span></div>
+      </label>
+    </div>
+    <p class="field-error hidden" id="ageError">은퇴 희망 나이는 현재 나이보다 많아야 합니다.</p>
+
+    <label class="field">연금으로 활용할 목돈 <span class="field-optional">(없으면 비워두세요)</span>
+      <div class="input-unit"><input type="text" inputmode="numeric" class="money-input" id="lumpSum" placeholder="예: 1,000"><span>만원</span></div>
+    </label>
+
+    <label class="field">납입 기간
+      <div class="input-unit"><input type="number" inputmode="numeric" id="payYears" placeholder="예: 10" min="1" max="50"><span>년</span></div>
+    </label>
+    <p class="field-hint">※ 은퇴 나이까지 남은 기간 중, 실제로 납입할 기간이에요. 남는 기간은 추가 납입 없이 그대로 굴린다고 가정해요.</p>
+    <p class="field-error hidden" id="payYearsError">납입 기간은 (은퇴 희망 나이 − 현재 나이)보다 길 수 없습니다.</p>
+
+    <button type="button" class="btn btn-primary btn-lg" id="calcBtn">계산하기</button>
+
+    <div class="result hidden" id="result">
+      <p class="baseline-source">2026년 기준 국민연금 평균 수령액은 약 <b>69만 8천원</b>이에요. <span class="source-tag">(국민연금공단 통계, 2026년 물가상승률 반영 · KB국민은행 자료)</span><br>퇴직연금은 개인 편차가 커서 "평균 수령액" 공식 통계가 따로 없어요. 대신 연금으로 받는 계좌의 평균 적립금(약 1.4억원)을 20년에 나눠 받는다고 계산한 값을 썼어요. <span class="source-tag">(2024년 퇴직연금통계, 금융감독원·고용노동부 · 월 환산은 자체 계산)</span></p>
+      <div class="baseline-box" id="baselineBox"></div>
+
+      <div class="goal-compare" id="goalCompare">
+        <p class="goal-type-note" id="goalTypeNote"></p>
+        <p class="goal-amount-row">내가 희망하는 월 은퇴 생활비 <strong id="goalAmountLabel">0원</strong></p>
+        <p class="gap-message" id="gapMessage"></p>
+      </div>
+
+      <div class="achieved-box hidden" id="achievedBox">
+        <p>국민연금과 퇴직연금만으로 목표 생활비를 채울 수 있어요!<br>따로 준비하지 않으셔도 괜찮아요.</p>
+      </div>
+
+      <div id="shortfallBlock">
+        <p class="result-label">부족분을 채우기 위해 매달 준비해야 할 금액</p>
+        <div class="compare-row">
+          <div class="compare-card declared">
+            <p class="compare-title">안전형</p>
+            <p class="compare-rate">연 2.5% 가정</p>
+            <p class="compare-value" id="declaredValue">0원</p>
+          </div>
+          <div class="compare-card index">
+            <p class="compare-title">투자형</p>
+            <p class="compare-rate">연 7% 가정</p>
+            <p class="compare-value" id="indexValue">0원</p>
+          </div>
+        </div>
+        <p class="diff-note" id="diffNote"></p>
+
+        <div class="invest-achieve-box hidden" id="investAchieveBox">
+          <p id="investAchieveText"></p>
+        </div>
+
+        <div class="delay-box hidden" id="delayBox">
+          <p class="delay-title">목표까지</p>
+          <p class="delay-row" id="delayNowText"></p>
+          <p class="delay-row hidden" id="delayLaterText"></p>
+          <p class="delay-note" id="delayNoteText"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-box-bottom">
+    <p class="cta-heading">연금상담이 필요하신가요?</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화로 연금상담 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡 연금상담 신청</a>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p>※ 국민연금(월 약 69.8만원)과 퇴직연금(월 약 58.3만원)은 평균적인 가정치이며, 실제 수령액은 가입 기간·소득 수준·상품에 따라 크게 달라질 수 있습니다. 이 계산기는 월 복리를 가정한 간이 추정치이며, 실제 상품의 사업비·수수료·세금 등은 반영하지 않았습니다. 정확한 예상 수령액은 국민연금공단, 퇴직연금 사업자를 통해 확인해 주세요. 안전형(공시이율)은 매달 변동되고, 투자형(변액·펀드형)은 원금 손실 가능성이 있는 실적배당 상품입니다.</p>
+  </div>
+
+</div>
+
+</div>
+
+<script src="main.js?v=4"></script>
+</body>
+</html>

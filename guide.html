@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  if (window.__backGuardInit) return;
+  window.__backGuardInit = true;
+  var alreadyArmed = false;
+  try { alreadyArmed = sessionStorage.getItem('bgArmed') === '1'; } catch (e) {}
+  if (alreadyArmed) return;
+  try { sessionStorage.setItem('bgArmed', '1'); } catch (e) {}
+  history.pushState({ __bg: 1 }, '', location.href);
+  window.addEventListener('popstate', function(e){
+    if (e.state && e.state.__bg) return;
+    var t = document.createElement('div');
+    t.innerHTML = '한 번 더 누르시면,<br>카카오톡 대화방으로<br>돌아갑니다.';
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+      'max-width:calc(100% - 40px);text-align:center;background:#191f28;color:#fff;' +
+      'font-size:13.5px;font-weight:600;line-height:1.5;padding:14px 20px;border-radius:20px;z-index:200;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.2)';
+    (document.body || document.documentElement).appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2600);
+  });
+})();
+</script>
+<title>보장 가이드 | 채종명</title><meta property="og:type" content="website">
+<meta property="og:title" content="보장 가이드 | 채종명">
+<meta property="og:image" content="assets/og-guide.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="보장 가이드 | 채종명">
+<meta name="twitter:image" content="assets/og-guide.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-frame">
+
+  <header class="top-bar">
+    <a class="brand-logo-link" href="index.html"><img class="brand-logo" src="assets/toss-logo.png" alt="토스"><span class="brand-text">toss insurance</span></a>
+    <a class="nav-link" href="index.html">홈</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">어드바이저가 생각하는 보험의 역할</p>
+    <h1>보험, 이렇게<br>
+준비 하시는건 어떨까요?</h1>
+    <p class="hero-note">자동차로 설명해 드릴게요</p>
+  </section>
+
+  <section class="card philosophy-full">
+    <h3>자동차 사고, 걱정되시나요?</h3>
+    <p>연간 교통사고 발생 건수 약 19만 8,296건[2023년], 연간 신규 암 환자 수 약 28만 8,613명[2023년]</p>
+    <p>사고가 날 거라고 우리가 자동차 보험을 준비하진 않습니다. 건강도 동일합니다.<br>
+    대신 치료비 걱정 없이 내 삶에 집중할 수 있게 만드는 역할로 설명드립니다.</p>
+    <blockquote class="msg">"자동차 사고를 처리하듯, 건강도 그렇게 준비해두면 됩니다."</blockquote>
+
+    <h3>예전에 잘 가입했다고 생각했는데..</h3>
+    <p>자동차를 살 때, 꼼꼼히 고르시지만 더 중요한 건 때에 맞춰 엔진오일과 브레이크를 교체해 주는 일입니다.</p>
+    <p>보험도 마찬가지로 한 번 가입했다고 끝나는 것이 아닙니다. 시간이 흐르며 의학은 발전하고, 보장 제도도 변경되고 새로운 치료법들이 계속해서 나오기 때문이죠.</p>
+    <blockquote class="msg">"시대와 상황에 맞게 꼭 필요한 방어막을 덧대어 주는 과정이 반드시 필요합니다."</blockquote>
+
+    <h3>고민이되시는 분들께</h3>
+    <p>"조금 더 생각해 보고 연락드릴게요" 하신 뒤 연락이 끊겼다가, 한참 뒤에 다시 찾아오시는 분들을 뵐 때가 가장 마음이 아픕니다. 그럴 때마다 그때 조금 더 강하게 말씀드릴 걸 하는 후회가 남습니다.</p>
+    <p>안타깝게도 도와드릴 방법이, 없는 경우가 많습니다.</p>
+    <blockquote class="msg">"보험은 아플 때 가입하는 게 아니라, 건강할 때 준비하는 수단입니다."</blockquote>
+
+  </section>
+
+  <section class="card guide-list-card">
+    <h2>보장 가이드</h2>
+
+    <a class="guide-link" href="guides/보험가입요령_가이드북.html">
+      <span class="guide-icon" aria-hidden="true">📘</span>
+      <span class="guide-text">
+        <span class="guide-title">보험가입요령 가이드북</span>
+        <span class="guide-desc">가입 전 꼭 알아야 할 기초 원칙</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+
+    <a class="guide-link" href="guides/5세대실손_가이드.html">
+      <span class="guide-icon" aria-hidden="true">🏥</span>
+      <span class="guide-text">
+        <span class="guide-title">5세대실손 가이드</span>
+        <span class="guide-desc">달라진 실손보험 제도, 무엇이 바뀌었나</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+
+    <a class="guide-link" href="guides/고액항암치료_가이드.html">
+      <span class="guide-icon" aria-hidden="true">💊</span>
+      <span class="guide-text">
+        <span class="guide-title">고액항암치료 가이드</span>
+        <span class="guide-desc">치료비가 삶을 흔들지 않도록</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+
+    <a class="guide-link" href="guides/순환계주요치료비_가이드.html">
+      <span class="guide-icon" aria-hidden="true">❤️</span>
+      <span class="guide-text">
+        <span class="guide-title">순환계주요치료비 가이드</span>
+        <span class="guide-desc">뇌·심장 질환, 준비가 필요한 이유</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-heading">점검이 필요하신가요?</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화로 점검 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡 점검 신청</a>
+    </div>
+    <p class="phone-line">토스인슈어런스 직영사업단 직영1 총괄본부<br>
+서울특별시 구로구 경인로 662, 37F(신도림동, 디큐브시티)</p>
+    <p class="compliance">이 사이트는 토스인슈어런스 소속 보험설계사 채종명이 운영하는 개인 소개 페이지입니다. 특정 보험상품의 가입을 권유하거나 추천하지 않으며, 안내된 내용은 이해를 돕기 위한 참고용입니다. 실제 가입 여부는 고객님의 자유로운 의사에 따라 결정되며, 상품 세부 내용은 반드시 상품설명서와 약관을 통해 확인하시기 바랍니다.</p>
+  </footer>
+
+</div>
+<script src="assets/phone-cta.js"></script>
+</body>
+</html>

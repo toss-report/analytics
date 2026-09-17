@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  if (window.__backGuardInit) return;
+  window.__backGuardInit = true;
+  var alreadyArmed = false;
+  try { alreadyArmed = sessionStorage.getItem('bgArmed') === '1'; } catch (e) {}
+  if (alreadyArmed) return;
+  try { sessionStorage.setItem('bgArmed', '1'); } catch (e) {}
+  history.pushState({ __bg: 1 }, '', location.href);
+  window.addEventListener('popstate', function(e){
+    if (e.state && e.state.__bg) return;
+    var t = document.createElement('div');
+    t.innerHTML = '한 번 더 누르시면,<br>카카오톡 대화방으로<br>돌아갑니다.';
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+      'max-width:calc(100% - 40px);text-align:center;background:#191f28;color:#fff;' +
+      'font-size:13.5px;font-weight:600;line-height:1.5;padding:14px 20px;border-radius:20px;z-index:200;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.2)';
+    (document.body || document.documentElement).appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2600);
+  });
+})();
+</script>
+<title>연금·저축 가이드 | 채종명</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="연금·저축 가이드 | 채종명">
+<meta property="og:image" content="assets/og-pension-guide.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="연금·저축 가이드 | 채종명">
+<meta name="twitter:image" content="assets/og-pension-guide.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-frame">
+
+  <header class="top-bar">
+    <a class="brand-logo-link" href="index.html"><img class="brand-logo" src="assets/toss-logo.png" alt="토스"><span class="brand-text">toss insurance</span></a>
+    <a class="nav-link" href="index.html">홈</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">어드바이저가 생각하는 저축의 역할</p>
+    <h1>충전기가 사라져도,<br>
+우리의 하루는 멈추지 않도록</h1>
+    <p class="hero-note">스마트폰 배터리로 풀어보는 저축 이야기</p>
+  </section>
+
+  <section class="card philosophy-full">
+    <h3>은퇴는 '충전기가 뽑히는 순간'입니다.</h3>
+    <p>지금 우리는 매달 들어오는 급여가 있습니다. 하지만 은퇴는 충전기 없이 배터리만으로 남은 하루를 버텨야 하는 순간과 같습니다. 충전기가 뽑힌 후에도 내 일상이 멈추지 않으려면 잔여 배터리가 얼마나 되는지 미리 확인해야 합니다.</p>
+    <blockquote class="msg">"스마트폰을 충전기에 꽂아두고 쓸 때는 배터리가 줄어들 걱정이 없습니다."</blockquote>
+
+    <h3>아무것도 안 해도 배터리는 줄어듭니다.</h3>
+    <p>화면을 켜두기만 해도 기본 전력이 나가는 것처럼, 숨만 쉬어도 나가는 지출이 있습니다. 예전보다 물가가 오른 만큼 배터리는 우리가 생각하는 것보다 훨씬 빠르게 달아납니다. 모아둔 돈을 그냥 통장에 둔다는 건, 화면을 켜둔 채 배터리가 닳는 것을 방관하는 것과 같습니다.</p>
+
+    <h3>스스로 충전되는 '보조배터리'를 만들 시간입니다.</h3>
+    <p>은퇴 후에도 방전 걱정 없이 살아가려면, 일하지 않아도 알아서 전력을 채워주는 '보조배터리'가 필요합니다. 내 노동력에만 의존하는 저축에서 벗어나, 돈이 스스로 일하며 배터리를 채워주도록 만드는 구조.</p>
+    <blockquote class="msg">"그것이 바로 어드바이저가 제안하는 진짜 드림 머니의 역할입니다."</blockquote>
+
+  </section>
+
+  <section class="card guide-list-card">
+    <h2>연금·저축 가이드</h2>
+
+    <a class="guide-link" href="guides/연금보험_저축보험_가이드.html">
+      <span class="guide-icon" aria-hidden="true">📋</span>
+      <span class="guide-text">
+        <span class="guide-title">연금보험·저축보험 가이드</span>
+        <span class="guide-desc">지금 가입한 상품, 제대로 점검해보고 싶다면</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+
+    <a class="guide-link" href="dreammoney/index.html">
+      <span class="guide-icon" aria-hidden="true">🎯</span>
+      <span class="guide-text">
+        <span class="guide-title">드림머니 계산기</span>
+        <span class="guide-desc">목돈을 새로 모으고 싶다면</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+
+    <a class="guide-link" href="pension-simple/index.html">
+      <span class="guide-icon" aria-hidden="true">⏳</span>
+      <span class="guide-text">
+        <span class="guide-title">타임캡슐 계산기</span>
+        <span class="guide-desc">내가 받을 연금이 궁금하다면</span>
+      </span>
+      <span class="guide-chevron" aria-hidden="true">›</span>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-heading">점검이 필요하신가요?</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화로 점검 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡 점검 신청</a>
+    </div>
+    <p class="phone-line">토스인슈어런스 직영사업단 직영1 총괄본부<br>
+서울특별시 구로구 경인로 662, 37F(신도림동, 디큐브시티)</p>
+    <p class="compliance">이 사이트는 토스인슈어런스 소속 보험설계사 채종명이 운영하는 개인 소개 페이지입니다. 특정 보험상품의 가입을 권유하거나 추천하지 않으며, 안내된 내용은 이해를 돕기 위한 참고용입니다. 실제 가입 여부는 고객님의 자유로운 의사에 따라 결정되며, 상품 세부 내용은 반드시 상품설명서와 약관을 통해 확인하시기 바랍니다.</p>
+  </footer>
+
+</div>
+<script src="assets/phone-cta.js"></script>
+</body>
+</html>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>순환계 주요치료비 가이드</title>
+<meta property="og:title" content="순환계 주요치료비 가이드">
+<meta property="og:description" content="뇌혈관·심혈관 주요치료비 보장 안내 — 토스인슈어런스">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og-guide.png">
+<style>
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Regular.woff2') format('woff2');
+    font-weight: 400; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Medium.woff2') format('woff2');
+    font-weight: 500; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Bold.woff2') format('woff2');
+    font-weight: 700; font-display: swap;
+  }
+
+  :root {
+    --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+    --fs-xs:    9px;
+    --fs-sm:    10px;
+    --fs-base:  11px;
+    --fs-body:  12px;
+    --fs-md:    13px;
+    --fs-lg:    14px;
+    --fs-xl:    17px;
+    --fs-2xl:   21px;
+    --fs-stat:  15px;
+    --lh-tight:  1.35;
+    --lh-normal: 1.45;
+    --lh-loose:  1.6;
+    --ls-tight:  -0.4px;
+    --ls-normal: -0.3px;
+    --ls-wide:   0.3px;
+    --bg:           #FFFFFF;
+    --bg-root:      #F8F9FB;
+    --bg-card:      #FFFFFF;
+    --bg-elevated:  #F3F4F6;
+    --bg-input:     #F9FAFB;
+    --text-primary:   #1F2937;
+    --text-secondary: #6B7280;
+    --text-tertiary:  #9CA3AF;
+    --border:      rgba(0,0,0,0.06);
+    --border-card: rgba(0,0,0,0.04);
+    --blue:        #3182F6;
+    --blue-dim:    rgba(49,130,246,0.08);
+    --blue-text:   #1D4ED8;
+    --amber:       #F59E0B;
+    --amber-dim:   rgba(245,158,11,0.08);
+    --amber-text:  #B45309;
+    --green:       #10B981;
+    --green-dim:   rgba(16,185,129,0.08);
+    --green-text:  #047857;
+    --purple:      #8B5CF6;
+    --purple-dim:  rgba(139,92,246,0.08);
+    --purple-text: #6D28D9;
+    --rose:        #DC2626;
+    --rose-dim:    rgba(220,38,38,0.08);
+    /* 순환계 테마 컬러 */
+    --heart:       #E11D48;
+    --heart-dim:   rgba(225,29,72,0.08);
+    --heart-text:  #9F1239;
+    --section-px:    24px;
+    --section-py:    28px;
+    --section-gap:   6px;
+    --header-px:     24px;
+    --header-pt:     24px;
+    --header-pb:     28px;
+    --header-inner-gap: 24px;
+    --card-px:       16px;
+    --card-py:       14px;
+    --card-body-px:  16px;
+    --card-body-pt:  12px;
+    --card-body-pb:  14px;
+    --card-gap:      12px;
+    --card-row-gap:  5px;
+    --stat-box-p:    20px;
+    --stat-bar-gap:  5px;
+    --problem-gap:   10px;
+    --cta-px:        16px;
+    --cta-py:        14px;
+    --cta-mt:        16px;
+    --footer-px:     24px;
+    --footer-py:     14px;
+    --radius-sm:   5px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-xl:   14px;
+    --radius-pill: 16px;
+    --container-max: 480px;
+    --container-gap: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-root);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    background: var(--bg);
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    padding: var(--header-pt) var(--header-px) var(--header-pb);
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--header-inner-gap);
+  }
+
+  .header-page {
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--heart-dim);
+    color: var(--heart);
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: var(--lh-normal);
+    letter-spacing: var(--ls-tight);
+    margin-bottom: 8px;
+  }
+  .header h1 em { font-style: normal; color: var(--heart); }
+  .header-desc {
+    font-size: var(--fs-md);
+    color: var(--text-secondary);
+    line-height: var(--lh-tight);
+  }
+
+  /* ── 섹션 ── */
+  .section {
+    padding: var(--section-py) var(--section-px);
+    border-top: var(--section-gap) solid rgba(0,0,0,0.03);
+  }
+  .section-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--heart);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-wide);
+  }
+  .section-title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: var(--ls-normal);
+    line-height: var(--lh-normal);
+  }
+  .section-title em { font-style: normal; color: var(--heart); }
+  .section-desc {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.55;
+  }
+
+  /* ── 타임라인 ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+  .tl-item { display: flex; align-items: stretch; gap: 14px; }
+  .tl-rail { display: flex; flex-direction: column; align-items: center; width: 20px; flex-shrink: 0; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--heart); flex-shrink: 0; margin-top: 5px; }
+  .tl-dot.dim { background: var(--text-tertiary); }
+  .tl-dot.active { background: var(--heart); box-shadow: 0 0 0 4px var(--heart-dim); }
+  .tl-line { width: 2px; flex: 1; background: rgba(0,0,0,0.06); }
+  .tl-content { flex: 1; padding-bottom: 16px; }
+  .tl-item:last-child .tl-content { padding-bottom: 0; }
+  .tl-item:last-child .tl-line { display: none; }
+  .tl-year { font-size: var(--fs-xs); font-weight: 700; color: var(--text-secondary); margin-bottom: 2px; }
+  .tl-title { font-size: var(--fs-md); font-weight: 600; color: var(--text-primary); line-height: var(--lh-normal); margin-bottom: 2px; }
+  .tl-desc { font-size: var(--fs-xs); color: var(--text-tertiary); line-height: var(--lh-normal); }
+  .tl-arrow { font-size: var(--fs-xs); color: var(--heart); font-weight: 600; }
+
+  /* ── 통계 바 박스 ── */
+  .stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    padding: var(--stat-box-p);
+    margin-bottom: 16px;
+  }
+  .stat-box-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    letter-spacing: var(--ls-normal);
+  }
+  .stat-box-title em { font-style: normal; color: var(--heart); }
+
+  /* ── 환자수 바 차트 ── */
+  .patient-bars { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .pb-row { display: flex; align-items: center; gap: 8px; }
+  .pb-label { width: 62px; font-size: var(--fs-sm); font-weight: 600; color: var(--text-secondary); text-align: right; flex-shrink: 0; line-height: 1.3; }
+  .pb-track { flex: 1; height: 22px; background: var(--bg-elevated); border-radius: var(--radius-sm); overflow: hidden; position: relative; }
+  .pb-fill { height: 100%; border-radius: var(--radius-sm); display: flex; align-items: center; padding: 0 8px; font-size: 9px; font-weight: 700; color: #fff; white-space: nowrap; }
+  .pb-heart { background: var(--heart); }
+  .pb-brain { background: #3182F6; }
+  .pb-sub   { background: #60A5FA; }
+  .pb-note { font-size: var(--fs-xs); color: var(--text-tertiary); margin-top: 4px; line-height: 1.4; }
+
+  /* ── 위험요인 그리드 ── */
+  .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .risk-card { background: var(--bg-elevated); border-radius: var(--radius-md); padding: 12px; }
+  .risk-icon { font-size: 18px; margin-bottom: 6px; }
+  .risk-name { font-size: var(--fs-xs); font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+  .risk-num { font-size: 16px; font-weight: 700; color: var(--heart); letter-spacing: -0.5px; }
+  .risk-num span { font-size: var(--fs-xs); font-weight: 500; color: var(--text-secondary); }
+
+  /* ── 재발률 강조 박스 ── */
+  .highlight-box {
+    background: var(--heart-dim);
+    border: 1px solid rgba(225,29,72,0.12);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .highlight-big {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--heart);
+    letter-spacing: -1px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .highlight-text { flex: 1; }
+  .highlight-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); margin-bottom: 3px; line-height: var(--lh-normal); }
+  .highlight-desc { font-size: var(--fs-xs); color: var(--text-secondary); line-height: 1.45; }
+
+  /* ── 문제 카드 ── */
+  .problem-grid { display: flex; flex-direction: column; gap: var(--problem-gap); margin-bottom: 16px; }
+  .problem-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .problem-label { font-size: var(--fs-sm); font-weight: 700; color: var(--rose); margin-bottom: 6px; letter-spacing: var(--ls-wide); }
+  .problem-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); margin-bottom: 4px; line-height: var(--lh-normal); }
+  .problem-desc { font-size: var(--fs-xs); color: var(--text-secondary); line-height: 1.55; }
+  .problem-desc strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── 솔루션 박스 ── */
+  .solution-box { background: var(--heart-dim); border: 1px solid rgba(225,29,72,0.1); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .solution-title { font-size: var(--fs-md); font-weight: 700; color: var(--heart); margin-bottom: 6px; }
+  .solution-text { font-size: var(--fs-body); color: var(--text-secondary); line-height: var(--lh-loose); }
+  .solution-text strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── 보장 범위 확대 비교 카드 ── */
+  .expand-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-bottom: var(--card-gap);
+  }
+  .expand-head {
+    padding: 12px 16px;
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .expand-icon { font-size: 18px; }
+  .expand-category { font-size: var(--fs-body); font-weight: 700; color: var(--text-primary); }
+  .expand-body { padding: 14px 16px 16px; }
+  .expand-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .expand-row:last-child { margin-bottom: 0; }
+  .expand-tag {
+    flex-shrink: 0;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+  .tag-old { background: var(--bg-elevated); color: var(--text-tertiary); }
+  .tag-new { background: var(--heart-dim); color: var(--heart); }
+  .tag-best { background: var(--heart); color: #fff; }
+  .expand-arrow { color: var(--text-tertiary); font-size: 10px; flex-shrink: 0; }
+  .expand-name { font-size: var(--fs-body); color: var(--text-primary); font-weight: 500; flex: 1; }
+  .expand-coverage { font-size: var(--fs-xs); color: var(--text-secondary); line-height: 1.4; margin-top: 4px; padding-left: 62px; }
+
+  /* ── TX 카드 (치료 유형) ── */
+  .tx-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); overflow: hidden; margin-bottom: var(--card-gap); }
+  .tx-card:last-of-type { margin-bottom: 0; }
+  .tx-card-head { padding: var(--card-py) var(--card-px); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+  .tx-icon { width: 30px; height: 30px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: var(--fs-lg); flex-shrink: 0; }
+  .tx-titles { flex: 1; min-width: 0; }
+  .tx-en { font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0.1px; line-height: 1.2; }
+  .tx-kr { font-size: var(--fs-lg); font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; line-height: var(--lh-tight); }
+  .tx-badge { font-size: var(--fs-xs); font-weight: 600; padding: 3px 8px; border-radius: var(--radius-sm); white-space: nowrap; flex-shrink: 0; }
+  .tx-card-body { padding: var(--card-body-pt) var(--card-body-px) var(--card-body-pb); display: flex; flex-direction: column; gap: var(--card-row-gap); }
+  .tx-row { display: flex; align-items: flex-start; gap: 8px; }
+  .tx-label { flex-shrink: 0; font-size: var(--fs-xs); font-weight: 700; padding: 2px 6px; border-radius: 4px; min-width: 30px; text-align: center; margin-top: 2px; color: #fff; }
+  .tx-val { font-size: var(--fs-body); line-height: var(--lh-tight); color: var(--text-secondary); }
+  .tx-val strong { font-weight: 600; color: var(--text-primary); }
+
+  .t-heart .tx-icon  { background: var(--heart-dim); }
+  .t-heart .tx-en    { color: var(--heart-text); }
+  .t-heart .tx-badge { background: var(--heart-dim); color: var(--heart-text); }
+  .t-heart .tx-label { background: var(--heart); }
+
+  .t-blue .tx-icon   { background: var(--blue-dim); }
+  .t-blue .tx-en     { color: var(--blue-text); }
+  .t-blue .tx-badge  { background: var(--blue-dim); color: var(--blue-text); }
+  .t-blue .tx-label  { background: var(--blue); }
+
+  .t-purple .tx-icon   { background: var(--purple-dim); }
+  .t-purple .tx-en     { color: var(--purple-text); }
+  .t-purple .tx-badge  { background: var(--purple-dim); color: var(--purple-text); }
+  .t-purple .tx-label  { background: var(--purple); }
+
+  .t-green .tx-icon   { background: var(--green-dim); }
+  .t-green .tx-en     { color: var(--green-text); }
+  .t-green .tx-badge  { background: var(--green-dim); color: var(--green-text); }
+  .t-green .tx-label  { background: var(--green); }
+
+  /* ── CTA 박스 ── */
+  .cta-box { background: var(--heart-dim); border: 1px solid rgba(225,29,72,0.12); border-radius: var(--radius-lg); padding: var(--cta-py) var(--cta-px); margin-top: var(--cta-mt); display: flex; align-items: flex-start; gap: 10px; }
+  .cta-emoji { font-size: var(--fs-md); flex-shrink: 0; margin-top: 1px; }
+  .cta-text { font-size: var(--fs-body); line-height: 1.55; color: var(--text-secondary); }
+  .cta-text strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── 반복보장 강조 배지 ── */
+  .repeat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--green-dim);
+    color: var(--green-text);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── 진단비 vs 치료비 비교 ── */
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .vs-card { border-radius: var(--radius-lg); padding: 14px; }
+  .vs-card.vc-diag { background: var(--bg-elevated); }
+  .vs-card.vc-treat { background: var(--heart-dim); border: 1px solid rgba(225,29,72,0.1); }
+  .vs-card-label { font-size: var(--fs-xs); font-weight: 700; color: var(--text-tertiary); margin-bottom: 6px; }
+  .vc-treat .vs-card-label { color: var(--heart); }
+  .vs-card-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); margin-bottom: 8px; line-height: 1.3; }
+  .vs-item { font-size: var(--fs-xs); color: var(--text-secondary); line-height: 1.6; display: flex; align-items: flex-start; gap: 4px; }
+  .vs-item::before { content: '·'; flex-shrink: 0; }
+  .vs-item strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── 질환 범위 박스 ── */
+  .scope-wrap { margin-bottom: 20px; }
+
+  /* 순환계질환 — 외곽 카드 */
+  .scope-circ {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+  .scope-circ-head {
+    background: var(--heart);
+    padding: 10px 16px 9px;
+  }
+  .scope-circ-head-top {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2px;
+  }
+  .scope-circ-head-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: #fff;
+    line-height: var(--lh-tight);
+    margin-bottom: 1px;
+  }
+  .scope-circ-head-sub {
+    font-size: var(--fs-xs);
+    color: rgba(255,255,255,0.75);
+  }
+  /* 순환계 질환 목록 영역 */
+  .scope-circ-body {
+    padding: 12px 14px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 10px;
+  }
+  .sc-item {
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .sc-item::before { content: '·'; color: var(--heart); font-weight: 700; flex-shrink: 0; }
+  .sc-item.bold { color: var(--text-primary); font-weight: 600; }
+  .sc-code { font-size: 8px; color: var(--text-tertiary); font-weight: 400; }
+
+  /* 2대질환 — 순환계 박스 내부 중첩 */
+  .scope-2dae {
+    margin: 12px 12px 12px;          /* 순환계 박스 안쪽 여백 */
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .scope-2dae-head {
+    background: #374151;
+    padding: 7px 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .scope-2dae-head-title {
+    font-size: var(--fs-body);
+    font-weight: 700;
+    color: #fff;
+  }
+  .scope-2dae-head-sub {
+    font-size: var(--fs-xs);
+    color: rgba(255,255,255,0.6);
+  }
+  .scope-2dae-body {
+    padding: 8px 12px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 10px;
+  }
+  .sd-item {
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .sd-item::before { content: '·'; color: var(--text-tertiary); flex-shrink: 0; }
+
+  /* ── 푸터 ── */
+  .footer { padding: var(--footer-py) var(--footer-px); border-top: 1px solid var(--border); }
+  .footer-text { font-size: var(--fs-sm); color: var(--text-tertiary); line-height: var(--lh-tight); }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head>
+<body>
+
+<div class="tj-topbar">
+  <a class="tj-topbar-brand" href="../index.html"><img class="tj-topbar-logo" src="../assets/toss-logo.png" alt="토스"><span class="tj-topbar-text">toss insurance</span></a>
+  <a class="tj-topbar-link" href="../guide.html">보장 가이드</a>
+</div>
+<style>
+  .tj-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e8eb;
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    letter-spacing: normal;
+  }
+  .tj-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .tj-topbar-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .tj-topbar-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #191f28;
+  }
+  .tj-topbar-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b64da;
+    text-decoration: none;
+  }
+</style>
+
+<!-- ═══ PAGE 1 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      
+      <span class="header-page">1 / 3</span>
+    </div>
+    <div class="header-badge">❤️ 순환계 주요치료비 가이드</div>
+    <h1>순환계 질환, <em>의료 트렌드</em>에 맞춰<br>고도화가 필요합니다</h1>
+    <div class="header-desc">심장·뇌혈관 질환 환자는 매년 증가, 치료 후에도 재발 위험은 계속됩니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">순환계 질환의 현실</div>
+    <div class="section-title">심장·뇌혈관 환자,<br><em>매년 늘고 있습니다</em></div>
+    <div class="section-desc">단순한 노인 질환이 아닙니다. 40~50대 발병이 급증하고 있습니다.</div>
+
+    <div class="stat-box">
+      <div class="stat-box-title">심장·뇌혈관질환 <em>환자 수 추이</em></div>
+      <div class="patient-bars">
+        <div class="pb-row">
+          <div class="pb-label">심장질환<br>('21)</div>
+          <div class="pb-track"><div class="pb-fill pb-heart" style="width:92%">175만 명</div></div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">심장질환<br>('17)</div>
+          <div class="pb-track"><div class="pb-fill pb-heart" style="width:76%;background:#F87171">145만 명</div></div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">뇌혈관질환<br>('21)</div>
+          <div class="pb-track"><div class="pb-fill pb-brain" style="width:56%">106만 명</div></div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">뇌혈관질환<br>('17)</div>
+          <div class="pb-track"><div class="pb-fill pb-brain" style="width:48%;background:#93C5FD">91만 명</div></div>
+        </div>
+      </div>
+      <div class="pb-note">※ 출처: 건강보험공단·비대이터개방포털(국민건강통계), 2023 / 심장질환 I05~I09, I20~I27, I30~I52 기준 / 뇌혈관질환 I60~I69 기준</div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="highlight-big">15~20%</div>
+      <div class="highlight-text">
+        <div class="highlight-title">치료 후 1년 내 주요<br>심혈관질환 재발률</div>
+        <div class="highlight-desc">완치되어도 재발 위험은 계속됩니다.<br>반복 치료비 대비가 필수입니다.</div>
+      </div>
+    </div>
+    <div class="pb-note" style="margin-bottom:0">※ 출처: 서울아산병원·삼성병원 건강정보 (심장환자의 심장재발), 2021</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">위험요인 현황</div>
+    <div class="section-title">순환계 질환 위험요인,<br>나와는 관계없는 이야기일까요?</div>
+    <div class="section-desc">국민 3명 중 1명 이상이 이미 위험요인을 보유하고 있습니다.</div>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-icon">🩺</div>
+        <div class="risk-name">이상지질혈증</div>
+        <div class="risk-num">1,615<span>만 명</span></div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon">⚖️</div>
+        <div class="risk-name">비만</div>
+        <div class="risk-num">1,493<span>만 명</span></div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon">🩸</div>
+        <div class="risk-name">고혈압</div>
+        <div class="risk-num">1,214<span>만 명</span></div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon">🍬</div>
+        <div class="risk-name">당뇨병</div>
+        <div class="risk-num">431<span>만 명</span></div>
+      </div>
+    </div>
+    <div class="pb-note">※ 출처: 대한심장학회, Heart disease fact sheet, 2020 / 2018년 기준</div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-text">위험요인은 누적될수록 발병 확률이 급격히 높아집니다. <strong>60대는 3개 이상 위험요인 보유자가 20%</strong>를 넘어섭니다. 미리 준비하지 않으면 치료비 부담은 고스란히 본인 몫입니다.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">※ 본 자료는 상담 참고용이며 특정 상품의 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 2 ═══ -->
+<div class="container" style="margin-top: var(--container-gap);">
+  <div class="header">
+    <div class="header-top">
+      
+      <span class="header-page">2 / 3</span>
+    </div>
+    <div class="header-badge">❤️ 순환계 주요치료비 가이드</div>
+    <h1><em>진단비</em> 범위 확대와<br>치료비의 중요성</h1>
+    <div class="header-desc">보장 범위가 얼마나 넓은지, 1회인지 반복인지가 핵심입니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">2대질환 진단비의 진화</div>
+    <div class="section-title">진단비, 범위가 <em>넓을수록</em><br>실제로 받을 확률이 높아집니다</div>
+    <div class="section-desc">같은 진단비라도 어떤 질병까지 보장되는지가 핵심입니다.</div>
+
+    <!-- 뇌 진단비 확대 -->
+    <div class="expand-card">
+      <div class="expand-head">
+        <div class="expand-icon">🧠</div>
+        <div class="expand-category">뇌 관련 진단비 — 보장 범위 확대</div>
+      </div>
+      <div class="expand-body">
+        <div class="expand-row">
+          <div class="expand-tag tag-old">기존</div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-name">뇌출혈 진단비</div>
+        </div>
+        <div class="expand-coverage">전체 뇌혈관질환의 <strong>8.5%</strong>만 해당 (I60~I62)</div>
+        <div class="expand-row" style="margin-top:12px">
+          <div class="expand-tag tag-new">확대</div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-name">뇌졸중 진단비</div>
+        </div>
+        <div class="expand-coverage">뇌출혈 + 뇌경색(I63) 포함, 전체의 약 <strong>74%</strong> 커버</div>
+        <div class="expand-row" style="margin-top:12px">
+          <div class="expand-tag tag-best">최적</div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-name">뇌혈관질환 진단비</div>
+        </div>
+        <div class="expand-coverage">I60~I69 전체 보장. 뇌혈관질환 <strong>100%</strong> 커버 — 뇌혈관질환의 후유증(I69)까지 포함</div>
+      </div>
+    </div>
+
+    <!-- 심장 진단비 확대 -->
+    <div class="expand-card">
+      <div class="expand-head">
+        <div class="expand-icon">❤️</div>
+        <div class="expand-category">심장 관련 진단비 — 보장 범위 확대</div>
+      </div>
+      <div class="expand-body">
+        <div class="expand-row">
+          <div class="expand-tag tag-old">기존</div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-name">급성심근경색 진단비</div>
+        </div>
+        <div class="expand-coverage">심장질환 중 일부만 해당 (I21~I23). <strong>협심증·심부전 미포함</strong></div>
+        <div class="expand-row" style="margin-top:12px">
+          <div class="expand-tag tag-new">확대</div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-name">허혈성심장질환 진단비</div>
+        </div>
+        <div class="expand-coverage">협심증(I20) + 급성심근경색(I21~I23) + 허혈심장병(I24~I25) 포함</div>
+        <div class="expand-row" style="margin-top:12px">
+          <div class="expand-tag tag-best">최적</div>
+          <div class="expand-arrow">→</div>
+          <div class="expand-name">심장질환 진단비</div>
+        </div>
+        <div class="expand-coverage">I20~I25 허혈성심장질환 전체 + 심부전·부정맥까지 광범위 보장</div>
+      </div>
+    </div>
+
+    <div class="pb-note" style="margin-bottom:16px">※ 출처: 건강보험공단·비대이터개방포털(국민건강통계) 2022년 기준, 뇌혈관질환 환자 비중</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">진단비 vs 치료비</div>
+    <div class="section-title">진단비는 <em>1회</em>,<br>치료비는 <em>반복 보장</em>입니다</div>
+    <div class="section-desc">진단비만으로는 반복되는 치료비를 감당하기 어렵습니다.</div>
+
+    <div class="vs-grid">
+      <div class="vs-card vc-diag">
+        <div class="vs-card-label">진단비</div>
+        <div class="vs-card-title">1회 지급 후 종료</div>
+        <div class="vs-item"><strong>진단 시점 1회</strong> 지급</div>
+        <div class="vs-item">이후 재발·재치료 시 <strong>추가 지급 없음</strong></div>
+        <div class="vs-item">생활비·소득 공백 보전 목적</div>
+      </div>
+      <div class="vs-card vc-treat">
+        <div class="vs-card-label">순환계 치료비</div>
+        <div class="vs-card-title">치료받을 때마다 반복 지급</div>
+        <div class="vs-item"><strong>수술·중환자실·혈전 치료</strong> 시마다</div>
+        <div class="vs-item">재발해도 <strong>한도 내 반복</strong> 보장</div>
+        <div class="vs-item">실제 치료비 직접 대응</div>
+      </div>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-label">한계 ①</div>
+        <div class="problem-title">진단비 = 한 번으로 끝</div>
+        <div class="problem-desc">심근경색 진단 후 받은 진단비로 수술을 했어도, <strong>6개월 뒤 협심증이 재발해 재수술이 필요하면 진단비는 다시 지급되지 않습니다.</strong></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-label">한계 ②</div>
+        <div class="problem-title">실손보험 한도 = 치료비 일부만 커버</div>
+        <div class="problem-desc">순환계 수술·중환자실 치료는 <strong>수백만 원~수천만 원</strong>에 달합니다. 실손보험의 입원·통원 한도와 <strong>급여 본인부담금 차액은 고스란히 본인 부담</strong>입니다.</div>
+      </div>
+    </div>
+
+    <div class="solution-box">
+      <div class="solution-title">💡 두 가지를 함께 준비해야 합니다</div>
+      <div class="solution-text">
+        진단비 = <strong>'소득 공백 방패'</strong> — 넓은 범위로 확대<br>
+        순환계 치료비 = <strong>'반복 치료비 방패'</strong> — 재발해도 계속 보장<br>
+        두 가지를 조합해야 순환계 질환에 완전히 대비할 수 있습니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">※ 보험사별 실제 보장 범위와 약관 내용은 반드시 해당 보험사 약관을 참고하시기 바랍니다</div>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 3 ═══ -->
+<div class="container" style="margin-top: var(--container-gap);">
+  <div class="header">
+    <div class="header-top">
+      
+      <span class="header-page">3 / 3</span>
+    </div>
+    <div class="header-badge">❤️ 순환계 주요치료비 가이드</div>
+    <h1>순환계 <em>주요치료비</em><br>4가지 보장 항목</h1>
+    <div class="header-desc">수술 · 중환자실 · 혈전용해 · 혈전제거 — 한도 내 반복 보장 (연 1회 또는 회당)</div>
+  </div>
+
+  <div class="section">
+    
+    <div class="section-title">어떤 치료를 받을 때<br>보장받을 수 있나요?</div>
+    <div class="section-desc"><em style="font-style:normal;color:var(--heart);font-weight:700">특정순환계질환</em>은 심장·뇌혈관을 넘어 훨씬 넓은 범위를 포괄합니다.<br>이 질환으로 진단 확정 후 아래 치료를 받으면 한도 내 반복 지급합니다.</div>
+
+    <!-- 질환 범위 강조 블록 -->
+    <div class="scope-wrap">
+      <div class="scope-circ">
+
+        <!-- 헤더 -->
+        <div class="scope-circ-head">
+          <div class="scope-circ-head-top">2대질환보다 더 넓은 범위</div>
+          <div class="scope-circ-head-title">순환계질환 주요치료비 보장 대상</div>
+          <div class="scope-circ-head-sub">뇌·심질환뿐 아니라 부정맥(I49)·심근병증·식도정맥류까지 포함</div>
+        </div>
+
+        <!-- 순환계 질환 목록 -->
+        <div class="scope-circ-body">
+          <div class="sc-item">급성 류마티스열 <span class="sc-code">I00~I02</span></div>
+          <div class="sc-item">특정 동맥혈관질환 <span class="sc-code">I72,I74,I77</span></div>
+          <div class="sc-item">만성 류마티스 심장질환 <span class="sc-code">I05~I09</span></div>
+          <div class="sc-item">문맥혈전증 <span class="sc-code">I81</span></div>
+          <div class="sc-item">폐성심장병·폐순환질환 <span class="sc-code">I26~I28</span></div>
+          <div class="sc-item bold">식도정맥류 <span class="sc-code">I85,I98.2,I98.3</span></div>
+          <div class="sc-item">심장염증질환 <span class="sc-code">I30~I33,I38,I40,I41</span></div>
+          <div class="sc-item bold">부정맥(I49) <span class="sc-code">I47~I49</span></div>
+          <div class="sc-item">심근병증 <span class="sc-code">I42,I43</span></div>
+          <div class="sc-item">심부전 <span class="sc-code">I50</span></div>
+          <div class="sc-item">중증 방실차단 <span class="sc-code">I44.1~I44.3</span></div>
+          <div class="sc-item">대동맥동맥류·박리 <span class="sc-code">I71</span></div>
+          <div class="sc-item">인공소생 성공 심장정지 <span class="sc-code">I46.0</span></div>
+          <div class="sc-item">경증 뇌혈관질환 <span class="sc-code">I64~I69</span></div>
+        </div>
+
+        <!-- 2대질환 — 내부 중첩 박스 -->
+        <div class="scope-2dae">
+          <div class="scope-2dae-head">
+            <div class="scope-2dae-head-title">2대질환 주요치료비</div>
+            <div class="scope-2dae-head-sub">순환계질환에 포함</div>
+          </div>
+          <div class="scope-2dae-body">
+            <div class="sd-item">협심증 <span class="sc-code">I20</span></div>
+            <div class="sd-item">뇌경색증 <span class="sc-code">I63</span></div>
+            <div class="sd-item">급성심근경색증 <span class="sc-code">I21~I23</span></div>
+            <div class="sd-item">뇌출혈 <span class="sc-code">I60~I62</span></div>
+            <div class="sd-item">허혈성심장질환 <span class="sc-code">I24,I25</span></div>
+            <div class="sd-item">뇌혈관질환 <span class="sc-code">I64~I69</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pb-note" style="margin-bottom:16px">※ 특정순환계질환 분류는 제9차 개정 한국표준질병·사인분류(통계청 고시 제2025-299호, 2026.1.1.시행) 기준. 보험사·상품에 따라 보장 범위 상이</div>
+
+    <div class="tx-card t-heart">
+      <div class="tx-card-head">
+        <div class="tx-icon">🔪</div>
+        <div class="tx-titles">
+          <div class="tx-en">Surgery (Excluding Thrombectomy)</div>
+          <div class="tx-kr">수술 치료비 <span class="repeat-badge">반복</span></div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label" style="background:var(--heart)">정의</span><span class="tx-val">요양병원 제외 의료기관에서 <strong>수술(혈전제거술 제외)</strong>을 받은 경우</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--heart)">예시</span><span class="tx-val"><strong>관상동맥 우회술, 심장판막 수술, 뇌동맥류 결찰술, 경동맥 내막절제술</strong> 등 순환계 외과적 수술 전반</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--heart)">비용</span><span class="tx-val">순환계 수술은 <strong>수백만~수천만 원</strong> 수준. 비급여·본인부담금 비중이 높음</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--heart)">포인트</span><span class="tx-val">재발로 재수술 시에도 <strong>한도 내 반복 지급</strong> / 진단비와 결정적 차이</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-blue">
+      <div class="tx-card-head">
+        <div class="tx-icon">🏥</div>
+        <div class="tx-titles">
+          <div class="tx-en">ICU (Intensive Care Unit) Treatment</div>
+          <div class="tx-kr">종합병원 중환자실 치료비 <span class="repeat-badge" style="background:rgba(49,130,246,0.1);color:var(--blue-text)">반복</span></div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label" style="background:var(--blue)">정의</span><span class="tx-val"><strong>종합병원 중환자실</strong>에서 직접적 치료를 받은 경우</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--blue)">상황</span><span class="tx-val">급성심근경색·뇌졸중 등 <strong>응급 발생 직후 중환자실 입실</strong>이 필요한 상황</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--blue)">비용</span><span class="tx-val">중환자실 1일 비용 <strong>30~80만 원</strong> 수준 (비급여 포함). 장기 입실 시 수백만 원 초과</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--blue)">포인트</span><span class="tx-val">심장·뇌 응급 상황은 <strong>반드시 중환자실을 거치는 경우가 많아</strong> 실질 보장 효과 큼</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-purple">
+      <div class="tx-card-head">
+        <div class="tx-icon">💉</div>
+        <div class="tx-titles">
+          <div class="tx-en">Thrombolysis Therapy</div>
+          <div class="tx-kr">혈전용해 치료비 <span class="repeat-badge" style="background:var(--purple-dim);color:var(--purple-text)">반복</span></div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label" style="background:var(--purple)">정의</span><span class="tx-val">특정순환계질환으로 진단 확정 후, 요양병원 제외 의료기관에서 <strong><br>혈전용해치료</strong>를 받은 경우</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--purple)">원리</span><span class="tx-val">혈관을 막은 혈전에 <strong>용해제(tPA 등)를 주입</strong>해 혈전을 녹이는 치료,<BR> 뇌졸중·심근경색 응급에 사용</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--purple)">비용</span><span class="tx-val">약제비 기준 <strong>수십만~수백만 원</strong> (급여 외 비용 별도 발생)</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--purple)">포인트</span><span class="tx-val">수술 없이 약물로 해결하는 치료이나 <strong>고가 약제·처치비</strong>가 발생<BR>별도 특약이 없으면 미보장</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-green">
+      <div class="tx-card-head">
+        <div class="tx-icon">🩸</div>
+        <div class="tx-titles">
+          <div class="tx-en">Thrombectomy (Clot Removal)</div>
+          <div class="tx-kr">혈전제거 치료비 <span class="repeat-badge" style="background:var(--green-dim);color:var(--green-text)">반복</span></div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label" style="background:var(--green)">정의</span><span class="tx-val">특정순환계질환으로 진단 확정 후, 요양병원 제외 의료기관에서 <strong><BR> 혈전제거치료</strong>를 받은 경우</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--green)">원리</span><span class="tx-val">카테터로 혈관에 접근해 <strong>혈전을 물리적으로 제거</strong>하는 시술 <BR>혈전용해가 어려운 경우 사용</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--green)">비용</span><span class="tx-val">시술비 <strong>수백만 원</strong> 이상 발생. 혈전용해보다 비용 높음</span></div>
+        <div class="tx-row"><span class="tx-label" style="background:var(--green)">포인트</span><span class="tx-val">혈전용해와 함께 순환계 응급 치료의 양대 핵심 시술<BR> 최신 상품에서 별도 보장 구성</span></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-text">
+        4가지 치료비는 <strong>모두 한도 내 반복 보장</strong> (연1회 또는 회당)됩니다. 진단비가 1회에 그치는 것과 달리, <strong>재발·재치료 시에도 계속 지급</strong>됩니다. 순환계 질환 특성상 장기 관리가 필요한 만큼, 치료비 특약은 진단비와 반드시 함께 준비하세요.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">※  보험사별 실제 보장 범위와 약관 내용은 반드시 해당 보험사 약관을 참고하시기 바랍니</div>
+  </div>
+</div>
+
+</body>
+</html>

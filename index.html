@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  if (window.__backGuardInit) return;
+  window.__backGuardInit = true;
+  var alreadyArmed = false;
+  try { alreadyArmed = sessionStorage.getItem('bgArmed') === '1'; } catch (e) {}
+  if (alreadyArmed) return;
+  try { sessionStorage.setItem('bgArmed', '1'); } catch (e) {}
+  history.pushState({ __bg: 1 }, '', location.href);
+  window.addEventListener('popstate', function(e){
+    if (e.state && e.state.__bg) return;
+    var t = document.createElement('div');
+    t.innerHTML = '한 번 더 누르시면,<br>카카오톡 대화방으로<br>돌아갑니다.';
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+      'max-width:calc(100% - 40px);text-align:center;background:#191f28;color:#fff;' +
+      'font-size:13.5px;font-weight:600;line-height:1.5;padding:14px 20px;border-radius:20px;z-index:200;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.2)';
+    (document.body || document.documentElement).appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2600);
+  });
+})();
+</script>
+<title>채종명 | 토스 어드바이저</title><meta property="og:type" content="website">
+<meta property="og:title" content="채종명 | 토스 어드바이저">
+<meta property="og:image" content="assets/og-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="채종명 | 토스 어드바이저">
+<meta name="twitter:image" content="assets/og-index.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-frame">
+
+  <header class="top-bar">
+    <a class="brand-logo-link" href="index.html"><img class="brand-logo" src="assets/toss-logo.png" alt="토스"><span class="brand-text">toss insurance</span></a>
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="site-menu">
+      <span class="hamburger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="sr-only">메뉴</span>
+    </button>
+    <nav id="site-menu" class="site-menu" hidden>
+      <a href="guide.html">보장가이드</a>
+      <a href="pension-guide.html">연금·저축 가이드</a>
+      <a href="claim.html">보험금 청구하기</a>
+      <a href="insight.html">Insight</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero hero-a">
+    <p class="eyebrow">토스 인슈어런스</p>
+    <h1>안녕하세요,<br>
+채종명 어드바이저입니다.</h1>
+    <p class="hero-sub">보험사와 고객님 사이에 있는 정보의 차이를 없애,<br>
+병원 방문하실 때 가장 든든한 울타리가 되어드리겠습니다.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화로 상담 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡으로 상담하기</a>
+    </div>
+  </section>
+
+  <section class="card needs-card">
+    <h2>자동차보험은 당연한데, 건강은요?</h2>
+    <div class="stat-row"><div class="stat"><strong>44.6%</strong><span>남성 평생 암 발생 확률</span></div><div class="stat"><strong>38.2%</strong><span>여성 평생 암 발생 확률</span></div></div>
+    <p class="muted-line">2023년 국가암등록통계 기준. 교통사고 보다 높은 확률인데도, <br>자동차 보험에 비해 건강 준비는 자주 미뤄집니다.</p>
+    <p>겁을 드리려는 게 아닙니다. 치료비 걱정 없이 내 삶에 집중할 수 있도록,<br>
+자동차 사고 때 보험 처리하듯 건강도 미리 정리해두자는 겁니다.</p>
+<p>보험의 목적과 우선 순위에 맞는 내용을 안내 드리겠습니다.</p>
+    <a class="btn btn-weak btn-block" href="guide.html">보장가이드 열기</a>
+  </section>
+
+  <section class="card calc-card">
+    <h2>내비게이션, 켜보셨나요?</h2>
+    <div class="stat-row"><div class="stat"><strong>14.8%</strong><span>OECD 평균 노인 빈곤율</span></div><div class="stat"><strong>39.7%</strong><span>우리나라 노인 빈곤율(OECD 1위)</span></div></div>
+    <p>근교로 잠깐 나들이를 갈 때도 우리는 지도를 엽니다. 아는 길이어도 지금 위치와 남은 거리를 확인할 때도 있죠.</p>
+<p>인생이란 여행을 떠날 땐 어떨까요.<br>
+가장 길고 변수가 많지만 정작 이 여행은 내비게이션 없이 막연하게 떠나는 분들이 많습니다. 한 번 확인해 보세요.<br>
+지금부터 목적지까지의 방향도 훨씬 선명해집니다.</p>
+    <a class="btn btn-weak btn-block" href="pension-guide.html">연금·저축가이드 열기</a>
+  </section>
+
+  <section class="card claim-link-card">
+    <h2>보험금 청구가 필요하신가요?</h2>
+    <p>서류 사진만 찍어서 올리면 끝. 간편 청구 방법을 안내해드립니다.</p>
+    <a class="btn btn-weak btn-block" href="claim.html">보험금 청구하기</a>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-heading">상담이 필요하신가요?</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화 상담 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡 상담 신청</a>
+    </div>
+    <p class="phone-line">토스인슈어런스 직영사업단 직영1 총괄본부<br>
+서울특별시 구로구 경인로 662, 37F(신도림동, 디큐브시티)</p>
+    <p class="compliance">이 사이트는 토스인슈어런스 소속 보험설계사 채종명이 운영하는 개인 소개 페이지입니다. 특정 보험상품의 가입을 권유하거나 추천하지 않으며, 안내된 내용은 이해를 돕기 위한 참고용입니다. 실제 가입 여부는 고객님의 자유로운 의사에 따라 결정되며, 상품 세부 내용은 반드시 상품설명서와 약관을 통해 확인하시기 바랍니다.</p>
+  </footer>
+
+</div>
+
+<script src="assets/phone-cta.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('menu-toggle');
+  var menu = document.getElementById('site-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function () {
+    var willOpen = menu.hidden;
+    menu.hidden = !willOpen;
+    btn.setAttribute('aria-expanded', String(willOpen));
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!menu.hidden && !menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

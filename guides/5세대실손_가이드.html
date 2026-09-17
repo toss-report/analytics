@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5세대 실손의료보험 가이드</title>
+<meta property="og:title" content="5세대 실손의료보험 가이드">
+<meta property="og:description" content="2026년 5월 출시 5세대 실손 — 구조·보장한도·자기부담금 정보 가이드">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og-guide.png">
+<style>
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Regular.woff2') format('woff2');
+    font-weight: 400; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Medium.woff2') format('woff2');
+    font-weight: 500; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Bold.woff2') format('woff2');
+    font-weight: 700; font-display: swap;
+  }
+
+  /* ============================================================
+     ★ 디자인 변수 — 보험가입요령 가이드북 톤 동일
+  ============================================================ */
+  :root {
+    --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+
+    --fs-xs:    11px;
+    --fs-sm:    12px;
+    --fs-base:  13px;
+    --fs-body:  14px;
+    --fs-md:    15px;
+    --fs-lg:    16px;
+    --fs-xl:    19px;
+    --fs-2xl:   24px;
+
+    --lh-tight:  1.4;
+    --lh-normal: 1.55;
+    --lh-loose:  1.7;
+
+    --ls-tight:  -0.5px;
+    --ls-normal: -0.3px;
+    --ls-wide:   0.4px;
+
+    --bg:           #FFFFFF;
+    --bg-root:      #F8F9FB;
+    --bg-card:      #FFFFFF;
+    --bg-elevated:  #F3F4F6;
+    --bg-soft:      #F9FAFB;
+
+    --text-primary:   #1F2937;
+    --text-secondary: #4B5563;
+    --text-tertiary:  #6B7280;
+    --text-quaternary: #9CA3AF;
+
+    --border:      rgba(0,0,0,0.08);
+    --border-card: rgba(0,0,0,0.05);
+    --border-soft: rgba(0,0,0,0.04);
+
+    --blue:        #3182F6;
+    --blue-light:  #60A5FA;
+    --blue-pale:   #DBEAFE;
+    --blue-dim:    rgba(49,130,246,0.08);
+    --blue-text:   #1D4ED8;
+
+    --amber:       #F59E0B;
+    --amber-dim:   rgba(245,158,11,0.10);
+    --amber-text:  #B45309;
+
+    --green:       #10B981;
+    --green-dim:   rgba(16,185,129,0.10);
+    --green-text:  #047857;
+
+    --rose:        #DC2626;
+    --rose-dim:    rgba(220,38,38,0.08);
+
+    --section-px:    22px;
+    --section-py:    30px;
+    --section-gap:   6px;
+
+    --header-px:     22px;
+    --header-pt:     24px;
+    --header-pb:     28px;
+    --header-inner-gap: 22px;
+
+    --card-px:       16px;
+    --card-py:       14px;
+    --cta-px:        16px;
+    --cta-py:        14px;
+    --cta-mt:        18px;
+
+    --radius-sm:   5px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-xl:   14px;
+    --radius-pill: 16px;
+
+    --container-max: 480px;
+    --container-gap: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-root);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    background: var(--bg);
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    padding: var(--header-pt) var(--header-px) var(--header-pb);
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--header-inner-gap);
+  }
+  .header-page {
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .header-priority {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    padding: 3px 10px;
+    border: 1px solid var(--blue);
+    border-radius: var(--radius-sm);
+    letter-spacing: -0.2px;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--blue-dim);
+    color: var(--blue);
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: var(--ls-tight);
+    margin-bottom: 8px;
+  }
+  .header h1 em { font-style: normal; color: var(--blue); }
+  .header-question {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--blue-text);
+    margin-top: 4px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    letter-spacing: var(--ls-normal);
+  }
+  .header-desc {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+
+  /* ── 섹션 ── */
+  .section {
+    padding: var(--section-py) var(--section-px);
+    border-top: var(--section-gap) solid rgba(0,0,0,0.03);
+  }
+  .section-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-wide);
+  }
+  .section-title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-tight);
+    line-height: 1.4;
+  }
+  .section-title em { font-style: normal; color: var(--blue); }
+  .section-desc {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    margin-bottom: 22px;
+    line-height: var(--lh-normal);
+  }
+  .section-desc strong { color: var(--text-primary); font-weight: 700; }
+
+  .sub-title {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    letter-spacing: var(--ls-tight);
+    line-height: 1.4;
+  }
+  .sub-title:first-child { margin-top: 0; }
+  .sub-title em { font-style: normal; color: var(--blue); }
+
+  /* ── CTA 박스 ── */
+  .cta-box {
+    background: var(--blue-dim);
+    border: 1px solid rgba(49,130,246,0.12);
+    border-radius: var(--radius-lg);
+    padding: var(--cta-py) var(--cta-px);
+    margin-top: var(--cta-mt);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .cta-emoji { font-size: var(--fs-md); flex-shrink: 0; margin-top: 1px; }
+  .cta-text {
+    font-size: var(--fs-body);
+    line-height: var(--lh-loose);
+    color: var(--text-primary);
+  }
+  .cta-text strong { color: var(--text-primary); font-weight: 700; }
+  .cta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .cta-next {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(49,130,246,0.2);
+    font-size: var(--fs-sm);
+    color: var(--blue-text);
+    font-weight: 600;
+    display: flex;
+    gap: 6px;
+  }
+  .cta-next-arrow { font-weight: 700; }
+
+  /* ── 주의 박스 ── */
+  .caution-box {
+    background: var(--rose-dim);
+    border: 1px solid rgba(220,38,38,0.12);
+    border-radius: var(--radius-lg);
+    padding: var(--cta-py) var(--cta-px);
+    margin-top: var(--cta-mt);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .caution-box .cta-text strong { color: var(--rose); }
+
+  /* ── 푸터 ── */
+  .footer {
+    padding: 14px var(--section-px);
+    border-top: 1px solid var(--border-soft);
+  }
+  .footer-text {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: var(--lh-normal);
+  }
+
+  .mini-note {
+    font-size: var(--fs-xs);
+    color: var(--text-quaternary);
+    line-height: var(--lh-normal);
+    margin-top: 10px;
+  }
+
+  /* ── 정의 박스 ── */
+  .def-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .def-label {
+    display: inline-block;
+    background: var(--blue-dim);
+    color: var(--blue-text);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .def-label.amber { background: var(--amber-dim); color: var(--amber-text); }
+  .def-label.green { background: var(--green-dim); color: var(--green-text); }
+  .def-label.rose { background: var(--rose-dim); color: var(--rose); }
+  .def-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .def-text {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-loose);
+  }
+  .def-text strong { color: var(--text-primary); font-weight: 700; }
+
+  /* ── 인포 칩 ── */
+  .chip-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .chip {
+    flex: 1;
+    background: var(--blue-dim);
+    border-radius: var(--radius-lg);
+    padding: 12px 12px;
+    text-align: center;
+  }
+  .chip-label {
+    font-size: var(--fs-xs);
+    color: var(--blue-text);
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+  }
+  .chip-value {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.3px;
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head>
+<body>
+<style>
+  /* Page 1 전용 — 세대 타임라인 + 3계층 구조 + 핵심 변화 체크리스트 */
+
+  /* ── 세로 타임라인 ── */
+  .timeline {
+    position: relative;
+    padding-left: 4px;
+    margin: 8px 0 0;
+  }
+  .tl-row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 14px;
+    position: relative;
+  }
+  .tl-rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--blue);
+    flex-shrink: 0;
+    margin-top: 6px;
+    z-index: 1;
+  }
+  .tl-dot.now {
+    background: var(--blue);
+    border: none;
+    box-shadow: 0 0 0 4px var(--blue-dim);
+  }
+  .tl-line {
+    width: 2px;
+    flex: 1;
+    background: rgba(0,0,0,0.08);
+    margin-top: 4px;
+  }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 18px; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-when {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 3px;
+  }
+  .tl-what {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+    margin-bottom: 3px;
+  }
+  .tl-what em { font-style: normal; color: var(--blue); }
+  .tl-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .tl-detail strong { color: var(--text-primary); font-weight: 700; }
+
+  /* ── 5세대 3계층 구조 ── */
+  .gen5-struct {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .gen5-struct-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 11px 14px;
+    align-items: baseline;
+  }
+  .gen5-struct-row.main { border-color: var(--blue); }
+  .gen5-struct-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+  .gen5-struct-row.main .gen5-struct-label { color: var(--blue); }
+  .gen5-struct-content {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .gen5-struct-content strong { font-weight: 700; }
+  .gen5-struct-mini {
+    display: block;
+    margin-top: 3px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: 1.5;
+  }
+
+  /* ── 핵심 변화 체크리스트 ── */
+  .checklist {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    margin-bottom: 14px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-soft);
+  }
+  .check-item:first-of-type { border-top: none; padding-top: 0; }
+  .check-item:last-of-type { padding-bottom: 0; }
+  .check-mark {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--blue-dim);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .check-body { flex: 1; }
+  .check-head {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin-bottom: 3px;
+  }
+  .check-head em { font-style: normal; color: var(--blue); }
+  .check-head em.down { color: var(--rose); }
+  .check-text {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .check-text strong { color: var(--text-primary); font-weight: 700; }
+</style>
+
+<div class="tj-topbar">
+  <a class="tj-topbar-brand" href="../index.html"><img class="tj-topbar-logo" src="../assets/toss-logo.png" alt="토스"><span class="tj-topbar-text">toss insurance</span></a>
+  <a class="tj-topbar-link" href="../guide.html">보장 가이드</a>
+</div>
+<style>
+  .tj-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e8eb;
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    letter-spacing: normal;
+  }
+  .tj-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .tj-topbar-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .tj-topbar-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #191f28;
+  }
+  .tj-topbar-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b64da;
+    text-decoration: none;
+  }
+</style>
+
+<!-- ═══ PAGE 1 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">1 / 3</span>
+      <span class="header-priority">2026.05 출시</span>
+    </div>
+    <div class="header-badge">🏥 5세대 실손 가이드</div>
+    <h1>실손의료보험,<br><em>5세대</em>가 시작됐습니다</h1>
+    <div class="header-question">5세대 실손, 무엇이 달라졌을까요?</div>
+    <div class="header-desc">2026년 5월부터 판매 중인 새 실손. 구조가 어떻게 바뀌었고 나에게 어떤 의미인지 차례로 정리했습니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">실손보험의 변천사</div>
+    <div class="section-title">내 실손은 <em>몇 세대</em>인가요?</div>
+    <div class="section-desc">실손은 가입 시점(계약일)에 따라 세대가 나뉘고, 세대마다 보장 구조와 보험료가 다릅니다. 보험증서의 가입일자로 확인할 수 있습니다.</div>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">~2009.07 · 1세대 (구실손)</div>
+          <div class="tl-what">본인부담 거의 0원</div>
+          <div class="tl-detail">보장 조건은 가장 좋지만, 갱신 시 보험료 인상 폭이 가장 큽니다</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">2009.08~2017.03 · 2세대 (표준화실손)</div>
+          <div class="tl-what">전 보험사 보장 표준화</div>
+          <div class="tl-detail">도수치료·MRI·주사가 한도에 포함되어 활용도가 높지만, 갱신 인상 요인</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">2017.04~2021.06 · 3세대 (착한실손)</div>
+          <div class="tl-what">3대 비급여 특약 분리</div>
+          <div class="tl-detail">도수·체외충격파·주사·MRI가 별도 특약으로 분리되며 보험료 하락</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">2021.07~2026.04 · 4세대</div>
+          <div class="tl-what">급여 / 비급여 분리</div>
+          <div class="tl-detail">비급여를 많이 쓸수록 보험료가 할증되는 차등제 도입</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot now"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">2026.05~ · 5세대 (현행)</div>
+          <div class="tl-what">비급여를 <em>중증 / 비중증</em>으로 분리</div>
+          <div class="tl-detail"><strong>중증은 더 두텁게, 비중증은 슬림하게</strong> — 그만큼 보험료 인하</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">상품 구조</div>
+    <div class="section-title">주계약 + 특약 2개,<br><em>필요한 만큼 골라서</em> 가입</div>
+    <div class="section-desc">5세대는 급여(주계약)에 비급여 특약 2개를 조합하는 구조입니다. 특약을 선택 가입할 수 있어 보험료를 조절할 수 있습니다.</div>
+
+    <div class="gen5-struct">
+      <div class="gen5-struct-row main">
+        <div class="gen5-struct-label">주계약<br>(필수)</div>
+        <div class="gen5-struct-content">
+          <strong>급여 실손의료비</strong>
+          <span class="gen5-struct-mini">건강보험이 적용되는 치료비의 본인부담금 보장</span>
+        </div>
+      </div>
+      <div class="gen5-struct-row">
+        <div class="gen5-struct-label">특약 1<br>(선택)</div>
+        <div class="gen5-struct-content">
+          <strong>중증 비급여 실손의료비</strong>
+          <span class="gen5-struct-mini">암·심장·뇌혈관·희귀난치 등 산정특례대상질환의 비급여 치료비</span>
+        </div>
+      </div>
+      <div class="gen5-struct-row">
+        <div class="gen5-struct-label">특약 2<br>(선택)</div>
+        <div class="gen5-struct-content">
+          <strong>비중증 비급여 실손의료비</strong>
+          <span class="gen5-struct-mini">중증이 아닌 일반 질환의 비급여 치료비</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-label">용어 한 줄</div>
+      <div class="def-title">산정특례대상질환이란?</div>
+      <div class="def-text">암·심장·뇌혈관·희귀난치성 질환처럼 치료비 부담이 큰 <strong>중증 질환의 본인부담을 국가가 낮춰주는 제도</strong>의 대상 질환입니다. 5세대는 이 기준으로 중증/비중증을 나눕니다.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">핵심 변화</div>
+    <div class="section-title">4세대와 달라진 점 <em>5가지</em></div>
+    <div class="section-desc">방향은 분명합니다. <strong>중증 보장은 강화하고, 비중증 비급여는 줄여서 보험료를 낮췄습니다.</strong></div>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-mark">1</div>
+        <div class="check-body">
+          <div class="check-head">보험료 약 <em>30% 인하</em></div>
+          <div class="check-text">4세대 대비 약 30%, 1·2세대 대비 50% 이상 저렴할 것으로 예상됩니다. <strong>주계약+특약1만 가입하면 4세대의 절반 수준</strong>까지 낮아집니다.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">2</div>
+        <div class="check-body">
+          <div class="check-head">중증 입원 자기부담 <em>상한 500만원</em> 신설</div>
+          <div class="check-text">상급종합·종합병원에서 중증 비급여 입원치료 시 <strong>자기부담금이 연 500만원을 넘으면 초과분은 보험이 부담</strong>합니다. 4세대에는 없던 안전장치입니다.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">3</div>
+        <div class="check-body">
+          <div class="check-head">비중증 비급여 한도 <em class="down">5천만 → 1천만원</em> 축소</div>
+          <div class="check-text">비중증 비급여는 연간 한도가 줄고 <strong>자기부담률도 50%로</strong> 높아졌습니다. 도수치료·체외충격파·비급여 주사는 보장에서 제외됩니다.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">4</div>
+        <div class="check-body">
+          <div class="check-head">임신·출산 <em>신규 보장</em></div>
+          <div class="check-text">임신·출산 관련 급여 의료비가 실손 역사상 처음으로 보장됩니다. 태아 가입 시 <strong>정신발달장애 치료도 18세까지</strong> 보장됩니다.</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">5</div>
+        <div class="check-body">
+          <div class="check-head">무사고 할인 <em>10%</em></div>
+          <div class="check-text">직전 2년간 비중증 비급여(특약2) 보험금을 받지 않으면 <strong>다음 1년 보험료 전체가 10% 할인</strong>됩니다. 병원을 적게 가는 분에게 유리한 구조입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">요약하면 — <strong>큰 병은 더 든든하게, 가벼운 비급여는 내 돈으로.</strong> 이 원칙을 알면 5세대의 모든 숫자가 이해됩니다.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지에서는 항목별 보장 한도를 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 2 전용 — 보장 카드 3장 */
+
+  .cov-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    margin-bottom: 14px;
+  }
+  .cov-card.main-cov { border: 2px solid var(--blue); }
+  .cov-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .cov-name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+  }
+  .cov-tag {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cov-tag.amber { color: var(--amber-text); background: var(--amber-dim); }
+  .cov-limit {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .cov-limit .cov-limit-unit {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    letter-spacing: -0.2px;
+    margin-left: 4px;
+  }
+  .cov-attrs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cov-attr {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .cov-attr-key {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    padding-top: 1px;
+  }
+  .cov-attr-val {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .cov-attr-val strong { font-weight: 700; }
+  .cov-attr-val .val-rose { color: var(--rose); font-weight: 700; }
+  .cov-attr-mini {
+    display: block;
+    margin-top: 3px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* 카드 내 세부 한도 */
+  .cov-sub {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+  }
+  .cov-sub-title {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 8px;
+  }
+  .cov-sub-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    padding: 4px 0;
+  }
+  .cov-sub-name {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: 1.45;
+  }
+  .cov-sub-val {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cov-sub-val.excluded { color: var(--rose); }
+</style>
+
+<!-- ═══ PAGE 2 ═══ -->
+<div class="container" style="margin-top: var(--container-gap);">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">2 / 3</span>
+      <span class="header-priority">보장 한도</span>
+    </div>
+    <div class="header-badge">🏥 5세대 실손 가이드</div>
+    <h1>어디까지, <em>얼마나</em><br>보장될까요?</h1>
+    <div class="header-question">주계약과 특약 2개, 각각의 한도입니다</div>
+    <div class="header-desc">상해·질병 각각 적용되는 연간 한도와 통원·입원 세부 기준을 카드 3장으로 정리했습니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">보장 ①</div>
+    <div class="section-title">주계약 — <em>급여</em> 실손의료비</div>
+    <div class="section-desc">건강보험이 적용된 치료의 본인부담금을 돌려받는, 5세대의 기본 토대입니다.</div>
+
+    <div class="cov-card main-cov">
+      <div class="cov-head">
+        <div class="cov-name">급여 실손의료비</div>
+        <div class="cov-tag">필수 가입</div>
+      </div>
+      <div class="cov-limit">연간 5,000만원<span class="cov-limit-unit">상해·질병 각각 · 입원+통원 합산</span></div>
+      <div class="cov-attrs">
+        <div class="cov-attr">
+          <div class="cov-attr-key">보장</div>
+          <div class="cov-attr-val">상해 또는 질병으로 입원·통원하여 <strong>급여 치료 또는 급여 처방조제</strong>를 받은 때</div>
+        </div>
+        <div class="cov-attr">
+          <div class="cov-attr-key">통원</div>
+          <div class="cov-attr-val">회당 <strong>20만원</strong> 한도</div>
+        </div>
+        <div class="cov-attr">
+          <div class="cov-attr-key">참고</div>
+          <div class="cov-attr-val">"급여"란 국민건강보험법에서 정한 요양급여, 의료급여법에서 정한 의료급여를 말합니다</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">보장 ②</div>
+    <div class="section-title">특약1 — <em>중증</em> 비급여</div>
+    <div class="section-desc">암·심장·뇌혈관·희귀난치 등 산정특례대상질환의 비급여 치료비를 연간 5천만원까지 보장합니다.</div>
+
+    <div class="cov-card">
+      <div class="cov-head">
+        <div class="cov-name">중증 비급여 실손의료비</div>
+        <div class="cov-tag">선택 가입</div>
+      </div>
+      <div class="cov-limit">연간 5,000만원<span class="cov-limit-unit">상해·질병 각각 · 입원+통원 합산</span></div>
+      <div class="cov-attrs">
+        <div class="cov-attr">
+          <div class="cov-attr-key">보장</div>
+          <div class="cov-attr-val"><strong>산정특례대상질환</strong>으로 입원·통원하여 비급여 치료를 받거나 비급여 처방조제를 받은 경우 (3대 비급여 제외)</div>
+        </div>
+        <div class="cov-attr">
+          <div class="cov-attr-key">통원</div>
+          <div class="cov-attr-val">회당 <strong>20만원</strong> · 연간 <strong>100회</strong> 한도
+            <span class="cov-attr-mini">입원은 의료기관 종별 한도 구분 없음</span>
+          </div>
+        </div>
+      </div>
+      <div class="cov-sub">
+        <div class="cov-sub-title">3대 비급여 별도 한도 (중증 치료 목적)</div>
+        <div class="cov-sub-row">
+          <span class="cov-sub-name">근골격계 이학요법치료 · 체외충격파</span>
+          <span class="cov-sub-val">연 350만원 (50회)</span>
+        </div>
+        <div class="cov-sub-row">
+          <span class="cov-sub-name">주사료</span>
+          <span class="cov-sub-val">연 250만원 (50회)</span>
+        </div>
+        <div class="cov-sub-row">
+          <span class="cov-sub-name">비급여 자기공명영상진단 (MRI/MRA)</span>
+          <span class="cov-sub-val">연 300만원</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">보장 ③</div>
+    <div class="section-title">특약2 — <em>비중증</em> 비급여</div>
+    <div class="section-desc">중증이 아닌 일반 질환의 비급여 치료비. 한도와 자기부담 조건을 꼼꼼히 봐야 하는 영역입니다.</div>
+
+    <div class="cov-card">
+      <div class="cov-head">
+        <div class="cov-name">비중증 비급여 실손의료비</div>
+        <div class="cov-tag amber">선택 가입</div>
+      </div>
+      <div class="cov-limit">연간 1,000만원<span class="cov-limit-unit">상해·질병 각각 · 입원+통원 합산</span></div>
+      <div class="cov-attrs">
+        <div class="cov-attr">
+          <div class="cov-attr-key">보장</div>
+          <div class="cov-attr-val">산정특례대상질환이 <strong>아닌</strong> 질환으로 비급여 치료를 받거나 비급여 처방조제를 받은 경우</div>
+        </div>
+        <div class="cov-attr">
+          <div class="cov-attr-key">통원</div>
+          <div class="cov-attr-val">연간 <strong>100일</strong> · 일당 <strong>20만원</strong> 한도</div>
+        </div>
+        <div class="cov-attr">
+          <div class="cov-attr-key">입원</div>
+          <div class="cov-attr-val">병·의원 입원은 회당 <strong>300만원</strong> 한도
+            <span class="cov-attr-mini">상급종합·종합병원 입원은 회당 한도 없음</span>
+          </div>
+        </div>
+      </div>
+      <div class="cov-sub">
+        <div class="cov-sub-title">세부 한도 · 제외 항목</div>
+        <div class="cov-sub-row">
+          <span class="cov-sub-name">비급여 자기공명영상진단 (MRI/MRA)</span>
+          <span class="cov-sub-val">연 200만원</span>
+        </div>
+        <div class="cov-sub-row">
+          <span class="cov-sub-name">도수치료 등 근골격계 이학요법 · 체외충격파</span>
+          <span class="cov-sub-val excluded">보장 제외</span>
+        </div>
+        <div class="cov-sub-row">
+          <span class="cov-sub-name">비급여 주사료</span>
+          <span class="cov-sub-val excluded">보장 제외</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caution-box">
+      <span class="cta-emoji">⚠️</span>
+      <div class="cta-content">
+        <div class="cta-text"><strong>도수치료·체외충격파·비급여 주사</strong>는 비중증(특약2)에서 보장하지 않습니다. 중증 질환 치료 목적일 때만 특약1의 3대 비급여 한도로 보장됩니다. 해당 치료를 자주 받는 분이라면 가입 전 꼭 확인이 필요한 부분입니다.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지에서는 자기부담금과 가입 유형을 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">명시한 가입금액은 최대보장 기준이며 실제 가입금액과 다를 수 있습니다 · 세부 내용은 각 보험사 약관 기준</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 3 전용 — 자기부담 테이블 + 가입 유형 + 유지/전환 */
+
+  /* ── 자기부담 테이블 ── */
+  .pay-tbl {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .pay-row {
+    display: grid;
+    grid-template-columns: 0.62fr 1fr 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .pay-row:first-child { border-top: none; }
+  .pay-row.head { background: var(--bg-elevated); }
+  .pay-row.head > div {
+    padding: 11px 4px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+    color: var(--text-primary);
+  }
+  .pay-row.head .ph-key {
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+  .pay-row > div + div { border-left: 1px solid var(--border); }
+  .pay-key {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    background: var(--bg-soft);
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: var(--ls-wide);
+    padding: 12px 4px;
+    line-height: 1.4;
+  }
+  .pay-cell {
+    padding: 13px 6px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .pay-cell.span2 { grid-column: span 2; }
+  .pay-pct {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .pay-pct.blue { color: var(--blue); }
+  .pay-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    color: var(--text-tertiary);
+    line-height: 1.45;
+    letter-spacing: -0.2px;
+  }
+  .pay-cell.dash {
+    color: var(--text-quaternary);
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-base);
+  }
+
+  /* ── 가입 유형 카드 ── */
+  .plan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .plan-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+  }
+  .plan-card.pick { border: 2px solid var(--blue); }
+  .plan-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+  }
+  .plan-combo {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .plan-card.pick .plan-combo { color: var(--blue-text); }
+  .plan-pill {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .plan-pill.p-blue  { background: var(--blue-dim); color: var(--blue-text); }
+  .plan-pill.p-green { background: var(--green-dim); color: var(--green-text); }
+  .plan-pill.p-gray  { background: var(--bg-elevated); color: var(--text-tertiary); }
+  .plan-desc {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .plan-desc strong { color: var(--text-primary); font-weight: 700; }
+
+  /* ── 유지 vs 전환 듀얼 카드 ── */
+  .duo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .duo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+  }
+  .duo-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .duo-name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .duo-domain {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+  }
+  .duo-concept {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 14px;
+  }
+  .duo-concept::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+  .duo-concept em { font-style: normal; color: var(--blue); }
+  .duo-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-loose);
+  }
+  .duo-detail strong { color: var(--text-primary); font-weight: 700; }
+
+  /* ── Wrap-up 박스 ── */
+  .wrap-summary {
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 22px 20px;
+    text-align: center;
+    margin-top: 18px;
+  }
+  .wrap-intro {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+  .wrap-title {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+  }
+  .wrap-title em { font-style: normal; }
+  .wrap-text {
+    font-size: var(--fs-sm);
+    line-height: var(--lh-loose);
+    opacity: 0.95;
+  }
+  .wrap-text strong { font-weight: 700; }
+</style>
+
+<!-- ═══ PAGE 3 ═══ -->
+<div class="container" style="margin-top: var(--container-gap);">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">3 / 3</span>
+      <span class="header-priority">자기부담 · 가입 유형</span>
+    </div>
+    <div class="header-badge">🏥 5세대 실손 가이드</div>
+    <h1>내가 내는 돈,<br><em>자기부담금</em></h1>
+    <div class="header-question">치료비 중 얼마를 내가 부담할까요?</div>
+    <div class="header-desc">실손은 치료비 전액이 아닌, 자기부담금을 뺀 금액을 보상합니다. 급여 20% → 중증 비급여 30% → 비중증 비급여 50% 순으로 높아지는 구조입니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">자기부담금 기준</div>
+    <div class="section-title">입원·통원별 <em>공제 기준</em></div>
+    <div class="section-desc">숫자가 많아 보이지만 원리는 하나입니다 — <strong>중증일수록 내 부담이 적고, 비중증일수록 내 부담이 큽니다.</strong></div>
+
+    <div class="pay-tbl">
+      <div class="pay-row head">
+        <div class="ph-key">구분</div>
+        <div>주계약<br>(급여)</div>
+        <div>특약1<br>(중증 비급여)</div>
+        <div>특약2<br>(비중증 비급여)</div>
+      </div>
+      <div class="pay-row">
+        <div class="pay-key">입원</div>
+        <div class="pay-cell">
+          <span class="pay-pct blue">20%</span>
+          <span class="pay-note">연간 최대 200만원까지만 본인 부담</span>
+        </div>
+        <div class="pay-cell">
+          <span class="pay-pct blue">30%</span>
+          <span class="pay-note">상급종합·종합병원 자기부담 최대 500만원</span>
+        </div>
+        <div class="pay-cell">
+          <span class="pay-pct">50%</span>
+        </div>
+      </div>
+      <div class="pay-row">
+        <div class="pay-key">통원<br>처방조제</div>
+        <div class="pay-cell">
+          <span class="pay-pct">1~2만원<br>vs 20%</span>
+          <span class="pay-note">1만원(병·의원) / 2만원((상급)종합병원), 보장대상의료비×20%, 보장대상의료비×건강보험 본인부담률 중 큰 금액</span>
+        </div>
+        <div class="pay-cell">
+          <span class="pay-pct">3만원<br>vs 30%</span>
+          <span class="pay-note">중 큰 금액</span>
+        </div>
+        <div class="pay-cell">
+          <span class="pay-pct">5만원<br>vs 50%</span>
+          <span class="pay-note">중 큰 금액</span>
+        </div>
+      </div>
+      <div class="pay-row">
+        <div class="pay-key">상급병실<br>차액</div>
+        <div class="pay-cell dash">—</div>
+        <div class="pay-cell span2">
+          <span class="pay-pct">비급여 병실료의 50%</span>
+          <span class="pay-note">1일 평균 10만원 한도로 보상</span>
+        </div>
+      </div>
+    </div>
+    <div class="mini-note">※ 건강보험 본인부담률 = 발생한 급여 의료비 중 일부 본인부담 항목(전액 본인부담(100분의 100) 항목 제외)의 본인부담금 합계액(a) ÷ (본인부담금 합계액(a) + 공단부담금 합계액(b))</div>
+    <div class="mini-note">※ 특약1 입원 자기부담 상한 500만원은 근골격계 이학요법·체외충격파·주사료 제외</div>
+    <div class="mini-note">※ 특약1의 3대 비급여도 회당 3만원과 보장대상의료비의 30% 중 큰 금액을 공제합니다</div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">반대로 보면 — 급여 입원은 <strong>1년에 200만원</strong>, 중증 비급여 입원(상급종합·종합병원)은 <strong>500만원까지만 내면</strong> 그 이상은 보험이 부담합니다. 중증 질환일수록 든든해진 것이 5세대의 핵심입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">가입 유형</div>
+    <div class="section-title">어떻게 조합하는 게<br><em>나에게 맞을까요?</em></div>
+    <div class="section-desc">특약을 선택 가입할 수 있어, 의료 이용 패턴에 따라 4가지 조합이 가능합니다.</div>
+
+    <div class="plan-list">
+      <div class="plan-card">
+        <div class="plan-head">
+          <span class="plan-combo">주계약만</span>
+          <span class="plan-pill p-gray">보험료 최소</span>
+        </div>
+        <div class="plan-desc">급여 치료비만 보장. <strong>비급여 의료 이용이 거의 없는 분</strong>에게 맞는 최소 구성입니다.</div>
+      </div>
+      <div class="plan-card pick">
+        <div class="plan-head">
+          <span class="plan-combo">주계약 + 특약1</span>
+          <span class="plan-pill p-green">균형 조합</span>
+        </div>
+        <div class="plan-desc">급여 + 중증 비급여 보장. <strong>암·뇌·심장 같은 큰 병만 확실히 대비</strong>하고 보험료는 4세대의 절반 수준으로 낮추는 조합입니다.</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-head">
+          <span class="plan-combo">주계약 + 특약2</span>
+        </div>
+        <div class="plan-desc">급여 + 비중증 비급여 보장. 중증 대비를 다른 보험으로 이미 갖춘 경우에 해당하는 <strong>드문 케이스</strong>입니다.</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-head">
+          <span class="plan-combo">주계약 + 특약1 + 특약2</span>
+          <span class="plan-pill p-blue">최대 보장</span>
+        </div>
+        <div class="plan-desc">5세대의 모든 보장을 담는 조합. 단, <strong>비중증 비급여는 한도 1천만·자기부담 50%</strong>라는 점은 알고 선택해야 합니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">기존 실손 가입자라면</div>
+    <div class="section-title">갈아탈까요, <em>유지할까요?</em></div>
+    <div class="section-desc">정답은 <strong>의료 이용 패턴</strong>에 있습니다. 무조건 갈아타는 것도, 무조건 유지하는 것도 답이 아닙니다.</div>
+
+    <div class="duo">
+      <div class="duo-card">
+        <div class="duo-card-head">
+          <div class="duo-name">유지가 유리한 경우</div>
+          <div class="duo-domain">의료 이용 많음</div>
+        </div>
+        <div class="duo-concept">도수치료·비급여 주사를 <em>자주 이용</em></div>
+        <div class="duo-detail">5세대는 비중증 비급여 보장이 줄었습니다. <strong>연간 받는 보험금이 내는 보험료보다 크다면</strong> 기존 실손 유지가 유리할 수 있습니다.</div>
+      </div>
+      <div class="duo-card">
+        <div class="duo-card-head">
+          <div class="duo-name">전환이 유리한 경우</div>
+          <div class="duo-domain">의료 이용 적음</div>
+        </div>
+        <div class="duo-concept">병원은 적게, <em>보험료가 부담</em></div>
+        <div class="duo-detail">의료 이용이 적다면 <strong>낮아진 보험료 + 중증 보장 강화</strong> 효과를 그대로 누릴 수 있습니다. 1~4세대 모두 별도 심사 없이 5세대로 전환 가능하고, 전환 후 <strong>6개월 이내 청약 철회</strong>도 가능합니다.</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">내 실손이 몇 세대인지, 갱신 보험료가 얼마나 오르는지, 전환 시 유불리는 어떤지 — <strong>최근 2~3년 의료 이용 내역</strong>을 놓고 따져보면 답이 나옵니다. 담당 설계사와 함께 점검해 보세요.</div>
+      </div>
+    </div>
+
+    <div class="wrap-summary">
+      <div class="wrap-intro">5세대 실손의 한 줄 요약은,</div>
+      <div class="wrap-title"><em>'중증은 두텁게,<br>비중증은 슬림하게'</em></div>
+      <div class="wrap-text">내 의료 이용 패턴에 맞는 조합을 고르는 것.<br>그게 5세대를 제대로 활용하는 방법입니다.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 금융위원회·금융감독원 보도자료(2026.5) 기준 참고용이며, 실제 보장 내용은 각 보험사 약관을 따릅니다</div>
+  </div>
+</div>
+</body></html>

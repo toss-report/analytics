@@ -1,0 +1,3296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보험 가입 요령 가이드북</title>
+<meta property="og:title" content="보험 가입 요령 가이드북">
+<meta property="og:description" content="보험 가입의 기본 원리와 우선순위 — 6페이지 정보 가이드">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og-guide.png">
+<style>
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Regular.woff2') format('woff2');
+    font-weight: 400; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Medium.woff2') format('woff2');
+    font-weight: 500; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Bold.woff2') format('woff2');
+    font-weight: 700; font-display: swap;
+  }
+
+  /* ============================================================
+     ★ 디자인 변수 — 기존 가이드 톤 + 모바일 가독성 폰트 상향
+  ============================================================ */
+  :root {
+    --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+
+    /* 폰트 — 한 단계 상향 (기존 9~21 → 11~24) */
+    --fs-xs:    11px;
+    --fs-sm:    12px;
+    --fs-base:  13px;
+    --fs-body:  14px;
+    --fs-md:    15px;
+    --fs-lg:    16px;
+    --fs-xl:    19px;
+    --fs-2xl:   24px;
+
+    --lh-tight:  1.4;
+    --lh-normal: 1.55;
+    --lh-loose:  1.7;
+
+    --ls-tight:  -0.5px;
+    --ls-normal: -0.3px;
+    --ls-wide:   0.4px;
+
+    /* 색상 — 기존 가이드 동일 */
+    --bg:           #FFFFFF;
+    --bg-root:      #F8F9FB;
+    --bg-card:      #FFFFFF;
+    --bg-elevated:  #F3F4F6;
+    --bg-input:     #F9FAFB;
+
+    --text-primary:   #1F2937;
+    --text-secondary: #4B5563;
+    --text-tertiary:  #6B7280;
+    --text-quaternary: #9CA3AF;
+
+    --border:      rgba(0,0,0,0.08);
+    --border-card: rgba(0,0,0,0.05);
+    --border-soft: rgba(0,0,0,0.04);
+
+    --blue:        #3182F6;
+    --blue-light:  #60A5FA;
+    --blue-pale:   #DBEAFE;
+    --blue-dim:    rgba(49,130,246,0.08);
+    --blue-text:   #1D4ED8;
+
+    --amber:       #F59E0B;
+    --amber-dim:   rgba(245,158,11,0.10);
+    --amber-text:  #B45309;
+
+    --green:       #10B981;
+    --green-dim:   rgba(16,185,129,0.10);
+    --green-text:  #047857;
+
+    --rose:        #DC2626;
+    --rose-dim:    rgba(220,38,38,0.08);
+
+    /* 여백 */
+    --section-px:    22px;
+    --section-py:    30px;
+    --section-gap:   6px;
+
+    --header-px:     22px;
+    --header-pt:     24px;
+    --header-pb:     28px;
+    --header-inner-gap: 22px;
+
+    --card-px:       16px;
+    --card-py:       14px;
+    --cta-px:        16px;
+    --cta-py:        14px;
+    --cta-mt:        18px;
+
+    --radius-sm:   5px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-xl:   14px;
+    --radius-pill: 16px;
+
+    --container-max: 480px;
+    --container-gap: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-root);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    background: var(--bg);
+  }
+
+  /* ── 헤더 (기존 가이드 톤) ── */
+  .header {
+    padding: var(--header-pt) var(--header-px) var(--header-pb);
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--header-inner-gap);
+  }
+  .header-page {
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .header-priority {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    padding: 3px 10px;
+    border: 1px solid var(--blue);
+    border-radius: var(--radius-sm);
+    letter-spacing: -0.2px;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--blue-dim);
+    color: var(--blue);
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: var(--ls-tight);
+    margin-bottom: 8px;
+  }
+  .header h1 em { font-style: normal; color: var(--blue); }
+  .header-question {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--blue-text);
+    margin-top: 4px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    letter-spacing: var(--ls-normal);
+  }
+  .header-desc {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+
+  /* ── 섹션 (기존 패턴) ── */
+  .section {
+    padding: var(--section-py) var(--section-px);
+    border-top: var(--section-gap) solid rgba(0,0,0,0.03);
+  }
+  .section-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-wide);
+  }
+  .section-title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-tight);
+    line-height: 1.4;
+  }
+  .section-title em { font-style: normal; color: var(--blue); }
+  .section-desc {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    margin-bottom: 22px;
+    line-height: var(--lh-normal);
+  }
+
+  /* ── 부제 (한 섹션 안 소제목) ── */
+  .sub-title {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    letter-spacing: var(--ls-tight);
+    line-height: 1.4;
+  }
+  .sub-title:first-child { margin-top: 0; }
+  .sub-title em { font-style: normal; color: var(--blue); }
+
+  /* ── CTA 박스 (💡 — 기존 가이드 패턴) ── */
+  .cta-box {
+    background: var(--blue-dim);
+    border: 1px solid rgba(49,130,246,0.12);
+    border-radius: var(--radius-lg);
+    padding: var(--cta-py) var(--cta-px);
+    margin-top: var(--cta-mt);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .cta-emoji { font-size: var(--fs-md); flex-shrink: 0; margin-top: 1px; }
+  .cta-text {
+    font-size: var(--fs-body);
+    line-height: var(--lh-loose);
+    color: var(--text-primary);
+  }
+  .cta-text strong { color: var(--text-primary); font-weight: 700; }
+
+  /* cta-text와 cta-next를 묶는 콘텐츠 영역 */
+  .cta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── 다음 페이지 예고 ── */
+  .cta-next {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(49,130,246,0.2);
+    font-size: var(--fs-sm);
+    color: var(--blue-text);
+    font-weight: 600;
+    display: flex;
+    gap: 6px;
+  }
+  .cta-next-arrow { font-weight: 700; }
+
+  /* ── 푸터 ── */
+  .footer {
+    padding: 14px var(--section-px);
+    border-top: 1px solid var(--border-soft);
+  }
+  .footer-text {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: var(--lh-normal);
+  }
+
+  .mini-note {
+    font-size: var(--fs-xs);
+    color: var(--text-quaternary);
+    line-height: var(--lh-normal);
+    margin-top: 10px;
+  }
+
+  /* ============================================================
+     공통 컴포넌트
+  ============================================================ */
+
+  /* ── 정의 박스 ── */
+  .def-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .def-label {
+    display: inline-block;
+    background: var(--blue-dim);
+    color: var(--blue-text);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .def-label.amber { background: var(--amber-dim); color: var(--amber-text); }
+  .def-label.green { background: var(--green-dim); color: var(--green-text); }
+  .def-label.rose { background: var(--rose-dim); color: var(--rose); }
+  .def-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .def-text {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-loose);
+  }
+  .def-text strong { color: var(--text-primary); font-weight: 700; }
+
+  /* ── 인포 칩 ── */
+  .chip-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .chip {
+    flex: 1;
+    background: var(--blue-dim);
+    border-radius: var(--radius-lg);
+    padding: 12px 12px;
+    text-align: center;
+  }
+  .chip-label {
+    font-size: var(--fs-xs);
+    color: var(--blue-text);
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+  }
+  .chip-value {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.3px;
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head>
+<body>
+<style>
+  /* Page 1 전용 — 세로 타임라인 + 대칭 듀얼카드 */
+
+  /* ── 세로 타임라인 ── */
+  .timeline {
+    position: relative;
+    padding-left: 4px;
+    margin: 8px 0 0;
+  }
+  .tl-row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 14px;
+    position: relative;
+  }
+  .tl-rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+    margin-top: 6px;
+    z-index: 1;
+  }
+  .tl-dot.dim {
+    background: #fff;
+    border: 2px solid var(--blue);
+  }
+  .tl-dot.start {
+    background: var(--blue);
+    box-shadow: 0 0 0 4px var(--blue-dim);
+  }
+  .tl-line {
+    width: 2px;
+    flex: 1;
+    background: rgba(0,0,0,0.08);
+    margin-top: 4px;
+  }
+  .tl-row:last-child .tl-line { display: none; }
+
+  .tl-content {
+    padding-bottom: 18px;
+  }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-when {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 3px;
+  }
+  .tl-what {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+    margin-bottom: 3px;
+  }
+  .tl-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+
+  /* ── 대칭 듀얼 카드 (보험 비교) ── */
+  .duo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .duo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+  }
+  .duo-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .duo-name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .duo-domain {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+  }
+
+  .duo-concept {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 14px;
+  }
+  .duo-concept::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+  .duo-concept em { font-style: normal; color: var(--blue); }
+
+  .duo-attrs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .duo-attr {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .duo-attr-key {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    padding-top: 1px;
+  }
+  .duo-attr-val {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .duo-attr-val strong { font-weight: 700; }
+  .duo-attr-mini {
+    display: block;
+    margin-top: 4px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="tj-topbar">
+  <a class="tj-topbar-brand" href="../index.html"><img class="tj-topbar-logo" src="../assets/toss-logo.png" alt="토스"><span class="tj-topbar-text">toss insurance</span></a>
+  <a class="tj-topbar-link" href="../guide.html">보장 가이드</a>
+</div>
+<style>
+  .tj-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e8eb;
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    letter-spacing: normal;
+  }
+  .tj-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .tj-topbar-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .tj-topbar-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #191f28;
+  }
+  .tj-topbar-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b64da;
+    text-decoration: none;
+  }
+</style>
+
+<!-- ═══ PAGE 1 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">1 / 6</span>
+    </div>
+    <div class="header-badge">📘 보험 가입 요령 가이드북</div>
+    <h1>보험의 <em>필요성</em></h1>
+    <div class="header-question">보험은 왜 필요할까요?</div>
+    <div class="header-desc">중대질병이나 사고가 발생하면 병원비 외에도 생활에 영향이 있을 수 있습니다. 보험이 막아주는 영역이 어디인지 살펴봅니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">위험의 두 영역</div>
+    <div class="section-title"><em>병원비</em>와 <em>생활비</em></div>
+    <div class="section-desc">한 번의 사고가 병원비와 생활비, 두 영역에 영향을 줍니다. 보험은 이 두 곳을 모두 커버하기 위해 두 종류로 나뉩니다.</div>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot start"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">시작</div>
+          <div class="tl-what">중대질병이나 사고 발생</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">치료 중</div>
+          <div class="tl-what">병원비</div>
+          <div class="tl-detail">치료비·검사비·약값</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-rail">
+          <div class="tl-dot dim"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-when">낫는 동안</div>
+          <div class="tl-what">생활비 공백</div>
+          <div class="tl-detail">휴직·실직·간병·유가족</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">두 종류의 보험</div>
+    <div class="section-title">보장 방식이 <em>다른</em> 두 보험</div>
+    <div class="section-desc">위 두 영역(병원비·생활비)에 대응하는 보험은 보장 방식이 다른 두 종류로 나뉩니다. 우열이 아니라 역할이 다릅니다.</div>
+
+    <div class="duo">
+      <div class="duo-card">
+        <div class="duo-card-head">
+          <div class="duo-name">실손형 보험</div>
+          <div class="duo-domain">병원비 영역</div>
+        </div>
+        <div class="duo-concept"><em>먼저 내고</em> 돌려받는</div>
+        <div class="duo-attrs">
+          <div class="duo-attr">
+            <div class="duo-attr-key">예시</div>
+            <div class="duo-attr-val">
+              실손의료비, 자동차보험,<br>
+              배상책임보험, 화재보험 등
+            </div>
+          </div>
+          <div class="duo-attr">
+            <div class="duo-attr-key">보상</div>
+            <div class="duo-attr-val">
+              <strong>먼저 내고 돌려받는 Payback 구조</strong>
+              <span class="duo-attr-mini">가입 한도 내에서 실제 부담한 금액 (자부담 공제 후)</span>
+            </div>
+          </div>
+          <div class="duo-attr">
+            <div class="duo-attr-key">중복</div>
+            <div class="duo-attr-val">
+              <strong>여러 개 들어도 비례보상</strong>
+              <span class="duo-attr-mini">한도 내 나눠서 지급, 중복가입 제한</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="duo-card">
+        <div class="duo-card-head">
+          <div class="duo-name">정액형 보험</div>
+          <div class="duo-domain">생활비 영역</div>
+        </div>
+        <div class="duo-concept"><em>정해진</em> 보험금을 주는</div>
+        <div class="duo-attrs">
+          <div class="duo-attr">
+            <div class="duo-attr-key">예시</div>
+            <div class="duo-attr-val">
+              암보험, 수술비보험,<br>
+              후유장해보험, 종합보험 등
+            </div>
+          </div>
+          <div class="duo-attr">
+            <div class="duo-attr-key">보상</div>
+            <div class="duo-attr-val">
+              <strong>가입한 보장금액</strong>
+              <span class="duo-attr-mini">예: 암 진단비 5천만 원, 질병수술비 30만 원</span>
+            </div>
+          </div>
+          <div class="duo-attr">
+            <div class="duo-attr-key">중복</div>
+            <div class="duo-attr-val">
+              <strong>여러 개 들면 각각 받음</strong>
+              <span class="duo-attr-mini">중복보상</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">한 번의 사고가 <strong>병원비와 생활비</strong>, 두 영역에 영향을 줍니다. 이 두 영역을 모두 막으려면 <strong>실손형과 정액형이 함께</strong> 필요합니다.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지에서는 가입 순서와 우선순위를 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 2 전용 — 미니멀 STEP + 계층형 우선순위 카드 */
+
+  /* ── STEP 리스트 (미니멀) ── */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .step-row {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-row:last-child { border-bottom: none; }
+  .step-num-big {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1;
+    letter-spacing: -1px;
+    text-align: center;
+    padding-top: 2px;
+  }
+  .step-content {
+    flex: 1;
+  }
+  .step-title-big {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .step-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .step-detail strong { color: var(--text-primary); font-weight: 700; }
+  .step-detail-em { color: var(--blue); font-weight: 700; }
+
+  /* ── 우선순위 계층 카드 ── */
+  .priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .pri-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+  }
+  .pri-card.essential {
+    border: 2px solid var(--blue);
+  }
+  .pri-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pri-rank {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .pri-card.essential .pri-rank { color: var(--blue); }
+  .pri-tag {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+  }
+  .pri-tag.must { background: var(--blue-dim); color: var(--blue); }
+  .pri-tag.recommend { background: var(--bg-elevated); color: var(--text-secondary); }
+  .pri-tag.optional { background: var(--bg-elevated); color: var(--text-tertiary); }
+
+  .pri-domains {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .pri-domains.single {
+    grid-template-columns: 1fr;
+  }
+  .pri-domain {
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+  }
+  .pri-card.essential .pri-domain {
+    background: var(--blue-dim);
+  }
+  .pri-domain-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-wide);
+  }
+  .pri-domain-items {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    font-weight: 600;
+  }
+  .pri-domain-sub {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+  .pri-domain ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pri-domain ul li {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    padding: 2px 0;
+    position: relative;
+    padding-left: 10px;
+  }
+  .pri-domain ul li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+  }
+</style>
+
+
+
+<style>
+  /* Page 2 전용 — 미니멀 STEP + 매트릭스 표 + 시나리오 박스 */
+
+  /* ── STEP 리스트 ── */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .step-row {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-row:last-child { border-bottom: none; }
+  .step-num-big {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1;
+    letter-spacing: -1px;
+    text-align: center;
+    padding-top: 2px;
+  }
+  .step-title-big {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .step-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .step-detail strong { color: var(--text-primary); font-weight: 700; }
+  .step-detail-em { color: var(--blue); font-weight: 700; }
+
+  /* ── 우선순위 매트릭스 표 ── */
+  .matrix {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .matrix-head {
+    display: grid;
+    grid-template-columns: 0.55fr 1fr 1fr;
+    background: var(--bg-elevated);
+  }
+  .matrix-head > div {
+    padding: 12px 8px;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+  .matrix-head > div + div { border-left: 1px solid var(--border); }
+  .matrix-head .mh-key {
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    font-size: var(--fs-xs);
+  }
+
+  .matrix-row {
+    display: grid;
+    grid-template-columns: 0.55fr 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .matrix-rank {
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 6px;
+  }
+  .matrix-rank-num {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .matrix-rank-label {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    font-weight: 600;
+    letter-spacing: var(--ls-wide);
+  }
+  .matrix-row.essential .matrix-rank {
+    background: var(--blue-dim);
+  }
+  .matrix-row.essential .matrix-rank-num {
+    color: var(--blue);
+  }
+  .matrix-row.essential .matrix-rank-label {
+    color: var(--blue);
+  }
+
+  .matrix-cell {
+    padding: 14px 12px;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-normal);
+    color: var(--text-primary);
+    border-left: 1px solid var(--border);
+  }
+  .matrix-cell.empty {
+    color: var(--text-quaternary);
+    text-align: center;
+    background: var(--bg-soft);
+    font-size: var(--fs-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mc-main {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    font-size: var(--fs-sm);
+    line-height: 1.4;
+  }
+  .mc-sub {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: 1.5;
+  }
+  .matrix-cell ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .matrix-cell ul li {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: 1.65;
+    padding: 1px 0 1px 10px;
+    position: relative;
+  }
+  .matrix-cell ul li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+  }
+
+  /* ── 가족 시나리오 박스 ── */
+  .scenario {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    margin-bottom: 14px;
+  }
+  .scenario-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 8px;
+  }
+  .scenario-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .scenario-title em { font-style: normal; color: var(--blue); }
+
+  .scenario-axis {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .axis-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .axis-key {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+  .axis-val {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .axis-val strong { font-weight: 700; color: var(--blue); }
+
+  .scenario-example {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+  }
+  .scenario-example-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 8px;
+  }
+  .scenario-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .scenario-step {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 10px;
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+  }
+  .scenario-who {
+    font-weight: 700;
+    color: var(--blue);
+    text-align: right;
+  }
+  .scenario-what {
+    color: var(--text-primary);
+  }
+  .scenario-what strong { font-weight: 700; }
+
+  /* ── 보험료 비교 두 축 카드 ── */
+  .compare-axis {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ca-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+  }
+  .ca-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ca-name {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .ca-tag {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+  }
+  .ca-concept {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 14px;
+  }
+  .ca-concept::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+  .ca-concept em { font-style: normal; color: var(--blue); }
+  .ca-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-loose);
+  }
+  .ca-detail strong { color: var(--text-primary); font-weight: 700; }
+</style>
+
+<!-- ═══ PAGE 2 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">2 / 6</span>
+    </div>
+    <div class="header-badge">📘 보험 가입 요령 가이드북</div>
+    <h1>가입 <em>순서와 우선순위</em></h1>
+    <div class="header-question">보험은 어떤 순서로 가입할까요?</div>
+    <div class="header-desc">예산을 먼저 정하고, 우선순위대로, 마지막에 보험료를 비교합니다. 다음 페이지부터는 우선순위 순서대로 각 보험을 살펴봅니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">가입 요령 3단계</div>
+    <div class="section-title"><em>예산 → 순서 → 비교</em></div>
+    <div class="section-desc">한 번에 모든 보험을 가입할 수 없습니다. 단계를 따라가면 합리적으로 구성할 수 있습니다.</div>
+
+    <div class="step-list">
+      <div class="step-row">
+        <div class="step-num-big">1</div>
+        <div>
+          <div class="step-title-big">예산을 먼저 정하세요</div>
+          <div class="step-detail">전문가들은 보장성 보험료를 <strong>미혼 5~6%, 가구 10~12%</strong> 내외로 권고합니다.</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num-big">2</div>
+        <div>
+          <div class="step-title-big">우선순위대로 가입하세요</div>
+          <div class="step-detail">
+            <span class="step-detail-em">누가 먼저</span> — 경제력이 큰 부모부터 자녀 순<br>
+            <span class="step-detail-em">무엇 먼저</span> — 실손 → 3대 진단·치료 → 그 외
+          </div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num-big">3</div>
+        <div>
+          <div class="step-title-big">보험료를 비교하세요</div>
+          <div class="step-detail">
+            <span class="step-detail-em">상대 비교</span> — 같은 내용의 보험료 차이 (가성비)<br>
+            <span class="step-detail-em">플랜 비교</span> — 건강 상태에 따른 심사 플랜 (건가비)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">우선순위</div>
+    <div class="section-title"><em>실손</em>과 <em>3대 진단비</em>가 가장 먼저</div>
+    <div class="section-desc">우선순위는 어느 보험이 더 중요한지를 의미합니다. 모두 필요하지만, 예산 안에서 위에서부터 채우는 것이 합리적입니다.</div>
+
+    <div class="matrix">
+      <div class="matrix-head">
+        <div class="mh-key">우선순위</div>
+        <div>실손형 보험</div>
+        <div>정액형 보험</div>
+      </div>
+
+      <div class="matrix-row essential">
+        <div class="matrix-rank">
+          <div class="matrix-rank-num">1순위</div>
+        </div>
+        <div class="matrix-cell">
+          <div class="mc-main">실손의료비보험</div>
+          <div class="mc-sub">실비보험</div>
+        </div>
+        <div class="matrix-cell">
+          <div class="mc-main">3대 질병 진단비·치료비</div>
+          <div class="mc-sub">암·뇌·심장</div>
+        </div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-rank">
+          <div class="matrix-rank-num">2순위</div>
+        </div>
+        <div class="matrix-cell empty">—</div>
+        <div class="matrix-cell">
+          <ul>
+            <li>질병·상해 후유장해</li>
+            <li>수술비(1~5종, N대)</li>
+            <li>상해보험(골절·화상)</li>
+            <li>입원일당, 간병인보험</li>
+            <li>치매·치아보험</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="matrix-row">
+        <div class="matrix-rank">
+          <div class="matrix-rank-num">3순위</div>
+        </div>
+        <div class="matrix-cell">
+          <ul>
+            <li>일상생활배상책임</li>
+            <li>운전자보험</li>
+            <li>화재보험</li>
+          </ul>
+        </div>
+        <div class="matrix-cell">
+          <ul>
+            <li>사망보험 (일반사망)</li>
+            <li>사망보험 (질병·상해사망)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">예산 배분</div>
+    <div class="section-title">우선순위는 <em>두 축</em>으로 적용합니다</div>
+    <div class="section-desc">"누가 먼저 / 무엇 먼저" 두 축으로 예산을 배분합니다. 가족 단위로 보험을 설계할 때 특히 유용합니다.</div>
+
+    <div class="scenario">
+      <div class="scenario-axis">
+        <div class="axis-row">
+          <div class="axis-key">누가 먼저</div>
+          <div class="axis-val"><strong>경제력이 큰 부모 → 자녀</strong> 순으로</div>
+        </div>
+        <div class="axis-row">
+          <div class="axis-key">무엇 먼저</div>
+          <div class="axis-val"><strong>1순위 → 2순위 → 3순위</strong> 순으로</div>
+        </div>
+      </div>
+
+      <div class="scenario-example">
+        <div class="scenario-example-label">📌 예시 — 4인 가구 예산 배분</div>
+        <div class="scenario-flow">
+          <div class="scenario-step">
+            <div class="scenario-who">아빠</div>
+            <div class="scenario-what"><strong>1·2·3순위 모두</strong> 가입</div>
+          </div>
+          <div class="scenario-step">
+            <div class="scenario-who">엄마</div>
+            <div class="scenario-what"><strong>1·2순위</strong> 가입 (예산 봐서 3순위)</div>
+          </div>
+          <div class="scenario-step">
+            <div class="scenario-who">자녀</div>
+            <div class="scenario-what"><strong>1순위</strong>만 (예산 차면 2순위)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text"><strong>예산 안에서 우선순위에 맞게</strong> — 모두에게 1순위가 가장 먼저, 그 다음 가장 경제력이 큰 사람부터 2~3순위로 확장하는 것이 일반적입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">보험료 비교</div>
+    <div class="section-title"><em>가성비</em>와 <em>건가비</em>를 함께</div>
+    <div class="section-desc">같은 보장도 회사·플랜별로 보험료 차이가 큽니다. 두 축으로 비교하면 합리적으로 절약할 수 있습니다.</div>
+
+    <div class="compare-axis">
+      <div class="ca-card">
+        <div class="ca-head">
+          <div class="ca-name">상대 비교</div>
+          <div class="ca-tag">가성비</div>
+        </div>
+        <div class="ca-concept"><em>가격 대비 성능</em>을 챙긴다</div>
+        <div class="ca-detail">같은 보장이라도 <strong>회사별 보험료 차이</strong>가 큽니다. 동일 조건에서 회사별 상품을 비교하면 보험료를 의미 있게 줄일 수 있습니다.</div>
+      </div>
+
+      <div class="ca-card">
+        <div class="ca-head">
+          <div class="ca-name">플랜 비교</div>
+          <div class="ca-tag">건가비</div>
+        </div>
+        <div class="ca-concept"><em>건강 대비 가격</em>을 챙긴다</div>
+        <div class="ca-detail"><strong>건강고지·초경증·간편 등 심사 플랜</strong>에 따라 각종 할인이 적용됩니다. 본인 건강 상태에 맞는 플랜을 선택하면 같은 보장도 더 저렴해질 수 있습니다.</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">두 축의 비교를 모두 거치면 <strong>같은 보장으로 보험료를 의미 있게 줄일 수 있습니다</strong>. 가입 직전 마지막 단계입니다.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지부터 우선순위 순서대로 각 보험을 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 3 전용 — 5세대 출시 반영 */
+
+  /* ── 도입 박스 (왜 1순위인가) ── */
+  .intro-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    margin-bottom: 12px;
+  }
+  .intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .intro-list li {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    padding: 4px 0 4px 16px;
+    position: relative;
+  }
+  .intro-list li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 13px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .intro-list li strong {
+    color: var(--blue-text);
+    font-weight: 700;
+  }
+
+  /* ── 1~4세대 비교표 ── */
+  .gen-tbl {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .gen-tbl-head {
+    display: grid;
+    grid-template-columns: 0.7fr repeat(4, 1fr);
+    background: var(--bg-elevated);
+  }
+  .gen-tbl-head > div {
+    padding: 11px 4px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    color: var(--text-primary);
+  }
+  .gen-tbl-head > div + div { border-left: 1px solid var(--border); }
+  .gen-tbl-head .gh-key {
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+
+  /* 5세대까지 표 — 컬럼 5개 + 폰트 압축 (모바일 가독성) */
+  .gen-tbl-5 .gen-tbl-head,
+  .gen-tbl-5 .gen-tbl-row {
+    grid-template-columns: 0.55fr repeat(5, 1fr);
+  }
+  .gen-tbl-5 .gen-tbl-row > div {
+    padding: 12px 2px;
+  }
+  .gen-tbl-5 .gen-tbl-row.key > div:not(:first-child) {
+    font-size: var(--fs-sm);
+    padding: 13px 2px;
+  }
+  .gen-tbl-5 .gen-tbl-row.sub > div:not(:first-child) {
+    font-size: 10px;
+  }
+  .gen-tbl-5 .gen-tbl-head > div {
+    padding: 11px 2px;
+  }
+
+  .gen-tbl-row {
+    display: grid;
+    grid-template-columns: 0.7fr repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+  }
+  .gen-tbl-row > div {
+    padding: 12px 4px;
+    text-align: center;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+  .gen-tbl-row > div + div { border-left: 1px solid var(--border); }
+  .gen-tbl-row > div:first-child {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    background: var(--bg-soft);
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: var(--ls-wide);
+  }
+  .gen-tbl-row.key > div:not(:first-child) {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    padding: 14px 4px;
+  }
+  .gen-tbl-row.key.high > div.highlight {
+    color: var(--blue);
+  }
+  .gen-tbl-row.sub > div:not(:first-child) {
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+  }
+
+  /* ── 세대별 특징 카드 ── */
+  .gen-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .gf-row {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+  }
+  .gf-num {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: -0.3px;
+  }
+  .gf-num em {
+    font-style: normal;
+    color: var(--blue);
+    font-size: var(--fs-lg);
+  }
+  .gf-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+
+  /* ── 내 실손 확인 안내 박스 ── */
+  .check-box {
+    background: var(--blue-dim);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .check-box-icon { font-size: var(--fs-md); flex-shrink: 0; }
+  .check-box-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .check-box-text strong { color: var(--blue-text); font-weight: 700; }
+
+  /* ── 4세대 할인·할증 박스 ── */
+  .grade-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .grade-box-title {
+    background: var(--bg-elevated);
+    padding: 11px 14px;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .grade-box-tag {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+  }
+  .grade-row {
+    display: grid;
+    grid-template-columns: 60px 80px 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    border-top: 1px solid var(--border-soft);
+    font-size: var(--fs-sm);
+  }
+  .grade-row:first-of-type { border-top: none; }
+  .grade-rank { font-weight: 700; color: var(--text-primary); }
+  .grade-rate {
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.3px;
+  }
+  .grade-rate.discount { color: var(--blue); }
+  .grade-rate.flat { color: var(--text-tertiary); }
+  .grade-rate.up1 { color: var(--text-primary); }
+  .grade-rate.up2 { color: var(--text-primary); font-weight: 800; }
+  .grade-rate.up3 { color: var(--text-primary); font-weight: 800; font-size: var(--fs-md); }
+  .grade-cond {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+  .grade-row.discount-row { background: var(--blue-dim); }
+
+  /* ── 5세대 출시 박스 ── */
+  .gen5 {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    margin-bottom: 12px;
+  }
+  .gen5-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .gen5-tag {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+  }
+  .gen5-when {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .gen5-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .gen5-title em { font-style: normal; color: var(--blue); }
+
+  /* 5세대 3계층 구조 */
+  .gen5-struct {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .gen5-struct-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 11px 14px;
+    align-items: baseline;
+  }
+  .gen5-struct-row.main {
+    border-color: var(--blue);
+  }
+  .gen5-struct-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+  .gen5-struct-row.main .gen5-struct-label {
+    color: var(--blue);
+  }
+  .gen5-struct-content {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .gen5-struct-content strong { font-weight: 700; }
+  .gen5-struct-mini {
+    display: block;
+    margin-top: 3px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: 1.5;
+  }
+
+  /* 5세대 핵심 변화 리스트 */
+  .gen5-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .gen5-list li {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: 1.65;
+    padding: 4px 0 4px 14px;
+    position: relative;
+  }
+  .gen5-list li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+  }
+  .gen5-list li strong { font-weight: 700; }
+
+  /* 5세대 추가 옵션 (2026.11~) 한 줄 박스 */
+  .add-option {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    margin-top: 14px;
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .add-option strong { color: var(--blue-text); font-weight: 700; }
+  .add-option-label {
+    display: inline-block;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--bg-card);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    margin-right: 6px;
+    letter-spacing: -0.2px;
+  }
+</style>
+
+<!-- ═══ PAGE 3 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">3 / 6</span>
+      <span class="header-priority">1순위</span>
+    </div>
+    <div class="header-badge">📘 보험 가입 요령 가이드북</div>
+    <h1><em>실손의료비</em>보험</h1>
+    <div class="header-question">실손은 왜 1순위일까요?</div>
+    <div class="header-desc">병원에서 쓴 의료비를 그대로 돌려주는 가장 기본적인 보험. 다른 모든 보장보다 우선순위가 높습니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">실손이 1순위인 이유</div>
+    <div class="section-title"><em>병원비 영역</em>의 거의 모든 것을 커버</div>
+    <div class="section-desc">실손의료비보험은 입원·통원·약값을 모두 포함하는, 가장 광범위한 병원비 보장 보험입니다.</div>
+
+    <div class="intro-box">
+      <ul class="intro-list">
+        <li><strong>병원비 영역의 거의 모든 항목을 커버</strong> — 입원·통원·약값까지 포함</li>
+        <li><strong>실제 부담한 의료비를 보장</strong> — 가입 한도 내에서 자기부담 공제 후 환급</li>
+        <li><strong>한 번 가입하면 80~100세까지 유지</strong> — 평생 보장의 기본 토대</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">세대 비교</div>
+    <div class="section-title">실손은 <em>5세대</em>까지 진화했습니다</div>
+    <div class="section-desc">가입 시기에 따라 자기부담률·갱신주기·보험료 인상률이 다릅니다. 1~4세대는 표로, 현행 5세대는 아래에서 따로 살펴봅니다.</div>
+
+    <div class="gen-tbl gen-tbl-5">
+      <div class="gen-tbl-head">
+        <div class="gh-key">구분</div>
+        <div>1세대</div>
+        <div>2세대</div>
+        <div>3세대</div>
+        <div>4세대</div>
+        <div>5세대</div>
+      </div>
+      <div class="gen-tbl-row key">
+        <div>자기<br>부담률</div>
+        <div>0%</div>
+        <div>10~20%</div>
+        <div>10~30%</div>
+        <div>20~30%</div>
+        <div>20~50%</div>
+      </div>
+      <div class="gen-tbl-row sub">
+        <div>판매<br>시기</div>
+        <div>~2009.07</div>
+        <div>2009.08<br>~2017.03</div>
+        <div>2017.04<br>~2021.06</div>
+        <div>2021.07<br>~2026.04</div>
+        <div>2026.05<br>~현재</div>
+      </div>
+      <div class="gen-tbl-row key high">
+        <div>'26<br>인상률</div>
+        <div>3%대</div>
+        <div>5%대</div>
+        <div>16%대</div>
+        <div class="highlight">20%대</div>
+        <div>신규</div>
+      </div>
+    </div>
+    <div class="mini-note">※ 출처: 생명·손해보험협회 「2026년도 실손의료보험료 인상률」 (2025.12 발표)</div>
+
+    <div class="check-box" style="margin-top: 16px;">
+      <span class="check-box-icon">📋</span>
+      <div class="check-box-text"><strong>내 실손이 몇 세대인지 확인하려면</strong> — 보험증서의 가입일자 또는 보험사 앱 '내 보험' 메뉴에서 가입 시점을 확인하세요.</div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">실손은 <strong>장기 유지 가능성</strong>이 핵심입니다. 보장이 좋아도 보험료 부담으로 해지하면 의미가 없습니다. 가입 세대·의료 이용 빈도·향후 갱신 인상폭을 종합적으로 봐야 합니다.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지에서는 정액형 1순위인 3대 질병 진단비를 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 4 전용 */
+
+  /* ── 암 벤다이어그램 ── */
+  .cancer-venn {
+    margin: 8px 0 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 14px 14px;
+  }
+  .cancer-venn-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+  .cancer-venn-sub {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .cancer-venn-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .cancer-venn-mini {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: 1.55;
+  }
+  .cancer-venn-mini p { margin: 3px 0; }
+
+  /* ── 핵심 메시지 박스 (암) ── */
+  .key-msg {
+    background: var(--blue-dim);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .key-msg-icon {
+    font-size: var(--fs-lg);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .key-msg-body {
+    flex: 1;
+  }
+  .key-msg-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--blue-text);
+    line-height: 1.4;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .key-msg-title em { font-style: normal; color: var(--blue); }
+  .key-msg-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .key-msg-text strong { color: var(--blue-text); font-weight: 700; }
+
+  /* ── 9.7% 임팩트 박스 ── */
+  .impact-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 18px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .impact-pct {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 6px;
+  }
+  .impact-divider {
+    width: 32px;
+    height: 2px;
+    background: var(--blue);
+    margin: 6px auto 10px;
+    border-radius: 1px;
+  }
+  .impact-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 10px;
+  }
+  .impact-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+  }
+  .impact-text strong { color: var(--blue-text); font-weight: 700; }
+
+  /* ── 3단계 보장범위 카드 ── */
+  .scope-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .scope-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 14px;
+    align-items: baseline;
+  }
+  .scope-stage {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-align: center;
+    letter-spacing: var(--ls-wide);
+    padding-top: 2px;
+  }
+  .scope-body {
+    flex: 1;
+  }
+  .scope-name {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
+  }
+  .scope-detail {
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .scope-detail strong { color: var(--blue-text); font-weight: 700; }
+</style>
+
+<!-- ═══ PAGE 4 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">4 / 6</span>
+      <span class="header-priority">1순위</span>
+    </div>
+    <div class="header-badge">📘 보험 가입 요령 가이드북</div>
+    <h1>3대 질병 <em>진단비</em></h1>
+    <div class="header-question">진단비는 어떻게 다를까요?</div>
+    <div class="header-desc">암·뇌·심장. 같은 진단비라도 어떤 질병까지 보장하느냐에 따라 받을 확률이 크게 달라집니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">① 암</div>
+    <div class="section-title">암의 <em>보장 범위</em></div>
+    <div class="section-desc">암은 분류에 따라 보장 범위가 달라집니다. 같은 '암 진단비'여도 어떤 암이 어느 그룹에 속하느냐에 따라 보장 금액이 크게 차이납니다.</div>
+
+    <div class="cancer-venn">
+      <div class="cancer-venn-title">암의 보장 범위 <span style="font-weight:500;color:var(--text-tertiary);font-size:var(--fs-xs)">(상품별 상이)</span></div>
+
+      <svg class="cancer-venn-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- 유사암 (왼쪽 원, 흰색) -->
+        <circle cx="140" cy="140" r="115" fill="#FFFFFF" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+
+        <!-- 일반암 (오른쪽 원, 연한 블루) -->
+        <circle cx="260" cy="140" r="115" fill="#DBEAFE" stroke="rgba(49,130,246,0.15)" stroke-width="1.5"/>
+
+        <!-- 특정소액암 (가운데 교집합 타원, 점선) -->
+        <ellipse cx="200" cy="140" rx="58" ry="100" fill="#C5DBFB" fill-opacity="0.5" stroke="#3182F6" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+        <!-- 유사암 라벨 -->
+        <text x="90" y="90" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="15" font-weight="700" fill="#1F2937">유사암</text>
+        <text x="90" y="108" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="11" font-weight="500" fill="#6B7280">(소액암)</text>
+
+        <!-- 유사암 예시 -->
+        <text x="90" y="140" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">ex) 갑상선암</text>
+        <text x="90" y="156" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">기타피부암</text>
+        <text x="90" y="172" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">경계성종양</text>
+        <text x="90" y="188" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">제자리암</text>
+
+        <!-- 특정소액암 라벨 -->
+        <text x="200" y="80" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="14" font-weight="700" fill="#3182F6">특정</text>
+        <text x="200" y="97" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="14" font-weight="700" fill="#3182F6">소액암</text>
+
+        <!-- 특정소액암 예시 -->
+        <text x="200" y="128" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#1F2937">ex) 전립선암</text>
+        <text x="200" y="144" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#1F2937">유방암</text>
+        <text x="200" y="160" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#1F2937">자궁암</text>
+        <text x="200" y="176" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#1F2937">비침습방광암</text>
+        <text x="200" y="192" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#1F2937">대장점막내암</text>
+
+        <!-- 일반암 라벨 -->
+        <text x="310" y="90" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="15" font-weight="700" fill="#1F2937">일반암</text>
+
+        <!-- 일반암 예시 -->
+        <text x="310" y="124" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">ex) 폐암</text>
+        <text x="310" y="140" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">위암</text>
+        <text x="310" y="156" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">간암</text>
+        <text x="310" y="172" text-anchor="middle" font-family="Toss Product Sans, sans-serif" font-size="10" fill="#4B5563">대장암</text>
+      </svg>
+
+      <div class="cancer-venn-mini">
+        <p>* 보험사·시기·상품에 따라 분류가 다를 수 있습니다</p>
+        <p>* 보험사에 따라 소액암과 유사암을 혼용해서 사용하기도 합니다</p>
+      </div>
+    </div>
+
+    <div class="key-msg">
+      <span class="key-msg-icon">💡</span>
+      <div class="key-msg-body">
+        <div class="key-msg-title">특정소액암도 <em>일반암에 포함</em>된 상품이 유리</div>
+        <div class="key-msg-text">현재 소액암의 가입한도는 <strong>일반암의 20%</strong> 수준입니다. 전립선암·유방암·자궁암 등 발생률이 높은 부위가 일반암으로 보장되는 상품을 선택하면 보장 폭이 훨씬 넓어집니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">② 뇌혈관</div>
+    <div class="section-title">뇌혈관은 <em>보장 범위</em>가 핵심</div>
+    <div class="section-desc">같은 '뇌 진단비'여도 어떤 질병코드까지 보장하는지에 따라 환자 커버 비율이 크게 차이납니다.</div>
+
+    <div class="impact-box">
+      <div class="impact-label">뇌출혈만 보장하는 진단비라면</div>
+      <div class="impact-pct">9.7%</div>
+      <div class="impact-divider"></div>
+      <div class="impact-text">
+        뇌혈관질환 환자 약 105만 명 중<br>
+        <strong>뇌출혈 환자는 약 10만 명(9.7%)</strong>입니다.<br>
+        나머지 환자는 보장받지 못합니다.
+      </div>
+    </div>
+
+    <div class="scope-list">
+      <div class="scope-card">
+        <div class="scope-stage">기존</div>
+        <div class="scope-body">
+          <div class="scope-name">뇌출혈 진단비</div>
+          <div class="scope-detail">뇌혈관질환 환자의 <strong>약 9.7%</strong> 커버</div>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-stage">확대</div>
+        <div class="scope-body">
+          <div class="scope-name">뇌졸중 진단비 (뇌출혈 + 뇌경색)</div>
+          <div class="scope-detail">뇌혈관질환 환자의 <strong>약 68.5%</strong> 커버</div>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-stage">광범위</div>
+        <div class="scope-body">
+          <div class="scope-name">뇌혈관질환 진단비</div>
+          <div class="scope-detail">뇌혈관질환 환자 <strong>100%</strong> 커버 (후유증 포함)</div>
+        </div>
+      </div>
+    </div>
+    <div class="mini-note">※ 출처: 건강보험심사평가원 2018년 통계 (뇌혈관질환 105만 명, 뇌졸중 71만 명, 뇌출혈 10만 명 기준)</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">③ 심장</div>
+    <div class="section-title">심장도 <em>보장 범위</em>에 따라</div>
+    <div class="section-desc">심장질환 진단비도 보장 범위에 따라 환자 커버 비율이 크게 달라집니다.</div>
+
+    <div class="impact-box">
+      <div class="impact-label">급성심근경색만 보장하는 진단비라면</div>
+      <div class="impact-pct">9.6%</div>
+      <div class="impact-divider"></div>
+      <div class="impact-text">
+        심장질환 환자 중<br>
+        <strong>급성심근경색 환자는 약 9.6%</strong>입니다.<br>
+        협심증·심부전 등은 보장받지 못합니다.
+      </div>
+    </div>
+
+    <div class="scope-list">
+      <div class="scope-card">
+        <div class="scope-stage">기존</div>
+        <div class="scope-body">
+          <div class="scope-name">급성심근경색 진단비</div>
+          <div class="scope-detail">심장질환 환자의 <strong>약 9.6%</strong> 커버</div>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-stage">확대</div>
+        <div class="scope-body">
+          <div class="scope-name">허혈성심장질환 진단비</div>
+          <div class="scope-detail">협심증 + 만성 + 급성심근경색 포함</div>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-stage">광범위</div>
+        <div class="scope-body">
+          <div class="scope-name">심장질환 진단비</div>
+          <div class="scope-detail">허혈성심장질환 + <strong>심부전·부정맥</strong>까지 포함</div>
+        </div>
+      </div>
+    </div>
+    <div class="mini-note">※ 출처: 건강보험심사평가원 (협심증 68.4%, 만성 허혈성 21.0%, 급성심근경색 9.6%)</div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text"><strong>보장 범위 = 실제 받을 확률</strong>입니다. 같은 이름의 진단비라도 약관의 보장 대상 질병을 확인해야 진짜 비교가 됩니다.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지에서는 수술비와 후유장해 보장을 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 5 전용 */
+
+  /* ── 수술비 4분류 비교표 ── */
+  .surg-tbl {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .surg-tbl-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--bg-elevated);
+  }
+  .surg-tbl-head > div {
+    padding: 11px 8px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+  .surg-tbl-head > div + div { border-left: 1px solid var(--border); }
+  .surg-tbl-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .surg-tbl-row > div {
+    padding: 13px 10px;
+    text-align: center;
+    color: var(--text-primary);
+    line-height: 1.4;
+    font-size: var(--fs-sm);
+  }
+  .surg-tbl-row > div + div { border-left: 1px solid var(--border); }
+  .surg-tbl-name {
+    font-weight: 700;
+    background: var(--bg-soft);
+  }
+  .surg-tbl-name strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: var(--fs-sm);
+    line-height: 1.4;
+  }
+  .surg-tbl-name span {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+  .surg-tbl-method {
+    color: var(--text-secondary);
+    font-size: var(--fs-xs);
+    line-height: 1.5;
+  }
+  .surg-tbl-feature {
+    color: var(--text-primary);
+    font-size: var(--fs-xs);
+    line-height: 1.5;
+  }
+  .surg-tbl-feature strong {
+    color: var(--blue-text);
+    font-weight: 700;
+  }
+  .surg-tbl-row.broad .surg-tbl-name {
+    background: var(--blue-dim);
+  }
+  .surg-tbl-row.broad .surg-tbl-name strong {
+    color: var(--blue-text);
+  }
+
+  /* ── 결론 메시지 (수술비) ── */
+  .conclusion {
+    background: var(--blue-dim);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .conclusion-icon {
+    font-size: var(--fs-lg);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .conclusion-body { flex: 1; }
+  .conclusion-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--blue-text);
+    line-height: 1.4;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .conclusion-title em { font-style: normal; color: var(--blue); }
+  .conclusion-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .conclusion-text strong { color: var(--blue-text); font-weight: 700; }
+
+  /* ── 후유장해 공식 박스 (시각 주인공) ── */
+  .formula-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .formula-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 10px;
+  }
+  .formula-eq {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+  .formula-eq em {
+    font-style: normal;
+    color: var(--blue);
+  }
+  .formula-example {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    margin-top: 12px;
+  }
+  .formula-example-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 6px;
+  }
+  .formula-example-eq {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+  }
+  .formula-example-eq em {
+    font-style: normal;
+    color: var(--blue);
+  }
+
+  /* ── 지급률 3구간 표 ── */
+  .grade-tbl {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .grade-tbl-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    border-top: 1px solid var(--border-soft);
+  }
+  .grade-tbl-row:first-of-type { border-top: none; }
+  .grade-tbl-pct {
+    background: var(--bg-soft);
+    padding: 13px 12px;
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .grade-tbl-desc {
+    padding: 13px 14px;
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    border-left: 1px solid var(--border);
+  }
+  .grade-tbl-desc strong { font-weight: 700; }
+</style>
+
+<!-- ═══ PAGE 5 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">5 / 6</span>
+      <span class="header-priority">1~2순위</span>
+    </div>
+    <div class="header-badge">📘 보험 가입 요령 가이드북</div>
+    <h1>수술비와 <em>후유장해</em></h1>
+    <div class="header-question">어떤 보장 구조일까요?</div>
+    <div class="header-desc">수술비는 <strong>수술을 받았을 때</strong>, 후유장해는 <strong>장해가 남았을 때</strong> 보장합니다. 정액형 보장의 핵심 두 영역입니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">① 수술비</div>
+    <div class="section-title">수술비는 <em>4가지 분류</em></div>
+    <div class="section-desc">같은 '수술비'라도 보장 방식과 보장 기준이 다릅니다. 특성을 알고 보완적으로 구성하는 것이 일반적입니다.</div>
+
+    <div class="surg-tbl">
+      <div class="surg-tbl-head">
+        <div>분류</div>
+        <div>보장 방식</div>
+        <div>특징</div>
+      </div>
+      <div class="surg-tbl-row broad">
+        <div class="surg-tbl-name">
+          <strong>질병/상해<br>수술비</strong>
+        </div>
+        <div class="surg-tbl-method">제외 항목만<br>약관에 명시</div>
+        <div class="surg-tbl-feature"><strong>가장 광범위</strong><br>(진단명·수술명 기준)</div>
+      </div>
+      <div class="surg-tbl-row">
+        <div class="surg-tbl-name">
+          <strong>질병/상해<br>1~5종 수술비</strong>
+        </div>
+        <div class="surg-tbl-method">약관 명시<br>1~5종 수술분류표</div>
+        <div class="surg-tbl-feature">급여+비급여<br>보장</div>
+      </div>
+      <div class="surg-tbl-row">
+        <div class="surg-tbl-name">
+          <strong>N대 질병<br>수술비</strong>
+        </div>
+        <div class="surg-tbl-method">약관 명시<br>질병코드 기준</div>
+        <div class="surg-tbl-feature">N에 따라 범위 상이<br>(5대·22대·119대)</div>
+      </div>
+      <div class="surg-tbl-row">
+        <div class="surg-tbl-name">
+          <strong>질병/상해<br>1~8종 수술비</strong>
+        </div>
+        <div class="surg-tbl-method">약관 명시<br>1~8종 급여 수술코드</div>
+        <div class="surg-tbl-feature">급여 수술만<br>보장</div>
+      </div>
+    </div>
+    <div class="mini-note">※ 분류 항목과 종 구분은 보험사·상품마다 매우 다릅니다. 가입 전 반드시 해당 상품의 약관 수술분류표를 확인하세요.</div>
+
+    <div class="conclusion">
+      <span class="conclusion-icon">💡</span>
+      <div class="conclusion-body">
+        <div class="conclusion-title"><em>질병/상해 수술비</em>가 가장 광범위</div>
+        <div class="conclusion-text">제외 항목만 명시하는 방식이라 거의 모든 수술을 커버합니다. 단, <strong>가입 가능금액이 30~100만 원 수준으로 낮고</strong> 보험료가 상대적으로 높아, 예산 여건에 따라 <strong>1~5종·N대·1~8종으로 보완</strong>하는 구성도 일반적입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">② 후유장해</div>
+    <div class="section-title">후유장해는 <em>공식</em>으로 산정</div>
+    <div class="section-desc">신체 부위·기능별로 약관에 정해진 지급률(%)을 가입금액에 곱해 보험금이 결정됩니다. 공식 하나만 이해하면 됩니다.</div>
+
+    <div class="formula-box">
+      <div class="formula-label">후유장해 보험금 공식</div>
+      <div class="formula-eq"><em>가입금액</em> × <em>지급률</em></div>
+
+      <div class="formula-example">
+        <div class="formula-example-label">📌 예시</div>
+        <div class="formula-example-eq"><em>1억 원</em> × <em>30%</em> = 3,000만 원</div>
+      </div>
+    </div>
+
+    <div class="sub-title">지급률 구간 (일반 참고)</div>
+    <div class="grade-tbl">
+      <div class="grade-tbl-row">
+        <div class="grade-tbl-pct">3% ~</div>
+        <div class="grade-tbl-desc">경미한 장해 (한 손 첫째 손가락 일부 · 약간의 신경장해 등)</div>
+      </div>
+      <div class="grade-tbl-row">
+        <div class="grade-tbl-pct">20% ~</div>
+        <div class="grade-tbl-desc">중등도 장해 (한 눈 시력 0.1 이하 · 인공관절 삽입 · <strong>CDR 1점 경증 치매</strong> 등)</div>
+      </div>
+      <div class="grade-tbl-row">
+        <div class="grade-tbl-pct">50% ~</div>
+        <div class="grade-tbl-desc">중증 장해 (한 눈 실명 · 한 팔 손목 이상 절단 · 폐 이식 · <strong>CDR 2점 중등도 치매</strong> 등)</div>
+      </div>
+      <div class="grade-tbl-row">
+        <div class="grade-tbl-pct">100%</div>
+        <div class="grade-tbl-desc">완전 장해 (두 눈 실명 · 심장 이식 · 사지마비 · <strong>CDR 3점 중증 치매</strong> 등)</div>
+      </div>
+    </div>
+    <div class="mini-note">※ 부위별 정확한 지급률은 보험사 약관의 후유장해 분류표를 참고하세요 · CDR(임상치매척도)은 0·0.5·1·2·3 5단계가 표준</div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-content">
+        <div class="cta-text">후유장해는 <strong>한 번의 사고나 질병으로 평생 영향</strong>을 미칠 수 있는 영역입니다. <strong>가입금액</strong>과 <strong>지급률 기준</strong>을 함께 확인하세요.</div>
+        <div class="cta-next">
+          <span class="cta-next-arrow">→</span>
+          <span>다음 페이지에서는 생활 보장과 보험료 구조를 살펴봅니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<style>
+  /* Page 6 전용 */
+
+  /* ── 일배책 4사례 2x2 그리드 ── */
+  .badcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .bc-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .bc-icon-lg {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .bc-title {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  .bc-result {
+    font-size: var(--fs-xs);
+    color: var(--blue);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* ── 화재보험 두 축 통합 박스 (건물 종류 / 거주 형태) ── */
+  .fire-axes-combined {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .fire-axis-col {
+    padding: 14px 12px;
+  }
+  .fire-axis-col + .fire-axis-col {
+    border-left: 1px solid var(--border);
+  }
+  .fire-axis-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .fire-axis-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .fire-axis-item + .fire-axis-item {
+    border-top: 1px dashed var(--border);
+  }
+  .fire-axis-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .fire-axis-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .fire-axis-name {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .fire-axis-sub {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  /* ── 화재보험 주거형태 3카드 (구버전, 미사용) ── */
+  .fire-targets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .fire-target-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 6px;
+    text-align: center;
+  }
+  .fire-target-icon {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .fire-target-name {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    letter-spacing: -0.2px;
+  }
+  .fire-target-sub {
+    display: block;
+    margin-top: 3px;
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* ── 화재보험 보장 박스 (두 카테고리) ── */
+  .fire-coverage-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .fire-cat-tag {
+    display: inline-block;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  .fire-cat-items {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    font-weight: 600;
+    letter-spacing: -0.2px;
+  }
+  .fire-cat-items-detail {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    letter-spacing: -0.2px;
+  }
+  .fire-cat-items-detail strong {
+    color: var(--blue-text);
+    font-weight: 700;
+  }
+  .fire-cat + .fire-cat {
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+
+  /* ── 집주인/세입자 (standalone) ── */
+  .fire-roles-standalone {
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fire-role {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .fire-role-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--bg-card);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    letter-spacing: -0.2px;
+  }
+  .fire-role-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .fire-role-text strong { font-weight: 700; color: var(--blue-text); }
+
+  /* ── 비용·손해 요약 박스 ── */
+  .cost-summary {
+    background: var(--blue-dim);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    margin-bottom: 6px;
+  }
+  .cost-summary strong { color: var(--blue-text); font-weight: 700; }
+  .cost-summary-sub {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(49,130,246,0.2);
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+  .cost-summary-sub strong { color: var(--blue-text); font-weight: 700; }
+
+  /* ── 자동차 vs 운전자 좌우 비교 카드 ── */
+  .dual-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .dual-cell {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 12px;
+  }
+  .dual-name {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+  .dual-tag {
+    display: inline-block;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+    margin-bottom: 12px;
+  }
+  .dual-list {
+    list-style: none;
+    padding: 0;
+  }
+  .dual-list li {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    padding: 4px 0 4px 10px;
+    position: relative;
+  }
+  .dual-list li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .dual-list li strong { font-weight: 700; }
+  .dual-mini {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  /* ── 주의 사항 박스 ── */
+  .caution-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .caution-tag {
+    flex-shrink: 0;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    background: var(--bg-elevated);
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    letter-spacing: -0.2px;
+  }
+  .caution-title {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    letter-spacing: -0.3px;
+  }
+
+  /* ── 집주인 vs 세입자 ── */
+  .fire-role {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .fire-role-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--blue-dim);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    letter-spacing: -0.2px;
+  }
+  .fire-role-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+  }
+  .fire-role-text strong { font-weight: 700; color: var(--blue-text); }
+
+  /* ── 보험료 공식 박스 (단순화) ── */
+  .premium-formula {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .pf-eq {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .pf-eq em { font-style: normal; color: var(--blue); }
+  .pf-desc {
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+
+  /* ── 갱신형 vs 비갱신형 막대 차트 ── */
+  .renew-charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .renew-chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 12px;
+    position: relative;
+  }
+  .renew-chart-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--blue);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .renew-chart-name {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .renew-chart-sub {
+    font-size: var(--fs-xs);
+    color: var(--blue);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .renew-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 4px;
+    height: 70px;
+    padding: 0 4px;
+  }
+  .renew-bar {
+    flex: 1;
+    border-radius: 3px 3px 0 0;
+    background: var(--blue);
+  }
+  /* 갱신형 — 톤다운된 블루 그라디언트 */
+  .bar-up-1 { height: 25%; background: #BFDBFE; }
+  .bar-up-2 { height: 45%; background: #93C5FD; }
+  .bar-up-3 { height: 70%; background: #60A5FA; }
+  .bar-up-4 { height: 100%; background: var(--blue); }
+  /* 비갱신형 — 균일 */
+  .bar-flat { height: 50%; background: var(--blue); }
+
+  .renew-x-labels {
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+    margin-top: 6px;
+    padding: 0 4px;
+  }
+  .renew-x-labels span {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-tertiary);
+    font-weight: 600;
+  }
+  .renew-foot {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: var(--fs-xs);
+    color: var(--text-secondary);
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  /* ── 갱신형 vs 비갱신형 비교표 (3열) ── */
+  .renewal-tbl {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .renewal-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .renewal-row:first-of-type { border-top: none; }
+  .renewal-row.head {
+    background: var(--bg-elevated);
+  }
+  .renewal-row.head > div {
+    padding: 11px 8px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .renewal-row.head > div + div { border-left: 1px solid var(--border); }
+  .renewal-row.head .renewal-name {
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+  .renewal-name {
+    background: var(--bg-soft);
+    padding: 13px 8px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: var(--ls-wide);
+    line-height: 1.3;
+  }
+  .renewal-col {
+    padding: 13px 12px;
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    border-left: 1px solid var(--border);
+  }
+  .renewal-col strong { font-weight: 700; color: var(--blue-text); }
+
+  /* ── 체크리스트 7가지 ── */
+  .checklist {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px;
+    margin-bottom: 14px;
+  }
+  .checklist-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-soft);
+  }
+  .check-item:first-of-type { border-top: none; padding-top: 0; }
+  .check-mark {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--blue-dim);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .check-text {
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    flex: 1;
+  }
+  .check-text strong { color: var(--blue-text); font-weight: 700; }
+
+  /* ── Wrap-up 박스 ── */
+  .wrap-summary {
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 22px 20px;
+    text-align: center;
+  }
+  .wrap-intro {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+  .wrap-title {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+  }
+  .wrap-title em {
+    font-style: normal;
+  }
+  .wrap-text {
+    font-size: var(--fs-sm);
+    line-height: var(--lh-loose);
+    opacity: 0.95;
+  }
+  .wrap-text strong { font-weight: 700; }
+</style>
+
+<!-- ═══ PAGE 6 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <span class="header-page">6 / 6</span>
+      <span class="header-priority">3순위 + Wrap-up</span>
+    </div>
+    <div class="header-badge">📘 보험 가입 요령 가이드북</div>
+    <h1>생활 보장과 <em>보험료 구조</em></h1>
+    <div class="header-question">보험료는 어떻게 책정될까요?</div>
+    <div class="header-desc">치료비 외 일상의 위험과, 모든 보험에 공통되는 보험료 책정 원리까지. 이 가이드의 마지막 페이지입니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">자동차 vs 운전자</div>
+    <div class="section-title">두 보험은 <em>역할이 다릅니다</em></div>
+    <div class="section-desc">자동차보험은 <strong>민사적 책임</strong>(피해자에게 보상)을, 운전자보험은 <strong>형사적 책임</strong>(사고 일으킨 운전자의 형사·법적 부담)을 보장합니다. 보장 영역이 달라 함께 필요합니다.</div>
+
+    <div class="dual-card">
+      <div class="dual-cell">
+        <div class="dual-name">자동차보험</div>
+        <div class="dual-tag">민사적 책임</div>
+        <ul class="dual-list">
+          <li>의무가입 <span class="dual-mini">(미가입시 과태료)</span></li>
+          <li><strong>대인보상 · 대물보상</strong></li>
+          <li>자기신체손해</li>
+          <li>자기차량손해</li>
+        </ul>
+      </div>
+      <div class="dual-cell">
+        <div class="dual-name">운전자보험</div>
+        <div class="dual-tag">형사적 책임</div>
+        <ul class="dual-list">
+          <li>선택가입</li>
+          <li><strong>교통사고처리지원금</strong></li>
+          <li>벌금·변호사 선임비용</li>
+          <li>교통사고 부상치료비</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="caution-box">
+      <div class="caution-tag">주의 사항</div>
+      <div class="caution-title">음주·무면허 사고는 보장이 제한됩니다</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">화재보험</div>
+    <div class="section-title">화재보험은 <em>모두에게</em> 필요합니다</div>
+    <div class="section-desc">개인주택·아파트, 집주인·세입자 모두 필요합니다. 아파트 단체보험은 <strong>공용부 위주 보장</strong>이라 가재도구·이웃 배상·임시거주비 등은 보장 안 되는 경우가 많아 별도 점검이 필요합니다.</div>
+
+    <div class="fire-axes-combined">
+      <div class="fire-axis-col">
+        <div class="fire-axis-label">건물 종류</div>
+        <div class="fire-axis-item">
+          <span class="fire-axis-icon">🏠</span>
+          <div class="fire-axis-body">
+            <div class="fire-axis-name">개인주택</div>
+            <div class="fire-axis-sub">단독·다세대·빌라</div>
+          </div>
+        </div>
+        <div class="fire-axis-item">
+          <span class="fire-axis-icon">🏢</span>
+          <div class="fire-axis-body">
+            <div class="fire-axis-name">아파트</div>
+            <div class="fire-axis-sub">단체보험과 별개</div>
+          </div>
+        </div>
+      </div>
+      <div class="fire-axis-col">
+        <div class="fire-axis-label">거주 형태</div>
+        <div class="fire-axis-item">
+          <span class="fire-axis-icon">🔑</span>
+          <div class="fire-axis-body">
+            <div class="fire-axis-name">집주인</div>
+            <div class="fire-axis-sub">건물 가치 보장</div>
+          </div>
+        </div>
+        <div class="fire-axis-item">
+          <span class="fire-axis-icon">📦</span>
+          <div class="fire-axis-body">
+            <div class="fire-axis-name">세입자</div>
+            <div class="fire-axis-sub">가재도구·원상복구</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fire-coverage-box">
+      <div class="fire-cat">
+        <div class="fire-cat-tag">화재 보장</div>
+        <div class="fire-cat-items">화재손해(건물·집기비품) + 화재배상 + 화재벌금 + 임시거주비 등</div>
+      </div>
+      <div class="fire-cat">
+        <div class="fire-cat-tag">생활 보장</div>
+        <div class="fire-cat-items">급배수누출손해, 일상생활배상책임, 가전제품수리비, 법률비용 등</div>
+      </div>
+    </div>
+
+    <div class="cost-summary">
+      💡 화재보험은 보험료가 <strong>월 1만원 안팎</strong>으로 가벼운 경우가 많지만, 한 번 사고가 나면 <strong>수천~수억 원 이상의 손해</strong>로 이어질 수 있습니다.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">일배책</div>
+    <div class="section-title"><em>일상생활</em> 배상책임</div>
+    <div class="section-desc">피보험자 본인·가족이 <strong>일상생활 중</strong>이나 <strong>주거용 주택의 소유·사용·관리</strong>에서 우연히 발생한 사고로 타인에게 신체·재물 손해를 입힌 경우, 법률상 배상책임을 보장합니다. 누수로 인한 아랫집 피해(<strong>누수배상</strong>)도 여기에 포함됩니다.</div>
+
+    <div class="badcase-grid">
+      <div class="bc-card">
+        <div class="bc-icon-lg">🚲</div>
+        <div class="bc-title">자전거로 주차된<br>차량 파손</div>
+        <div class="bc-result">→ 피해차량 수리비</div>
+      </div>
+      <div class="bc-card">
+        <div class="bc-icon-lg">📱</div>
+        <div class="bc-title">타인 핸드폰<br>실수로 파손</div>
+        <div class="bc-result">→ 휴대폰 수리비</div>
+      </div>
+      <div class="bc-card">
+        <div class="bc-icon-lg">🐶</div>
+        <div class="bc-title">반려견이<br>행인을 무는 사고</div>
+        <div class="bc-result">→ 피해자 치료비</div>
+      </div>
+      <div class="bc-card">
+        <div class="bc-icon-lg">💧</div>
+        <div class="bc-title">우리집 누수로<br>아랫집 피해</div>
+        <div class="bc-result">→ 아랫집 수리비</div>
+      </div>
+    </div>
+
+    <div class="fire-coverage-box">
+      <div class="fire-cat">
+        <div class="fire-cat-tag">2020년 4월 약관 개정</div>
+        <div class="fire-cat-items-detail">보험증권에 기재된 주택 기준으로 보장되므로 이사·매매 시 보험사 주소 변경 신청이 필수입니다. 소유 임대주택 누수도 보험증권에 기재하면 보장 가능합니다. 자기부담금은 <strong>대인 없음, 대물 20만원</strong>(개정 후 누수는 50만원)이 일반적 기준입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">보험료 구조</div>
+    <div class="section-title"><em>보험료 = 위험도</em></div>
+    <div class="section-desc">보험료는 가입자의 위험도를 반영해 책정됩니다. 나이를 먹을수록 비싸지고, 병력이 생기면 유병자 플랜 등 심사 조건에 따라 더 비싸집니다. 납입 방식은 갱신형·비갱신형으로 나뉩니다.</div>
+
+    <div class="premium-formula">
+      <div class="pf-eq">보험료 <em>=</em> 위험도</div>
+      <div class="pf-desc"><strong>한 살이라도 어릴 때, 건강할 때</strong> 가입하는 것이 합리적입니다.</div>
+    </div>
+
+    <div class="sub-title">갱신형 vs 비갱신형</div>
+
+    <div class="renew-charts">
+      <div class="renew-chart-card">
+        <div class="renew-chart-name">갱신형</div>
+        <div class="renew-chart-sub">시간 지날수록 ↑</div>
+        <div class="renew-bars">
+          <div class="renew-bar bar-up-1"></div>
+          <div class="renew-bar bar-up-2"></div>
+          <div class="renew-bar bar-up-3"></div>
+          <div class="renew-bar bar-up-4"></div>
+        </div>
+        <div class="renew-x-labels">
+          <span>최초</span><span>1차</span><span>2차</span><span>···</span>
+        </div>
+        <div class="renew-foot">
+          위험도 상승 = 보험료 상승<br>
+          보장일까지 계속 납입
+        </div>
+      </div>
+      <div class="renew-chart-card">
+        <div class="renew-chart-name">비갱신형</div>
+        <div class="renew-chart-sub">가입시 확정 → 일정</div>
+        <div class="renew-bars">
+          <div class="renew-bar bar-flat"></div>
+          <div class="renew-bar bar-flat"></div>
+          <div class="renew-bar bar-flat"></div>
+          <div class="renew-bar bar-flat"></div>
+        </div>
+        <div class="renew-x-labels">
+          <span>최초</span><span>중간</span><span>중반</span><span>만기</span>
+        </div>
+        <div class="renew-foot">
+          납입기간 동안 보험료 일정<br>
+          납입 끝나도 보장 유지
+        </div>
+      </div>
+    </div>
+
+    <div class="renewal-tbl">
+      <div class="renewal-row head">
+        <div class="renewal-name">구분</div>
+        <div class="renewal-col">갱신형</div>
+        <div class="renewal-col">비갱신형</div>
+      </div>
+      <div class="renewal-row">
+        <div class="renewal-name">의미</div>
+        <div class="renewal-col">주기마다 갱신, <strong>보험료 재산출</strong></div>
+        <div class="renewal-col">가입 시점에 <strong>보험료 확정</strong></div>
+      </div>
+      <div class="renewal-row">
+        <div class="renewal-name">납입<br>기간</div>
+        <div class="renewal-col">보장 전 기간 납입</div>
+        <div class="renewal-col">만기까지 또는 특정 기간</div>
+      </div>
+      <div class="renewal-row">
+        <div class="renewal-name">장점</div>
+        <div class="renewal-col"><strong>초기 보험료 저렴</strong></div>
+        <div class="renewal-col">보험료 일정, 납입 편리</div>
+      </div>
+      <div class="renewal-row">
+        <div class="renewal-name">단점</div>
+        <div class="renewal-col">갱신 시 <strong>보험료 상승</strong></div>
+        <div class="renewal-col">초기 보험료 다소 높음</div>
+      </div>
+    </div>
+    <div class="mini-note">※ 실손처럼 갱신형이 일반적인 상품도 있어 상품별 구조를 확인하세요</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Wrap-up</div>
+    <div class="section-title">가입 전, <em>이것만 확인하세요</em></div>
+    <div class="section-desc">이 가이드북의 핵심 메시지를 한 줄씩 요약했습니다.</div>
+
+    <div class="checklist">
+      <div class="checklist-title">📋 핵심 7가지</div>
+      <div class="check-item">
+        <div class="check-mark">1</div>
+        <div class="check-text">보험은 <strong>실손형 + 정액형</strong>을 함께 — 둘은 보완재입니다.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">2</div>
+        <div class="check-text">예산은 <strong>미혼 5~6%, 가구 10~12%</strong> 내외가 일반적 권고입니다.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">3</div>
+        <div class="check-text">우선순위 — <strong>실손 → 3대 진단·치료 → 후유장해 → 생활보장</strong>.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">4</div>
+        <div class="check-text">3대 진단비는 <strong>보장 범위(질병 코드)</strong>를 반드시 확인하세요.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">5</div>
+        <div class="check-text">수술비는 <strong>4가지 종류의 특성</strong>을 알고 보완적으로 구성하세요.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">6</div>
+        <div class="check-text">후유장해는 <strong>가입금액 × 지급률</strong>로 산정됩니다.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-mark">7</div>
+        <div class="check-text">갱신형은 시간이 지날수록 <strong>보험료가 오릅니다</strong>.</div>
+      </div>
+    </div>
+
+    <div class="wrap-summary">
+      <div class="wrap-intro">보험 가입의 정석은,</div>
+      <div class="wrap-title"><em>'순서와 균형'</em></div>
+      <div class="wrap-text">정해진 예산 내에서 우선순위대로 가입한다.<br>그게 합리적 보험의 출발점입니다.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">본 자료는 정보 전달을 위한 참고용이며, 특정 상품이나 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+</body></html>

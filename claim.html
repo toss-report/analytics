@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function(){
+  if (window.__backGuardInit) return;
+  window.__backGuardInit = true;
+  var alreadyArmed = false;
+  try { alreadyArmed = sessionStorage.getItem('bgArmed') === '1'; } catch (e) {}
+  if (alreadyArmed) return;
+  try { sessionStorage.setItem('bgArmed', '1'); } catch (e) {}
+  history.pushState({ __bg: 1 }, '', location.href);
+  window.addEventListener('popstate', function(e){
+    if (e.state && e.state.__bg) return;
+    var t = document.createElement('div');
+    t.innerHTML = '한 번 더 누르시면,<br>카카오톡 대화방으로<br>돌아갑니다.';
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+      'max-width:calc(100% - 40px);text-align:center;background:#191f28;color:#fff;' +
+      'font-size:13.5px;font-weight:600;line-height:1.5;padding:14px 20px;border-radius:20px;z-index:200;' +
+      'box-shadow:0 4px 16px rgba(0,0,0,.2)';
+    (document.body || document.documentElement).appendChild(t);
+    setTimeout(function(){ t.remove(); }, 2600);
+  });
+})();
+</script>
+<title>보험금 간편 청구 | 채종명</title><meta property="og:type" content="website">
+<meta property="og:title" content="보험금 간편 청구 | 채종명">
+<meta property="og:image" content="assets/og-claim.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="보험금 간편 청구 | 채종명">
+<meta name="twitter:image" content="assets/og-claim.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-frame">
+
+  <header class="top-bar">
+    <a class="brand-logo-link" href="index.html"><img class="brand-logo" src="assets/toss-logo.png" alt="토스"><span class="brand-text">toss insurance</span></a>
+    <a class="nav-link" href="index.html">홈</a>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">보험금 청구</p>
+    <h1>💳 보험금 간편 청구</h1>
+  </section>
+
+  <section class="card docs-card">
+    <h2>📄 기본 필요서류</h2>
+    <div class="doc-group">
+      <p class="doc-group-title">① 청구사유 증빙 <span class="doc-note">(다음 중 가장 저렴한 것 택1)</span></p>
+      <ul class="doc-list">
+        <li>환자용 처방전 (약 처방시, 무료)</li>
+        <li>진료/통원 확인서</li>
+        <li>진단서, 소견서</li>
+      </ul>
+    </div>
+    <div class="doc-group">
+      <p class="doc-group-title">② 병원비/약값 증빙</p>
+      <ul class="doc-list">
+        <li>진료비 영수증</li>
+        <li>진료비 세부내역서 (비급여 포함시)</li>
+        <li>약 봉투 (조제영수증)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card claim-card">
+    <a class="btn btn-primary btn-block" href="https://open.kakao.com/o/sxP4svNi" target="_blank" rel="noopener">보험금 간편청구 바로가기</a>
+    <ul class="check-list">
+      <li>✅ 보험사 앱 설치 불필요</li>
+      <li>✅ 가족 등 타인 청구 가능</li>
+      <li>✅ 서류 사진만 찍어서 보내주세요</li>
+      <li>✅ 가장 우선적으로 확인합니다</li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-heading">도움이 필요하신가요?</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-block" href="tel:01080343894">전화로 문의 신청</a>
+      <a class="btn btn-weak btn-block" href="https://open.kakao.com/o/stqAiTJi" target="_blank" rel="noopener">카카오톡 문의 신청</a>
+    </div>
+    <p class="phone-line">토스인슈어런스 직영사업단 직영1 총괄본부<br>
+서울특별시 구로구 경인로 662, 37F(신도림동, 디큐브시티)</p>
+    <p class="compliance">이 사이트는 토스인슈어런스 소속 보험설계사 채종명이 운영하는 개인 소개 페이지입니다. 특정 보험상품의 가입을 권유하거나 추천하지 않으며, 안내된 내용은 이해를 돕기 위한 참고용입니다. 실제 가입 여부는 고객님의 자유로운 의사에 따라 결정되며, 상품 세부 내용은 반드시 상품설명서와 약관을 통해 확인하시기 바랍니다.</p>
+  </footer>
+
+</div>
+<script src="assets/phone-cta.js"></script>
+</body>
+</html>

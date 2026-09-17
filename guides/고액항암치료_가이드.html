@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>첨단 항암치료 보장 가이드</title>
+<meta property="og:title" content="첨단 항암치료 보장 가이드">
+<meta property="og:description" content="표적항암·CAR-T·중입자·양성자 치료 보장 안내 — 토스인슈어런스">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og-guide.png">
+<style>
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Regular.woff2') format('woff2');
+    font-weight: 400; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Medium.woff2') format('woff2');
+    font-weight: 500; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Toss Product Sans';
+    src: url('https://static.toss.im/fonts/toss-product/TossProductSansKR-Bold.woff2') format('woff2');
+    font-weight: 700; font-display: swap;
+  }
+
+  /* ============================================================
+     ★ 편집 가능한 디자인 변수 모음 ★
+     VSCode에서 이 블록만 수정하면 전체 디자인이 바뀝니다.
+  ============================================================ */
+  :root {
+    /* ── 글꼴 ── */
+    --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+
+    /* ── 글씨 크기 ── */
+    --fs-xs:    9px;    /* 최소 레이블, 뱃지 안 텍스트 */
+    --fs-sm:    10px;   /* 주석, 푸터, 차트 레이블 */
+    --fs-base:  11px;   /* 본문 보조 설명 */
+    --fs-body:  12px;   /* 일반 본문 */
+    --fs-md:    13px;   /* 카드 내용, 소제목 */
+    --fs-lg:    14px;   /* 카드 타이틀, 강조 본문 */
+    --fs-xl:    17px;   /* 섹션 제목 */
+    --fs-2xl:   21px;   /* 페이지 헤더 H1 */
+    --fs-stat:  15px;   /* 도넛 차트 숫자 */
+
+    /* ── 줄 간격 ── */
+    --lh-tight:  1.35;
+    --lh-normal: 1.45;
+    --lh-loose:  1.6;
+
+    /* ── 자간 ── */
+    --ls-tight:  -0.4px;
+    --ls-normal: -0.3px;
+    --ls-wide:   0.3px;
+
+    /* ── 색상: 배경 ── */
+    --bg:           #FFFFFF;
+    --bg-root:      #F8F9FB;
+    --bg-card:      #FFFFFF;
+    --bg-elevated:  #F3F4F6;
+    --bg-input:     #F9FAFB;
+
+    /* ── 색상: 텍스트 ── */
+    --text-primary:   #1F2937;
+    --text-secondary: #6B7280;
+    --text-tertiary:  #9CA3AF;
+
+    /* ── 색상: 테두리 ── */
+    --border:      rgba(0,0,0,0.06);
+    --border-card: rgba(0,0,0,0.04);
+
+    /* ── 색상: 테마 ── */
+    --blue:        #3182F6;
+    --blue-dim:    rgba(49,130,246,0.08);
+    --blue-text:   #1D4ED8;
+
+    --amber:       #F59E0B;
+    --amber-dim:   rgba(245,158,11,0.08);
+    --amber-text:  #B45309;
+
+    --green:       #10B981;
+    --green-dim:   rgba(16,185,129,0.08);
+    --green-text:  #047857;
+
+    --purple:      #8B5CF6;
+    --purple-dim:  rgba(139,92,246,0.08);
+    --purple-text: #6D28D9;
+
+    --rose:        #DC2626;
+
+    /* ── 여백: 섹션 ── */
+    --section-px:    24px;   /* 섹션 좌우 패딩 */
+    --section-py:    28px;   /* 섹션 위아래 패딩 */
+    --section-gap:   6px;    /* 섹션 간 구분선 두께 */
+
+    /* ── 여백: 헤더 ── */
+    --header-px:     24px;
+    --header-pt:     24px;
+    --header-pb:     28px;
+    --header-inner-gap: 24px;  /* 헤더 상단바 ~ 뱃지 간격 */
+
+    /* ── 여백: 카드 ── */
+    --card-px:       16px;
+    --card-py:       14px;
+    --card-body-px:  16px;
+    --card-body-pt:  12px;
+    --card-body-pb:  14px;
+    --card-gap:      12px;   /* 카드 사이 간격 */
+    --card-row-gap:  5px;    /* 카드 내 행 간격 */
+
+    /* ── 여백: 기타 ── */
+    --stat-box-p:    20px;
+    --stat-bar-gap:  5px;
+    --problem-gap:   10px;
+    --cta-px:        16px;
+    --cta-py:        14px;
+    --cta-mt:        16px;
+    --footer-px:     24px;
+    --footer-py:     14px;
+
+    /* ── 둥글기 ── */
+    --radius-sm:   5px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-xl:   14px;
+    --radius-pill: 16px;
+
+    /* ── 컨테이너 ── */
+    --container-max: 480px;
+    --container-gap: 24px;   /* 페이지 간 간격 */
+  }
+
+  /* ============================================================
+     기본 리셋 & 레이아웃
+  ============================================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg-root);
+    color: var(--text-primary);
+    line-height: var(--lh-loose);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    background: var(--bg);
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    padding: var(--header-pt) var(--header-px) var(--header-pb);
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--header-inner-gap);
+  }
+
+  .header-page {
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--blue-dim);
+    color: var(--blue);
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    line-height: var(--lh-normal);
+    letter-spacing: var(--ls-tight);
+    margin-bottom: 8px;
+  }
+  .header h1 em { font-style: normal; color: var(--blue); }
+  .header-desc {
+    font-size: var(--fs-md);
+    color: var(--text-secondary);
+    line-height: var(--lh-tight);
+  }
+
+  /* ── 섹션 ── */
+  .section {
+    padding: var(--section-py) var(--section-px);
+    border-top: var(--section-gap) solid rgba(0,0,0,0.03);
+  }
+  .section-label {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 6px;
+    letter-spacing: var(--ls-wide);
+  }
+  .section-title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: var(--ls-normal);
+    line-height: var(--lh-normal);
+  }
+  .section-title em { font-style: normal; color: var(--blue); }
+  .section-desc {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.55;
+  }
+
+  /* ── 타임라인 ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+  .tl-item { display: flex; align-items: stretch; gap: 14px; }
+  .tl-rail { display: flex; flex-direction: column; align-items: center; width: 20px; flex-shrink: 0; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 5px; }
+  .tl-dot.dim { background: var(--text-tertiary); }
+  .tl-dot.active { background: var(--blue); box-shadow: 0 0 0 4px var(--blue-dim); }
+  .tl-line { width: 2px; flex: 1; background: rgba(0,0,0,0.06); }
+  .tl-content { flex: 1; padding-bottom: 16px; }
+  .tl-item:last-child .tl-content { padding-bottom: 0; }
+  .tl-item:last-child .tl-line { display: none; }
+  .tl-year { font-size: var(--fs-xs); font-weight: 700; color: var(--text-secondary); margin-bottom: 2px; }
+  .tl-title { font-size: var(--fs-md); font-weight: 600; color: var(--text-primary); line-height: var(--lh-normal); margin-bottom: 2px; }
+  .tl-desc { font-size: var(--fs-xs); color: var(--text-tertiary); line-height: var(--lh-normal); }
+  .tl-arrow { font-size: var(--fs-xs); color: var(--blue); font-weight: 600; }
+
+  /* ── 통계 박스 ── */
+  .stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    padding: var(--stat-box-p);
+    margin-bottom: 16px;
+  }
+  .stat-top { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+  .stat-donut { flex-shrink: 0; position: relative; width: 88px; height: 88px; }
+  .stat-donut svg { width: 88px; height: 88px; transform: rotate(-90deg); }
+  .donut-bg { fill: none; stroke: var(--bg-elevated); stroke-width: 12; }
+  .donut-fill { fill: none; stroke: var(--blue); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 213.6; stroke-dashoffset: 12.8; }
+  .stat-donut-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; }
+  .stat-num { font-size: var(--fs-stat); font-weight: 700; color: var(--blue); letter-spacing: -1px; line-height: 1; }
+  .stat-num-unit { font-size: var(--fs-xs); font-weight: 700; }
+  .stat-num-sub { font-size: 8px; color: var(--text-tertiary); margin-top: 2px; }
+  .stat-text-area { flex: 1; }
+  .stat-text-title { font-size: var(--fs-lg); font-weight: 700; color: var(--text-primary); line-height: var(--lh-normal); letter-spacing: -0.2px; margin-bottom: 2px; }
+  .stat-text-title em { font-style: normal; color: var(--blue); }
+  .stat-text-desc { font-size: var(--fs-xs); color: var(--text-secondary); }
+  .stat-bars { display: flex; flex-direction: column; gap: var(--stat-bar-gap); margin-bottom: 12px; }
+  .stat-bar { display: flex; align-items: center; gap: 8px; }
+  .stat-bar-name { width: 48px; font-size: var(--fs-sm); font-weight: 600; color: var(--text-secondary); text-align: right; flex-shrink: 0; }
+  .stat-bar-track { flex: 1; height: 20px; background: var(--bg-elevated); border-radius: var(--radius-sm); overflow: hidden; position: relative; }
+  .stat-bar-fill { height: 100%; border-radius: var(--radius-sm); display: flex; align-items: center; padding: 0 8px; font-size: 9px; font-weight: 700; color: #fff; }
+  .sb-drug { width: 61%; background: var(--blue); }
+  .sb-rad  { width: 33%; background: #60A5FA; }
+  .sb-surg { width: 19%;  background: var(--text-tertiary); min-width: auto; }
+  .stat-bar-ext { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 9px; font-weight: 600; color: var(--text-tertiary); }
+
+  /* ── 치료 방법 2열 비교 ── */
+  .tx-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .tx-compare-card { background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 12px; }
+  .tx-compare-title { font-size: var(--fs-body); font-weight: 700; color: var(--text-primary); margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .tx-compare-title.blue { color: var(--blue); }
+  .tx-compare-item { font-size: var(--fs-xs); color: var(--text-secondary); line-height: 1.65; display: flex; align-items: baseline; gap: 4px; }
+  .tx-compare-item::before { content: '·'; flex-shrink: 0; color: var(--blue); }
+  .tx-compare-cost { margin-top: 8px; padding: 6px 8px; background: var(--blue-dim); border-radius: var(--radius-sm); font-size: var(--fs-xs); color: var(--blue-text); font-weight: 600; text-align: center; }
+
+  /* ── 적층 바 그래프 (94% 시각화) ── */
+  .stacked-chart { margin-bottom: 16px; }
+  .stacked-chart-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); margin-bottom: 10px; letter-spacing: var(--ls-normal); }
+  .stacked-chart-title em { font-style: normal; color: var(--blue); }
+  .stacked-bar-wrap { position: relative; height: 36px; border-radius: var(--radius-md); overflow: hidden; display: flex; margin-bottom: 6px; }
+  .sb-seg { display: flex; align-items: center; justify-content: center; font-size: var(--fs-xs); font-weight: 700; color: #fff; transition: width 0.3s; }
+  .sb-seg.seg-surg  { background: #9CA3AF; width: 6%; }
+  .sb-seg.seg-rad   { background: #60A5FA; width: 33%; }
+  .sb-seg.seg-drug  { background: var(--blue); width: 61%; }
+  /* 수술 단독 라벨 (왼쪽 6%) */
+  .stacked-anno { display: flex; width: 100%; margin-bottom: 8px; position: relative; height: 40px; }
+  /* 수술 화살표 영역 */
+  .anno-surg {
+    width: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .anno-surg-line {
+    width: 1px; height: 10px;
+    background: var(--text-tertiary);
+    margin-left: 3px;
+  }
+  .anno-surg-text {
+    font-size: var(--fs-xs); font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1.3; white-space: nowrap;
+  }
+  /* 방사선+약물 브라켓 영역 */
+  .anno-radrug {
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .anno-bracket {
+    display: flex;
+    align-items: flex-start;
+    height: 10px;
+  }
+  .anno-bracket-line-v { width: 1px; height: 10px; background: var(--blue); flex-shrink: 0; }
+  .anno-bracket-line-h { flex: 1; height: 1px; background: var(--blue); margin-top: 9px; }
+  .anno-bracket-line-v2 { width: 1px; height: 10px; background: var(--blue); flex-shrink: 0; }
+  .anno-radrug-text {
+    font-size: var(--fs-xs); font-weight: 700;
+    color: var(--blue);
+    padding-top: 2px;
+    text-align: right;
+  }
+  .stacked-legend { display: flex; gap: 12px; flex-wrap: wrap; }
+  .sl-dot { display: flex; align-items: center; gap: 4px; font-size: var(--fs-xs); color: var(--text-secondary); }
+  .sl-dot::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .sl-dot.d-drug::before  { background: var(--blue); }
+  .sl-dot.d-rad::before   { background: #60A5FA; }
+  .sl-dot.d-surg::before  { background: #9CA3AF; }
+
+  /* ── 전이암 경고 박스 ── */
+  .meta-warn { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
+  .meta-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: 11px 14px;
+  }
+  .meta-badge.mb-blue { border-left: 3px solid var(--blue); }
+  .meta-badge.mb-rose { border-left: 3px solid var(--rose); }
+  .meta-check {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .meta-check.blue { background: var(--blue); color: #fff; }
+  .meta-check.rose { background: var(--rose); color: #fff; }
+  .meta-sentence {
+    font-size: var(--fs-md);
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: var(--lh-normal);
+    flex: 1;
+  }
+  .meta-sentence .hl-blue { color: var(--blue); font-weight: 700; }
+  .meta-sentence .hl-rose { color: var(--rose); font-weight: 700; }
+
+  /* ── 문제 카드 ── */
+  .problem-grid { display: flex; flex-direction: column; gap: var(--problem-gap); margin-bottom: 16px; }
+  .problem-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .problem-label { font-size: var(--fs-sm); font-weight: 700; color: var(--rose); margin-bottom: 6px; letter-spacing: var(--ls-wide); }
+  .problem-title { font-size: var(--fs-md); font-weight: 700; color: var(--text-primary); margin-bottom: 4px; line-height: var(--lh-normal); }
+  .problem-desc { font-size: var(--fs-xs); color: var(--text-secondary); line-height: 1.55; }
+  .problem-desc strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── 솔루션 박스 ── */
+  .solution-box { background: var(--blue-dim); border: 1px solid rgba(49,130,246,0.08); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .solution-title { font-size: var(--fs-md); font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+  .solution-text { font-size: var(--fs-body); color: var(--text-secondary); line-height: var(--lh-loose); }
+  .solution-text strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── TX 카드 ── */
+  .tx-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); overflow: hidden; margin-bottom: var(--card-gap); }
+  .tx-card:last-of-type { margin-bottom: 0; }
+  .tx-card-head { padding: var(--card-py) var(--card-px); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+  .tx-icon { width: 30px; height: 30px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: var(--fs-lg); flex-shrink: 0; }
+  .tx-titles { flex: 1; min-width: 0; }
+  .tx-en { font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0.1px; line-height: 1.2; }
+  .tx-kr { font-size: var(--fs-lg); font-weight: 700; color: var(--text-primary); letter-spacing: -0.2px; line-height: var(--lh-tight); }
+  .tx-badge { font-size: var(--fs-xs); font-weight: 600; padding: 3px 8px; border-radius: var(--radius-sm); white-space: nowrap; flex-shrink: 0; }
+  .tx-card-body { padding: var(--card-body-pt) var(--card-body-px) var(--card-body-pb); display: flex; flex-direction: column; gap: var(--card-row-gap); }
+  .tx-row { display: flex; align-items: flex-start; gap: 8px; }
+  .tx-label { flex-shrink: 0; font-size: var(--fs-xs); font-weight: 700; padding: 2px 6px; border-radius: 4px; min-width: 30px; text-align: center; margin-top: 2px; color: #fff; }
+  .tx-val { font-size: var(--fs-body); line-height: var(--lh-tight); color: var(--text-secondary); }
+  .tx-val strong { font-weight: 600; color: var(--text-primary); }
+
+  /* TX 테마 */
+  .t-amber .tx-icon  { background: var(--amber-dim); }
+  .t-amber .tx-en    { color: var(--amber-text); }
+  .t-amber .tx-badge { background: var(--amber-dim); color: var(--amber-text); }
+  .t-amber .tx-label { background: var(--amber); }
+
+  .t-blue .tx-icon   { background: var(--blue-dim); }
+  .t-blue .tx-en     { color: var(--blue-text); }
+  .t-blue .tx-badge  { background: var(--blue-dim); color: var(--blue-text); }
+  .t-blue .tx-label  { background: var(--blue); }
+
+  .t-purple .tx-icon   { background: var(--purple-dim); }
+  .t-purple .tx-en     { color: var(--purple-text); }
+  .t-purple .tx-badge  { background: var(--purple-dim); color: var(--purple-text); }
+  .t-purple .tx-label  { background: var(--purple); }
+
+  .t-green .tx-icon   { background: var(--green-dim); }
+  .t-green .tx-en     { color: var(--green-text); }
+  .t-green .tx-badge  { background: var(--green-dim); color: var(--green-text); }
+  .t-green .tx-label  { background: var(--green); }
+
+  /* ── CTA 박스 ── */
+  .cta-box { background: var(--blue-dim); border: 1px solid rgba(49,130,246,0.12); border-radius: var(--radius-lg); padding: var(--cta-py) var(--cta-px); margin-top: var(--cta-mt); display: flex; align-items: flex-start; gap: 10px; }
+  .cta-emoji { font-size: var(--fs-md); flex-shrink: 0; margin-top: 1px; }
+  .cta-text { font-size: var(--fs-body); line-height: 1.55; color: var(--text-secondary); }
+  .cta-text strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ── 푸터 ── */
+  .footer { padding: var(--footer-py) var(--footer-px); border-top: 1px solid var(--border); }
+  .footer-text { font-size: var(--fs-sm); color: var(--text-tertiary); line-height: var(--lh-tight); }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+</head>
+<body>
+
+<div class="tj-topbar">
+  <a class="tj-topbar-brand" href="../index.html"><img class="tj-topbar-logo" src="../assets/toss-logo.png" alt="토스"><span class="tj-topbar-text">toss insurance</span></a>
+  <a class="tj-topbar-link" href="../guide.html">보장 가이드</a>
+</div>
+<style>
+  .tj-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e8eb;
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    letter-spacing: normal;
+  }
+  .tj-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .tj-topbar-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .tj-topbar-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #191f28;
+  }
+  .tj-topbar-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b64da;
+    text-decoration: none;
+  }
+</style>
+
+<!-- ═══ PAGE 1 ═══ -->
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      
+      <span class="header-page">1 / 3</span>
+    </div>
+    <div class="header-badge">💊 첨단 항암치료 가이드</div>
+    <h1>암 보장, <em>의료 트렌드</em>에 맞춰<br>고도화가 필요합니다</h1>
+    <div class="header-desc">시대가 바뀌면 치료가 바뀌고, 치료가 바뀌면 필요한 보장도 달라집니다.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">의료 트렌드의 변화</div>
+    <div class="section-title">시대별 암 보험, 이렇게 달라졌습니다</div>
+    <div class="section-desc">고객님의 보험은 어느 시대 기준으로 만들어진 상품인가요?</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-rail"><div class="tl-dot dim"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">1980년대</div>
+          <div class="tl-title">암 = 사망하는 병</div>
+          <div class="tl-desc"><span class="tl-arrow">→</span> 사망보험금이 핵심</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><div class="tl-dot dim"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">1997년~</div>
+          <div class="tl-title">표적항암 허가, 생존율 상승</div>
+          <div class="tl-desc"><span class="tl-arrow">→</span> 암 치료비 보장 부각</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><div class="tl-dot dim"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2005년~</div>
+          <div class="tl-title">암 산정특례 적용</div>
+          <div class="tl-desc"><span class="tl-arrow">→</span> 진단 시 생활비 보전 개념 부각</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><div class="tl-dot active"></div></div>
+        <div class="tl-content">
+          <div class="tl-year">2022년~</div>
+          <div class="tl-title">CAR-T · 중입자 · 로봇수술 등장</div>
+          <div class="tl-desc"><span class="tl-arrow">→</span> <strong>고액 첨단 치료비</strong> 대비가 핵심</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">암 치료의 현실 ①</div>
+    <div class="section-title">암 환자 10명 중 <em>9명</em>,<br>수술이 아닌 약물·방사선 치료</div>
+    <div class="section-desc">암 치료는 수술·항암방사선·항암약물 3가지이지만, 여러 부위를 열어 수술하기 어려워 약물·방사선이 우선 시행됩니다.</div>
+
+    <!-- 치료 방법 2열 비교 -->
+    <div class="tx-compare">
+      <div class="tx-compare-card">
+        <div class="tx-compare-title blue">항암약물</div>
+        <div class="tx-compare-item">화학 항암제</div>
+        <div class="tx-compare-item">표적 항암제</div>
+        <div class="tx-compare-item">면역 항암제</div>
+        <div class="tx-compare-item">카티(CAR-T) 항암제</div>
+
+      </div>
+      <div class="tx-compare-card">
+        <div class="tx-compare-title blue">항암방사선</div>
+        <div class="tx-compare-item">세기조절 방사선</div>
+        <div class="tx-compare-item">양성자 방사선</div>
+        <div class="tx-compare-item">3D 방사선</div>
+        <div class="tx-compare-item">중입자 가속기</div>
+
+      </div>
+    </div>
+
+    <!-- 적층 바 그래프 -->
+    <div class="stacked-chart">
+      <div class="stacked-chart-title">항암약물·방사선이 전체 암 치료의 <em>94%</em></div>
+      <div class="stacked-bar-wrap">
+        <div class="sb-seg seg-surg">6%</div>
+        <div class="sb-seg seg-rad">방사선 33%</div>
+        <div class="sb-seg seg-drug">약물 치료 61%</div>
+      </div>
+      <div class="stacked-anno">
+        <!-- 수술 단독 화살표 -->
+        <div class="anno-surg">
+          <div class="anno-surg-line"></div>
+          <div class="anno-surg-text">→ 수술<br>　6%</div>
+        </div>
+        <!-- 방사선+약물 브라켓 -->
+        <div class="anno-radrug">
+          <div class="anno-bracket">
+            <div class="anno-bracket-line-v"></div>
+            <div class="anno-bracket-line-h"></div>
+            <div class="anno-bracket-line-v2"></div>
+          </div>
+          <div class="anno-radrug-text" style="text-align:center;">→ 방사선/약물 치료 94%</div>
+        </div>
+      </div>
+      <div class="stacked-legend">
+        <div class="sl-dot d-drug">항암약물 61% (215,793건)</div>
+        <div class="sl-dot d-rad">방사선 33% (117,680건)</div>
+        <div class="sl-dot d-surg">수술 6% (22,839건)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 전이암 섹션 ── -->
+  <div class="section">
+    <div class="section-label">암 치료의 현실 ②</div>
+    <div class="section-title">원발암만큼 무서운<br><em>전이암</em></div>
+    <div class="section-desc">암 진단 후 치료를 잘 받아도 전이암이 발생하면 치료 비용은 다시 처음부터 시작됩니다.</div>
+
+    <div class="meta-warn">
+      <div class="meta-badge mb-blue">
+        <div class="meta-check blue">✔</div>
+        <div class="meta-sentence">암 진단 환자 <span class="hl-blue">2명 중 1명</span>이 전이암 발생!</div>
+      </div>
+      <div class="meta-badge mb-rose">
+        <div class="meta-check rose">✔</div>
+        <div class="meta-sentence">암 사망자 <span class="hl-rose">10명 중 9명</span>이 전이암으로 사망!</div>
+      </div>
+    </div>
+    <div style="font-size:var(--fs-xs);color:var(--text-tertiary);margin-bottom:16px;line-height:var(--lh-tight)">※ 출처: 국가암정보센터, 2024</div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-text">원발암 보험만으로는 부족할 수 있어요. <strong>전이암 진단비 · 전이암 포함 주요치료비 · 전이암 진단 생활비</strong> 등 관련 보장을 꼼꼼히 점검해 보세요.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">기존 보험의 한계</div>
+    <div class="section-title">진단비와 실손만으로<br>충분할까요?</div>
+    <div class="section-desc">첨단 치료 시대, 기존 보험의 빈틈을 점검해보세요.</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-label">한계 ①</div>
+        <div class="problem-title">암 진단비 = 생활비 보전</div>
+        <div class="problem-desc">진단비는 암 확정 후 한 번 받는 <strong>소득 공백을 메우는 돈</strong>이지, 치료비를 감당하기 위한 것이 아닙니다.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-label">한계 ②</div>
+        <div class="problem-title">실손 통원 한도 = 하루 20~25만 원</div>
+        <div class="problem-desc">첨단 항암치료는 대부분 <strong>통원</strong>으로 진행. 표적항암 1회 수백만 원, CAR-T 수억 원인데 실손 한도와의 <strong>차액은 고스란히 본인 부담</strong>입니다.</div>
+      </div>
+    </div>
+    <div class="solution-box">
+      <div class="solution-title">💡 그래서 필요한 것</div>
+      <div class="solution-text">
+        진단비 = <strong>'생활비 방패'</strong><br>
+        치료비 특약 = <strong>'치료비 방패'</strong><br>
+        두 가지를 조합해서 준비하는 것이 현명한 선택입니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">※ 연간 건수는 건강보험심사평가원 기준 · 본 자료는 상담 참고용이며 특정 상품의 약관을 대체하지 않습니다</div>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 2 ═══ -->
+<div class="container" style="margin-top: var(--container-gap);">
+  <div class="header">
+    <div class="header-top">
+      
+      <span class="header-page">2 / 3</span>
+    </div>
+    <div class="header-badge">💊 첨단 항암치료 가이드</div>
+    <h1>첨단 <em>항암약물치료</em> · <em>로봇수술</em></h1>
+    <div class="header-desc">표적항암 · CAR-T · 호르몬요법 · 로봇수술</div>
+  </div>
+
+  <div class="section">
+    <div class="tx-card t-blue">
+      <div class="tx-card-head">
+        <div class="tx-icon">🔬</div>
+        <div class="tx-titles">
+          <div class="tx-en">Targeted Therapy</div>
+          <div class="tx-kr">표적항암 약물치료</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val">암세포의 <strong>특정 성장 신호만 선택적으로 차단</strong>, 정상세포 손상 최소화</span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>폐암(EGFR), 유방암(HER2), 대장암, 위암, 신장암, 흑색종</strong> 등</span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val">약제별 <strong>월 300~1,000만 원</strong>, 연간 수천만 원</span></div>
+        <div class="tx-row"><span class="tx-label">약제</span><span class="tx-val">허셉틴, 타그리소, 키트루다, 옵디보, 넥사바, 글리벡 등</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-blue">
+      <div class="tx-card-head">
+        <div class="tx-icon">🧬</div>
+        <div class="tx-titles">
+          <div class="tx-en">CAR-T Cell Therapy</div>
+          <div class="tx-kr">카티(CAR-T) 세포치료</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val">내 T세포를 꺼내 <strong>유전자 변형 후 재주입</strong> — 면역세포가 암만 찾아 공격</span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>급성림프구성백혈병, 미만성거대B세포림프종, 다발성골수종</strong> 등</span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val">1회 투여 약 <strong>1억~5억 원</strong> (비급여 시 전액 본인부담)</span></div>
+        <div class="tx-row"><span class="tx-label">약제</span><span class="tx-val">킴리아(노바티스), 예스카타(길리어드), 카빅티(J&J) 등</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-purple">
+      <div class="tx-card-head">
+        <div class="tx-icon">💜</div>
+        <div class="tx-titles">
+          <div class="tx-en">Hormone Therapy</div>
+          <div class="tx-kr">항암호르몬 약물치료</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val">암 성장에 필요한 <strong>호르몬을 차단·감소</strong>시켜 확산 억제 (표적항암과 별도)</span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>유방암(ER/PR 양성), 전립선암</strong>, 자궁내막암, 갑상선암</span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val"><strong>월 수십~수백만 원</strong>, 장기 복용(5~10년) 시 누적 비용 상당</span></div>
+        <div class="tx-row"><span class="tx-label">약제</span><span class="tx-val">타목시펜, 레트로졸, 아나스트로졸, 졸라덱스, 풀베스트란트</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-green">
+      <div class="tx-card-head">
+        <div class="tx-icon">🤖</div>
+        <div class="tx-titles">
+          <div class="tx-en">da Vinci · Revo-i</div>
+          <div class="tx-kr">로봇 암수술</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val"><strong>다빈치·레보아이 로봇</strong>으로 최소침습 정밀수술 — 출혈↓회복↑정밀도↑</span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>전립선암, 신장암, 자궁암, 대장암, 위암, 갑상선암, 폐암</strong></span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val">로봇 사용료 약 <strong>500~1,500만 원 추가</strong> (비급여)</span></div>
+        <div class="tx-row"><span class="tx-label">병원</span><span class="tx-val">서울대·세브란스·삼성서울·아산 등 <strong>대형병원 다수 도입</strong></span></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-text">표적항암·CAR-T·호르몬·로봇수술은 <strong>모두 별도 특약</strong>이에요. 기존 암보험 진단금만으로는 첨단 치료비 감당이 어렵습니다.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">※ 치료비는 일반적으로 알려진 수준이며 실제 금액은 개별 사례에 따라 다릅니다</div>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 3 ═══ -->
+<div class="container" style="margin-top: var(--container-gap);">
+  <div class="header">
+    <div class="header-top">
+      
+      <span class="header-page">3 / 3</span>
+    </div>
+    <div class="header-badge">💊 첨단 항암치료 가이드</div>
+    <h1>첨단 <em>방사선치료</em></h1>
+    <div class="header-desc">세기조절방사선(IMRT) · 양성자 · 중입자</div>
+  </div>
+
+  <div class="section">
+    <div class="tx-card t-amber">
+      <div class="tx-card-head">
+        <div class="tx-icon">⚡</div>
+        <div class="tx-titles">
+          <div class="tx-en">Intensity Modulated Radiation Therapy</div>
+          <div class="tx-kr">세기조절 방사선치료</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val">방사선의 <strong>세기를 영역별로 조절</strong>하여 정상조직 피해 최소화, 암세포 집중</span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>두경부암, 전립선암, 뇌종양, 폐암, 유방암</strong> 등</span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val">전체 코스(20~30회) 약 <strong>3,000~5,000만 원</strong></span></div>
+        <div class="tx-row"><span class="tx-label">병원</span><span class="tx-val">서울대·세브란스·삼성서울·아산 등 <strong>대부분 대형병원</strong></span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-amber">
+      <div class="tx-card-head">
+        <div class="tx-icon">🎯</div>
+        <div class="tx-titles">
+          <div class="tx-en">Proton Beam Therapy</div>
+          <div class="tx-kr">양성자 방사선치료</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val">양성자를 가속 조사 — <strong>브래그 피크</strong>로 종양에만 에너지 집중</span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>소아 뇌종양, 두경부암, 폐암, 간암, 전립선암</strong> 등</span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val">전체 코스 약 <strong>5,000만~1억 원</strong> (비급여 암종 전액 부담)</span></div>
+        <div class="tx-row"><span class="tx-label">병원</span><span class="tx-val"><strong>국립암센터·삼성서울·서울대</strong> 양성자센터 (<strong>국내만 보장</strong>)</span></div>
+      </div>
+    </div>
+
+    <div class="tx-card t-amber">
+      <div class="tx-card-head">
+        <div class="tx-icon">💫</div>
+        <div class="tx-titles">
+          <div class="tx-en">Heavy Ion (Carbon Ion) Therapy</div>
+          <div class="tx-kr">중입자 방사선치료</div>
+        </div>
+      </div>
+      <div class="tx-card-body">
+        <div class="tx-row"><span class="tx-label">치료</span><span class="tx-val">탄소 등 무거운 입자 가속 조사 — 일반 방사선 대비 <strong>2~3배 살상력</strong></span></div>
+        <div class="tx-row"><span class="tx-label">암종</span><span class="tx-val"><strong>골육종, 연부조직육종, 췌장암, 직장암 재발</strong> 등 난치성 암종</span></div>
+        <div class="tx-row"><span class="tx-label">비용</span><span class="tx-val">국내 약 <strong>5,000만~1.5억</strong> / 해외(일본·독일) <strong>1~2억 원 이상</strong></span></div>
+        <div class="tx-row"><span class="tx-label">병원</span><span class="tx-val"><strong>연세의료원</strong>(국내 최초) / 일본·독일 (<strong>국내·해외 모두 보장</strong>)</span></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-emoji">💡</span>
+      <div class="cta-text">세 가지 방사선치료는 <strong>각각 별도 특약</strong>이에요. 세기조절만 가입하면 양성자·중입자 치료 시 보장이 안 되므로 <strong>3종 모두 준비</strong>하시는 것이 안전합니다.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">※ 치료비는 일반적으로 알려진 수준이며 실제 금액은 개별 사례에 따라 다릅니다</div>
+  </div>
+</div>
+
+</body>
+</html>
