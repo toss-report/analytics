@@ -9,4 +9,4 @@ run_worker_first = ["/admin", "/admin/*", "/r/*"]
 
 [[kv_namespaces]]
 binding = "REPORTS"
-id = "id = "8ca90bab403c4229adbfb2eb6ad3046d"
+id = "8ca90bab403c4229adbfb2eb6ad3046d"
